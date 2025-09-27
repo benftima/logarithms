@@ -1,0 +1,37 @@
+Détermination de l'ensemble des points M(z)      <p>
+
+</p>         Step 1: Comprendre la condition             
+<p></p>  On nous demande de trouver l'ensemble des points M(z) tels que le nombre complexe \(\frac{z-i}{z-1}\) soit imaginaire pur. 
+<p></p>Un nombre complexe est imaginaire pur si sa partie réelle est nulle. 
+<p></p>Soit \(Z=\frac{z-i}{z-1}\). On veut que \(\mathbf{Re}(Z)=0\).     
+  
+
+Step 2: Exprimer Z en fonction de \(z=x+iy\)            
+<p></p>  Soit \(z=x+iy\), où \(x,y\in \mathbb{R}\).
+<p></p>    Alors \(z-i=x+i(y-1)\) et \(z-1=(x-1)+iy\).     
+ <p></p>             \(Z=\frac{x+i(y-1)}{(x-1)+iy}\)        
+          <p></p>  Pour rendre le dénominateur réel, 
+  <p></p>  on multiplie le numérateur et le dénominateur par le conjugué du dénominateur :  
+           <p></p>    \(Z=\frac{(x+i(y-1))((x-1)-iy)}{((x-1)+iy)((x-1)-iy)}\)             
+           <p></p>  \(Z=\frac{x(x-1)-ixy+i(y-1)(x-1)-i^{2}y(y-1)}{(x-1)^{2}+y^{2}}\)    
+                <p></p>  \(Z=\frac{x(x-1)+y(y-1)+i(-xy+(y-1)(x-1))}{(x-1)^{2}+y^{2}}\)    
+                 <p></p>                    Step 3: Déterminer la partie réelle de Z       
+        <p></p>   La partie réelle de \(Z\) est \(\mathbf{Re}(Z)=\frac{x(x-1)+y(y-1)}{(x-1)^{2}+y^{2}}\). 
+<p></p>     Pour que \(Z\) soit imaginaire pur, il faut que \(\mathbf{Re}(Z)=0\), et que le dénominateur ne soit pas nul.
+<p></p>     Le dénominateur \((x-1)^{2}+y^{2}=0\) si et seulement si \(x=1\) et \(y=0\), c'est-à-dire \(z=1\).
+<p></p>       Le point d'affixe 1 est donc exclu.       
+<p></p>        La condition \(\mathbf{Re}(Z)=0\) implique :\(x(x-1)+y(y-1)=0\)    \(x^{2}-x+y^{2}-y=0\)    
+<p></p>           Step 4: Interpréter géométriquement l'équation            
+  <p></p> L'équation \(x^{2}-x+y^{2}-y=0\) peut être réécrite en complétant les carrés :      
+ <p></p>        \((x^{2}-x+\frac{1}{4})+(y^{2}-y+\frac{1}{4})=\frac{1}{4}+\frac{1}{4}\)         
+  <p></p>      \((x-\frac{1}{2})^{2}+(y-\frac{1}{2})^{2}=\frac{1}{2}\)             
+  <p></p>  Cette équation représente un cercle de centre \((\frac{1}{2},\frac{1}{2})\) et de rayon \(R=\sqrt{\frac{1}{2}}=\frac{\sqrt{2}}{2}\).
+  <p></p> L'ensemble des points M(z) est ce cercle, à l'exception du point d'affixe 1, qui correspond aux coordonnées \((1,0)\).
+  <p></p> Vérifions si \((1,0)\) est sur le cercle : \((1-\frac{1}{2})^{2}+(0-\frac{1}{2})^{2}=(\frac{1}{2})^{2}+(-\frac{1}{2})^{2}=\frac{1}{4}+\frac{1}{4}=\frac{1}{2}\).
+    <p></p> Oui, le point \((1,0)\) est sur le cercle. 
+   <p></p>Par conséquent, il doit être exclu de l'ensemble.
+     Réponse:              <p></p> L'ensemble des points M(z) tels que \(\frac{z-i}{z-1}\) 
+     <p></p>soit imaginaire pur est le cercle d'équation <p>
+
+ </p>\(\mathbf{(x-}\frac{\mathbf{1}}{\mathbf{2}}\mathbf{)}^{\mathbf{2}}\mathbf{+(y-}\frac{\mathbf{1}}{\mathbf{2}}\mathbf{)}^{\mathbf{2}}\mathbf{=}\frac{\mathbf{1}}{\mathbf{2}}\), 
+privé du point d'affixe 1.
