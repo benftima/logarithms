@@ -1,110 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Fiche méthode: Démontrer avec les complexes</title>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
-    </script>
+        </script>
     <style>
-        body { font-family: sans-serif; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; vertical-align: middle;}
-        th { background-color: #f2f2f2; }
-        .small-text { font-size: 0.9em; }
+        body {
+            font-family: sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .small-text {
+            font-size: 0.9em;
+        }
     </style>
 </head>
+
 <body>
 
-<h2>Fiche méthode: Démontrer avec les complexes</h2>
-<p>A, B, C et D sont 4 points d'affixes respectives a, b, c et d.</p>
+    <h2>Fiche méthode: Démontrer avec les complexes</h2>
+    <p>A, B, C et D sont 4 points d'affixes respectives a, b, c et d.</p>
 
-<table>
-    <thead>
-        <tr>
-            <th>Que veut-on montrer ?</th>
-            <th>Comment procède-t-on ?</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ABC est un triangle <strong>isocèle en A</strong></td>
-            <td>
-                On calcule $AB = |z_B - z_A|$ et $AC = |z_C - z_A|$.<br>
-                On doit trouver deux longueurs égales.
-            </td>
-        </tr>
-        <tr>
-            <td>ABC est un triangle <strong>équilatéral</strong></td>
-            <td>
-                On calcule $AB = |z_B - z_A|$, $AC = |z_C - z_A|$ et $BC = |z_C - z_B|$.<br>
-                On doit trouver 3 longueurs égales.
-            </td>
-        </tr>
-        <tr>
-            <td>ABC est un triangle <strong>rectangle en A</strong></td>
-            <td>
-                On calcule $\frac{c-a}{b-a}$. On doit trouver $ki$ où $k$ est un réel.<br>
-                On conclut en disant que $\arg\left(\frac{c-a}{b-a}\right) = (\vec{AB}, \vec{AC}) = \frac{\pi}{2}$ (si $k > 0$) ou $-\frac{\pi}{2}$ (si $k < 0$).
-            </td>
-        </tr>
-        <tr>
-            <td>ABC est un triangle <strong>rectangle et isocèle en A</strong></td>
-            <td>
-                On calcule $\frac{c-a}{b-a}$. On doit trouver $i$ ou $-i$.<br>
-                On conclut en disant que $\arg\left(\frac{c-a}{b-a}\right) = (\vec{AB}, \vec{AC}) = \frac{\pi}{2}$ (si $i$) ou $-\frac{\pi}{2}$ (si $-i$)<br>
-                et en disant que $\left|\frac{c-a}{b-a}\right| = \frac{AC}{AB} = |i| = 1$ donc $AC = AB$.
-            </td>
-        </tr>
-        <tr>
-            <td><strong>A, B et C sont alignés</strong></td>
-            <td>
-                On montre que $\vec{AB}$ et $\vec{AC}$ sont colinéaires c'est à dire qu'il existe un réel $k$ tel que $\vec{AB} = k\,\vec{AC}$.<br>
-                Pour cela, on calcule $\frac{z_B - z_A}{z_C - z_A}$ et on doit trouver un <strong>réel k</strong>.
-            </td>
-        </tr>
-        <tr>
-            <td>B appartient au <strong>cercle de centre A</strong> et de rayon R</td>
-            <td>On calcule $AB = |z_B - z_A|$ et on doit trouver R.</td>
-        </tr>
-        <tr>
-            <td>A appartient à la <strong>médiatrice du segment [BC]</strong></td>
-            <td>
-                On calcule $AB = |z_B - z_A|$ et $AC = |z_C - z_A|$ et ces deux longueurs doivent être égales (A est alors équidistant des extrémités du segment [BC]).
-            </td>
-        </tr>
-        <tr>
-            <td>ABCD est un <strong>parallélogramme</strong></td>
-            <td>
-                On calcule l'affixe des vecteurs $\vec{AB}$ et $\vec{DC}$ c'est à dire $z_B - z_A$ et $z_C - z_D$.<br>
-                $\vec{AB}$ et $\vec{DC}$ doivent être égaux.
-            </td>
-        </tr>
-        <tr>
-            <td>ABCD est un <strong>losange</strong></td>
-            <td>
-                &bull; On montre d'abord que ABCD est un parallélogramme.<br>
-                &bull; On calcule ensuite $AB = |z_B - z_A|$ et $AD = |z_D - z_A|$ et ces deux longueurs doivent être égales (parallélogramme ayant deux côtés consécutifs de même longueur) <strong>ou</strong> les diagonales perpendiculaires.
-            </td>
-        </tr>
-        <tr>
-            <td>ABCD est un <strong>rectangle</strong></td>
-            <td>
-                &bull; On montre d'abord que ABCD est un parallélogramme.<br>
-                &bull; On calcule ensuite $AC = |z_C - z_A|$ et $BD = |z_D - z_B|$ et ces deux longueurs doivent être égales (parallélogramme ayant les diagonales de même longueur).<br>
-                <strong>ou</strong><br>
-                &bull; On montre que ABC est rectangle en A (parallélogramme ayant un angle droit).
-            </td>
-        </tr>
-        <tr>
-            <td>ABCD est un <strong>carré</strong></td>
-            <td>
-                &bull; On montre d'abord que ABCD est un parallélogramme.<br>
-                &bull; On montre ensuite que ABC est un triangle rectangle et isocèle en A (parallélogramme ayant 2 côtés consécutifs de même longueur et un angle droit).
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>Que veut-on montrer ?</th>
+                <th>Comment procède-t-on ?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ABC est un triangle <strong>isocèle en A</strong></td>
+                <td>
+                    On calcule $$AB = |z_B - z_A|$$ et $$AC = |z_C - z_A|$$.<br>
+                    On doit trouver deux longueurs égales.
+                </td>
+            </tr>
+            <tr>
+                <td>ABC est un triangle <strong>équilatéral</strong></td>
+                <td>
+                    On calcule $$AB = |z_B - z_A|$$, $$AC = |z_C - z_A|$$ et $$BC = |z_C - z_B|$$.<br>
+                    On doit trouver 3 longueurs égales.
+                </td>
+            </tr>
+            <tr>
+                <td>ABC est un triangle <strong>rectangle en A</strong></td>
+                <td>
+                    On calcule $$\frac{c-a}{b-a}$$. On doit trouver $ki$ où $k$ est un réel.<br>
+                    On conclut en disant que $$\arg\left(\frac{c-a}{b-a}\right) = (\vec{AB}, \vec{AC}) = \frac{\pi}{2}$$
+                    (si $$k > 0$$) ou $$-\frac{\pi}{2}$$ (si $$k < 0$$). </td>
+            </tr>
+            <tr>
+                <td>ABC est un triangle <strong>rectangle et isocèle en A</strong></td>
+                <td>
+                    On calcule $$\frac{c-a}{b-a}$$. On doit trouver $$i$$ ou $$-i$$.<br>
+                    On conclut en disant que $$\arg\left(\frac{c-a}{b-a}\right) = (\vec{AB}, \vec{AC}) = \frac{\pi}{2}$$
+                    (si $$i$$) ou $$-\frac{\pi}{2}$$ (si $$-i$$)<br>
+                    et en disant que $$\left|\frac{c-a}{b-a}\right| = \frac{AC}{AB} = |i| = 1$$ donc $$AC = AB$$.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>A, B et C sont alignés</strong></td>
+                <td>
+                    On montre que $$\vec{AB}$$ et $$\vec{AC}$$ sont colinéaires c'est à dire qu'il existe un réel $k$ tel
+                    que $$\vec{AB} = k\,\vec{AC}$$.<br>
+                    Pour cela, on calcule $$\frac{z_B - z_A}{z_C - z_A}$$ et on doit trouver un <strong>réel k</strong>.
+                </td>
+            </tr>
+            <tr>
+                <td>B appartient au <strong>cercle de centre A</strong> et de rayon R</td>
+                <td>On calcule $$AB = |z_B - z_A|$$ et on doit trouver R.</td>
+            </tr>
+            <tr>
+                <td>A appartient à la <strong>médiatrice du segment [BC]</strong></td>
+                <td>
+                    On calcule $$AB = |z_B - z_A|$$ et $$AC = |z_C - z_A|$$ et ces deux longueurs doivent être égales (A est
+                    alors équidistant des extrémités du segment [BC]).
+                </td>
+            </tr>
+            <tr>
+                <td>ABCD est un <strong>parallélogramme</strong></td>
+                <td>
+                    On calcule l'affixe des vecteurs $$\vec{AB}$$ et $$\vec{DC}$$ c'est à dire $$z_B - z_A$$ et 
+                    $$z_C -z_D$$.<br>
+                    $$\vec{AB}$$ et $$\vec{DC}$$ doivent être égaux.
+                </td>
+            </tr>
+            <tr>
+                <td>ABCD est un <strong>losange</strong></td>
+                <td>
+                    &bull; On montre d'abord que ABCD est un parallélogramme.<br>
+                    &bull; On calcule ensuite $$AB = |z_B - z_A|$$ et $$AD = |z_D - z_A|$$ et ces deux longueurs doivent
+                    être égales : (parallélogramme ayant deux côtés consécutifs de même longueur) <strong>ou</strong> (les
+                    diagonales perpendiculaires).
+                </td>
+            </tr>
+            <tr>
+                <td>ABCD est un <strong>rectangle</strong></td>
+                <td>
+                    &bull; On montre d'abord que ABCD est un parallélogramme.<br>
+                    &bull; On calcule ensuite $$AC = |z_C - z_A|$$ et $$BD = |z_D - z_B|$$ et ces deux longueurs doivent
+                    être égales (parallélogramme ayant les diagonales de même longueur).<br>
+                    <strong>ou</strong><br>
+                    &bull; On montre que ABC est rectangle en A (parallélogramme ayant un angle droit).
+                </td>
+            </tr>
+            <tr>
+                <td>ABCD est un <strong>carré</strong></td>
+                <td>
+                    &bull; On montre d'abord que ABCD est un parallélogramme.<br>
+                    &bull; On montre ensuite que ABC est un triangle rectangle et isocèle en A (parallélogramme ayant 2
+                    côtés consécutifs de même longueur et un angle droit).
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
-</html>
+
