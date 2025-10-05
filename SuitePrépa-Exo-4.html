@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p><strong>Exercice 4 </strong></p>
+    <p>Soit \((u_{n})_{n\ge 1}\) une suite réelle. </p>
+    <p>On considère la suite \((v_{n})_{n\ge 1}\) définie par :
+        \(v_{n}=\frac{1}{n}\sum _{k=1}^{n}u_{k}\).</p>
+    <p> 1.Montrer que si la suite \((u_{n})_{n\ge 1}\) converge vers \(l\) alors la
+        suite \((v_{n})_{n\ge 1}\) converge aussi vers \(l\). </p>
+    <p>2.Montrer que si la suite \((u_{n})_{n\ge 1}\) converge vers \(l\)
+        alors \(\left(\frac{u_{n}}{n}\right)_{n\ge 1}\) converge vers \(0\) </p>
+    <p>&nbsp;</p>
+    <p><strong><em>Analyse Série 2 </em></strong></p>
+
+
+
+    <p><em><strong>Suites numériques</strong></em></p>
+    <p><em><strong> Exercice 1</strong></em><strong></strong></p>
+    <p> Déterminer la limite, si celle-ci existe, de la suite \((u_{n})_{n\ge n_{0}}\) :</p>
+    <p> (a) \(u_{n}=\sqrt{2n+1}-\sqrt{2n-1}\).
+        \((n_{0}=1)\). (b) \(u_{n}=\frac{n\sin (n)}{n^{2}+1}\),\((n_{0}=0)\).
+        (c) \(u_{n}=n\sum _{k=1}^{2n+1}\frac{1}{n^{2}+k^{2}}\), \((n_{0}=0)\).
+        (d) \(u_{n}=3^{n}e^{-3n}\), \((n_{0}=1)\).
+        (e) \(u_{n}=\frac{5^{n}-(-2)^{n}}{5^{n}+(-2)^{n}}\), \((n_{0}=1)\).</p>
+    <p> (f) \(u_{n}=\frac{\ln (n!)}{n^{2}}\), \((n_{0}=1)\).</p>
+    <p> <strong>Exercice 2</strong></p>
+    <p> Soit \((u_{n})_{n\in \mathbb{N}}\) une suite de nombres réels positifs convergeant vers une limite \(l\).
+        Justifier que \(l\ge 0\). </p>
+    <p>Montrer que la suite \((\sqrt{u_{n}})_{n\in\mathbb{N}}\) converge vers \(\sqrt{l}\).</p>
+    <p> <strong>Exercice 3 </strong></p>
+    <p>Soit \((u_{n})_{n\ge 0}\) une suite réelle.</p>
+    <p> Montrer que \(\lim_{n\rightarrow +\infty }u_{n}=+\infty \) si
+        et seulement si pour tout réel \(\alpha >0\), la suite \((u_{n})_{n\ge 0}\)
+        est minorée par \(\alpha \) à partir d'un certain rang. </p>
+    <p>Montrer que \(\lim _{n\rightarrow +\infty }u_{n}=-\infty \)
+        si
+        et seulement si pour tout réel \(\beta <0\), la suite \((u_{n})_{n\ge 0}\) est majorée par \(\beta \) à partir
+            d'un certain rang. </p>
+            <p>On suppose que \((u_{n})_{n\ge 0}\) converge vers un réel \(l\). (a) Montrer que si \(l\ne 0\),
+                alors \(u_{n}\ne 0\) à partir d'un certain rang. </p>
+            <p>(b) Donner un exemple prouvant que la réciproque de (a) n'est
+                pas vraie.</p>
+            <p> <strong>Exercice 4 </strong></p>
+            <p>Soit \((u_{n})_{n\ge 1}\) une suite réelle. </p>
+            <p>On considère la suite \((v_{n})_{n\ge 1}\)
+                définie par : \(v_{n}=\frac{1}{n}\sum _{k=1}^{n}u_{k}\). </p>
+            <p>Montrer que si la suite \((u_{n})_{n\ge 1}\) converge
+                vers \(l\) alors la suite \((v_{n})_{n\ge 1}\) converge aussi vers \(l\). </p>
+            <p>Montrer que si la suite
+                \((\frac{u_{n}}{n})_{n\ge 1}\) converge vers \(l\) alors \((v_{n})_{n\ge 1}\) converge vers \(l\). </p>
+
+            <p><strong>Correction Exercice 4:             </strong></p>
+            <p> <strong>Exercice 4. 
+              Suites de Cesàro </strong></p>
+            <p><strong>Step 1: Comprendre le problème              </strong></p>
+            <p>L'exercice 4 présente une suite \((u_{n})_{n\ge1}\) et une suite \((v_{n})_{n\ge }\) définie comme la moyenne arithmétique des \(n\) premiers </p>
+            <p>termes de
+              \((u_{n})\). </p>
+            <p>La question 1 est de montrer que si \((u_{n})\) converge vers \(l\), alors \((v_{n})\) converge
+              aussi vers \(<em>l</em>\). </p>
+            <p><em>C'est un résultat connu sous le nom de théorème de Cesàro.</em></p>
+            <p> <strong>Step 2: Démontrer la
+              convergence de \((v_{n})\) </strong></p>
+            <p>On veut montrer que \(\lim _{n\rightarrow \infty }v_{n}=l\).</p>
+            <p> Cela équivaut à
+              montrer que \(\lim _{n\rightarrow \infty }(v_{n}-l)=0\).              </p>
+            <p>On peut écrire \(v_{n}-l\) </p>
+            <p>comme suit :
+              \(v_{n}-l=\frac{1}{n}\sum _{k=1}^{n}u_{k}-l\) </p>
+            <p>\(v_{n}-l=\frac{1}{n}\sum _{k=1}^{n}u_{k}-\frac{1}{n}\sum
+              _{k=1}^{n}l\) </p>
+            <p>\(v_{n}-l=\frac{1}{n}\sum _{k=1}^{n}(u_{k}-l)\) </p>
+            <p>Puisque la suite \((u_{n})\) converge vers
+              \(l\), pour tout \(\epsilon >0\), il existe un entier \(N_{0}\) tel que pour tout \(n>N_{0}\), on a
+              \(|u_{n}-l|<\epsilon \).</p>
+            <p> On peut diviser la somme en deux parties : \(v_{n}-l=\frac{1}{n}\sum
+              _{k=1}^{N_{0}}(u_{k}-l)+\frac{1}{n}\sum _{k=N_{0}+1}^{n}(u_{k}-l)\) </p>
+            <p>Pour la première partie, \(\sum
+              _{k=1}^{N_{0}}(u_{k}-l)\) est une somme finie, donc une constante. </p>
+            <p>Quand \(n\rightarrow \infty \), le
+              terme \(\frac{1}{n}\sum _{k=1}^{N_{0}}(u_{k}-l)\) tend vers 0.</p>
+            <p> Pour la deuxième partie, pour \(n>
+              N_{0}\), </p>
+            <p>on a \(|u_{k}-l|<\epsilon \) </p>
+            <p>pour tous \(k>N_{0}\). \(|\frac{1}{n}\sum
+              _{k=N_{0}+1}^{n}(u_{k}-l)|\le \frac{1}{n}\sum _{k=N_{0}+1}^{n}|u_{k}-l|<\frac{1}{n}\sum
+              _{k=N_{0}+1}^{n}\epsilon 
+			  \) </p>
+            <p>\(|\frac{1}{n}\sum
+              _{k=N_{0}+1}^{n}(u_{k}-l)|<\frac{n-N_{0}}{n}\epsilon=(1-\frac{N_{0}}{n})\epsilon \)</p>
+            <p> Comme \(n\rightarrow \infty \),
+              \((1-\frac{N_{0}}{n})\epsilon \) tend vers \(\epsilon \). </p>
+            <p>En combinant les deux parties, </p>
+            <p>on peut
+              montrer que pour \(n\) suffisamment grand, \(|v_{n}-l|\) est arbitrairement petit, ce qui prouve
+              la convergence de \((v_{n})\) vers \(l\). </p>
+            <p>Conclusion : La suite \((v_{n})_{n\ge 1}\) converge vers
+              \(\mathbf{l}\). </p>
+</body>
+
+</html>
