@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<div class="definition-container">
+    <h1>Définition de la convexité et Application à la monotonie des Pentes</h1>
+    <div class="graph-placeholder">
+        <img src="image2.png" alt="Description de l'image" width="500" position:"center">
+    
+    </div>
+    Caractérisation 1: Monotonie des pentes : La fonction \(f\) est convexe sur l'intervalle \(I\) si et seulement si<br>
+    les pentes des segments reliant trois points distincts \(x,y,z\) de \(I\) (avec \(x&lt;y&lt;z\)) sont croissantes.<br>
+    Cette caractérisation, illustrée par l'inégalité ci-dessous, <br><br>
+    signifie que la pente de la corde entre \((x,f(x))\) et \((y,f(y))\) est inférieure ou égale à la pente de la corde
+    entre \((x,f(x))\) et \((z,f(z))\),<br>
+    qui est elle-même inférieure ou égale à la pente de la corde entre \((y,f(y))\) et \((z,f(z))\).
+    Explication du concept Pente des sécantes : Le terme \(\frac{f(y)-f(x)}{y-x}\)<br> représente la pente de la droite sécante
+    qui passe par les points \((x,f(x))\) et \((y,f(y))\) sur le graphe de la fonction \(f\).<br><hr>Monotonie :<br>
+    <br>
+    
+    L'inégalité\(\frac{f(y)-f(x)}{y-x}\le \frac{f(z)-f(x)}{z-x}\le \frac{f(z)-f(y)}{z-y}\)pour tout \(x&lt;y&lt;z\) dans
+        l'intervalle \(I\), <br>signifie que la pente de la sécante augmente (ou reste constante) au fur et à mesure que les
+        points considérés se déplacent vers la droite sur la courbe de la fonction.<br>Interprétation graphique : Graphiquement,
+        une fonction convexe est une fonction dont le graphe "creuse vers le haut" ou est en forme de "bol" . <br>
+        La propriété des pentes croissantes assure que le graphe est toujours "en dessous" de ses sécantes (localement)
+        et que les droites tangentes (si elles existent) tournent dans le sens antihoraire lorsqu'on se déplace vers la
+        droite. 
+        L'explication détaillée est la suivante : Une fonction \(f\) est dite convexe sur un intervalle \(I\) si, <br>
+        pour tous
+        points \(x,y,z\in I\) tels que \(x&lt;y&lt;z\), <br>
+        les pentes des segments reliant ces points respectent l'inégalité suivante :
+    \(\frac{f(y)-f(x)}{y-x}\le \frac{f(z)-f(x)}{z-x}\le
+    \frac{f(z)-f(y)}{z-y}\) <br>
+    <br>La preuve montrée dans l'image utilise une approche basée sur la définition de \(y\) comme
+    une combinaison linéaire convexe de \(x\) et \(z\),<br>
+    <hr><br><h4>Solution 1</h4>
+     soit \(y=\lambda x+(1-\lambda )z\) avec \(\lambda \in ]0,1[\).
+    L'inégalité de convexité \(f(y)\le \lambda f(x)+(1-\lambda )f(z)\) est utilisée pour dériver la première partie de
+    l'inégalité des pentes. En substituant \(\lambda=\frac{z-y}{z-x}\) et \(1-\lambda=\frac{y-x}{z-x}\), <br>
+    <br>pon arrive à
+    l'inégalité intermédiaire \(\frac{f(y)-f(x)}{y-x}\le \frac{f(z)-f(x)}{z-x}\).<br>
+    <br>
+    Manipulation algébrique :<br> En soustrayant \(f(x)\) des deux côtés de l'inégalité, la
+    preuve dérive une forme alternative de la condition de convexité : \(f(y)-f(x)\le (1-\lambda )(f(z)-f(x))\).<br>
+
+    <hr>
+
+
+<br> La preuve part de l'hypothèse qu'une fonction \(f\) est convexe.
+Définition d'un point intermédiaire :<br> Un point \(y\) est défini comme une combinaison convexe de \(x\) et \(z\) dans
+l'intervalle ouvert \(]x,z[\), <br>en utilisant un paramètre \(\lambda \in ]0,1[\).<br>L'expression est \(y=\lambda
+x+(1-\lambda )z\). Application de la convexité : <br>La définition de la convexité est appliquée au point \(y\) : \(f(y)\le
+\lambda f(x)+(1-\lambda )f(z)\). Manipulation algébrique :<br> En soustrayant \(f(x)\) des deux côtés de l'inégalité, la
+preuve dérive une forme alternative de la condition de convexité : \(f(y)-f(x)\le (1-\lambda )(f(z)-f(x))\).<br>
+
+<hr><hr><br><hr><hr>
+<hr><br>
+<hr>
+
+<div>
+    <hr><br>
+    <div class="graph-placeholder">
+        <img src="image.png" alt="Description de l'image" width="500" position:"center">
+
+    </div>
+
+    <h3>Démontrer l'inégalité pour une fonction convexe</h3><br><br>Step 1: Comprendre l'énoncé et les hypothèses
+    <br><br>On
+    suppose que (\(x&lt;y&lt;a)\)
+    <br><br>et on cherche à démontrer l'inégalité suivante : \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\)
+    <br><br>Cette
+    inégalité est équivalente à : \((f(a)-f(x))\times \frac{a-y}{a-x}\le f(a)-f(y)\) <br><br>
+    <hr>Step 2: Utiliser la convexité de la
+    fonction On pose \(t=\frac{a-y}{a-x}\). <br><br>Comme \(x&lt;y&lt;a)\), on a \(0&lt;a-y&lt;a-x\), donc \(t\in
+    ]0,1[\). <br><br>L'inégalité à
+    prouver devient : \(f(a)-f(x)\times t\le f(a)-f(y)\) <br>\(f(y)\le f(a)-t(f(a)-f(x))\) <br> \(f(y)\le
+    (1-t)f(a)+tf(x)\) <br><br>On
+    sait que si \(f\) est une fonction convexe, alors pour tout \(t\in [0,1]\), on a \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\). <br>
+    <hr><br>Step 3: Vérifier l'égalité des points Il suffit de vérifier que le point \((1-t)a+tx\) est égal à
+    \(y\). <br>
+    <hr><br>\((1-t)a+tx=a-ta+tx=a-t(a-x)\) <br><br>En remplaçant \(t\) par sa valeur \(\frac{a-y}{a-x}\) :
+    \(a-\frac{a-y}{a-x}(a-x)=a-(a-y)=a-a+y=y\) Puisque \((1-t)a+tx=y\),<br><br> l'inégalité de convexité
+    \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\) devient \(f(y)\le (1-t)f(a)+tf(x)\),<br><br> ce qui est exactement l'inégalité que l'on voulait
+    démontrer.<br>
+    <hr><br>
+    Answer: L'inégalité \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\) est démontrée en utilisant la définition de
+    la convexité de la fonction \(f\).
+    <hr>
+    <hr><br>
+    <hr>
+</div>
+
+    <div class="graph-placeholder">
+        
+        <h1>dérivabilité à droite et à gauche en a</h1>
+        <hr><hr><br><hr>
+        Le point \(a\) est un point intérieur de l'intervalle \(I\), ce qui permet de trouver \(x,z\in I\) tels que \(x&lt;a&lt;z\).<br>
+            Sur l'intervalle semi-ouvert ]\(a,z\)[, la fonction \(\varphi _{a}\) est croissante et minorée par \(\varphi
+            _{a}(x)\), <br>elle admet donc une limite finie à droite en \(a\). L'existence de cette limite finie à droite en \(a\)
+            signifie que la fonction \(f\) est dérivable à droite en \(a\).<br> De même, sur l'intervalle semi-ouvert ]\(x,a\)[, la
+            fonction \(\varphi _{a}\) est croissante et majorée par \(\varphi _{a}(z)\), elle admet donc une limite finie à
+            gauche en \(a\).<br>
+    </div>
+</div>
+
+<div <div class="graph-placeholder">
+
+    <h1>Contnuité en a de I</h1>
+    <hr>
+    <hr><br>
+    <hr>
+Sujet principal : Une fonction convexe sur un intervalle ouvert est nécessairement continue sur cet intervalle.<br>
+Raisonnement : La démonstration s'appuie sur le fait qu'une fonction convexe sur un intervalle ouvert est dérivable à
+droite et à gauche en tout point de cet intervalle.<br>  Continuité : La dérivabilité à droite en un point \(a\) entraîne la
+continuité à droite, c'est-à-dire que \(\lim _{x\rightarrow a^{+}}f(x)=f(a)\).<br>  Conclusion : De même, la dérivabilité à
+gauche entraîne la continuité à gauche, et par conséquent, la fonction est continue en \(a\)..<br>
+</div>
+
+
+<hr>
+<h1>la fonction des pentes est croissante</h1>
+<h6>Ben Ftima Mohamed +216 21409061  +whatsApp</h6>
+
+
+<div style="font-size: 15px;font-family: georgia; background-color:rgb(252, 253, 253);line-height: 1cm;"></p>
+    <h4>Analyse de l'exercice et explication detaillée</h>
+
+    <h4>La
+    condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
+    \(I\setminus \{a\}\). </h4>
+    Définition de la convexité : L'image illustre la définition de la convexité d'une fonction \(f\) sur un intervalle
+    \(I\) à l'aide du taux d'accroissement en un point \(a\). <br>
+    L'image présente les éléments suivants : Une fonction \(f\) est une
+    application de \(I\rightarrow \mathbf{R}\). Pour tout \(a\in I\),on définit une fonction \(P_{a}\) (taux
+    d'accroissement) de \(I\setminus \{a\}\rightarrow \mathbf{R}\) par \(P_{a}(x)=\frac{f(x)-f(a)}{x-a}\). <br>Graphiquement,
+    \(P_{a}(x)\) représente la pente de la sécante passant par les points \((a,f(a))\) et \((x,f(x))\) de la courbe.<br> La
+    condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
+    \(I\setminus \{a\}\).<br>Visuellement, cela signifie que les pentes des sécantes "tournent" dans le sens antihoraire à
+    mesure que \(x\) augmente, ou que toutes les sécantes restent "au-dessus" de la courbe à partir du point \(a\).
+
+</div>
+
+
+
+<p style="font-size: 15px;font-family: georgia; background-color:bisque;line-height: 1cm;">
+    Définition de fonction convexe Answer: Une application \(f:I\rightarrow \mathbf{R}\) est dite convexe lorsque l'ensemble
+    \(\{(x,y)\in I\times \mathbf{R}\mid y\ge f(x)\}\) est convexe.<br>
+    <hr>
+<div>
+    <div style="font-size: 15px;font-family: georgia; background-color:rgb(214, 244, 166);line-height: 1cm;"></p>
+Points clés de la 1ére démonstration <br> Hypothèse de base : <br>On suppose que la fonction \(f\) est convexe sur un intervalle
+  \(I\).<br>Conditions des points : Trois points \(x\), \(y\), et \(a\) sont choisis tels que \(x&lt;y&lt;a)\)
+   appartiennent à
+    \(I\).<br> Définition de la convexité : Le point \(y\) est exprimé comme une combinaison convexe de \(a\) et \(x\) à
+    l'aide d'un coefficient \(\lambda=\frac{a-y}{a-x}\in ]0,1[\).Application de l'inégalité :<br> L'inégalité de convexité
+    \(f((1-\lambda )a+\lambda x)\le (1-\lambda )f(a)+\lambda f(x)\) est appliquée.<br><br>Résultat principal : Après
+    simplification algébrique, l'inégalité finale suivante est obtenue, montrant que la pente entre \(x\) et \(a\) est
+    inférieure ou égale à la pente entre \(y\) et \(a\):\(\frac{f(x)-f(a)}{x-a}\le \frac{f(y)-f(a)}{y-a}\) 
+</div>
+<div>
+   
+   
+
+<hr><hr>
+
+
+ </body>
+
+</html>
