@@ -9,12 +9,60 @@
 </head>
 
 <body>
+<div class="definition-container">
+    <h1>Définition de la convexité et Application à la Pente des Cordes</h1>
+   
 
-<div style="font-size: 15px;font-family: georgia; background-color:bisque;line-height: 1cm;"></p>
-    <img src="image.png" alt="Description de l'image" width="500"><hr>
-    <br> La
+        <p>Pour tout \(a\in I\),on définit une fonction \(P_{a}\) (taux
+        d'accroissement) de \(I\setminus \{a\}\rightarrow \mathbf{R}\) par \(P_{a}(x)=\frac{f(x)-f(a)}{x-a}\).</p>
+        <p>La
+        condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
+        \(I\setminus \{a\}\).</p>
+    <!-- L'image du graphique peut être insérée ici avec une balise <img> -->
+    <div class="graph-placeholder">
+        <img src="image.png" alt="Description de l'image" width="500" position:"center">
+        
+    </div>
+</div>
+<hr>
+<h3>Démonstration de lexercice</h3>
+<div>
+    <hr><br>
+
+    <h3>Démontrer l'inégalité pour une fonction convexe</h3><br><br>Step 1: Comprendre l'énoncé et les hypothèses <br><br>On
+    suppose que (\(x&lt;y&lt;a)\)
+    <br><br>et on cherche à démontrer l'inégalité suivante : \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\)
+    <br><br>Cette
+    inégalité est équivalente à : \((f(a)-f(x))\times \frac{a-y}{a-x}\le f(a)-f(y)\) <br><br>
+    <hr>Step 2: Utiliser la convexité de la
+    fonction On pose \(t=\frac{a-y}{a-x}\). <br><br>Comme \(x&lt;y&lt;a)\), on a \(0&lt;a-y&lt;a-x\), donc \(t\in
+    ]0,1[\). <br><br>L'inégalité à
+    prouver devient : \(f(a)-f(x)\times t\le f(a)-f(y)\) <br>\(f(y)\le f(a)-t(f(a)-f(x))\) <br> \(f(y)\le
+    (1-t)f(a)+tf(x)\) <br><br>On
+    sait que si \(f\) est une fonction convexe, alors pour tout \(t\in [0,1]\), on a \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\). <br>
+    <hr><br>Step 3: Vérifier l'égalité des points Il suffit de vérifier que le point \((1-t)a+tx\) est égal à
+    \(y\). <br>
+    <hr><br>\((1-t)a+tx=a-ta+tx=a-t(a-x)\) <br><br>En remplaçant \(t\) par sa valeur \(\frac{a-y}{a-x}\) :
+    \(a-\frac{a-y}{a-x}(a-x)=a-(a-y)=a-a+y=y\) Puisque \((1-t)a+tx=y\),<br><br> l'inégalité de convexité
+    \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\) devient \(f(y)\le (1-t)f(a)+tf(x)\),<br><br> ce qui est exactement l'inégalité que l'on voulait
+    démontrer.<br>
+    <hr><br>
+    Answer: L'inégalité \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\) est démontrée en utilisant la définition de
+    la convexité de la fonction \(f\).
+    <hr>
+    <hr><br>
+    <hr>    
+</div>
+
+
+<div style="font-size: 15px;font-family: georgia; background-color:rgb(252, 253, 253);line-height: 1cm;"></p>
+    <h4>Analyse de l'exercice et explication detaillée</h>
+
+    <h4>La
     condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
-    \(I\setminus \{a\}\). <br>
+    \(I\setminus \{a\}\). </h4>
     Définition de la convexité : L'image illustre la définition de la convexité d'une fonction \(f\) sur un intervalle
     \(I\) à l'aide du taux d'accroissement en un point \(a\). <br>
     L'image présente les éléments suivants : Une fonction \(f\) est une
@@ -22,7 +70,7 @@
     d'accroissement) de \(I\setminus \{a\}\rightarrow \mathbf{R}\) par \(P_{a}(x)=\frac{f(x)-f(a)}{x-a}\). <br>Graphiquement,
     \(P_{a}(x)\) représente la pente de la sécante passant par les points \((a,f(a))\) et \((x,f(x))\) de la courbe.<br> La
     condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
-    \(I\setminus \{a\}\). <br><br>Visuellement, cela signifie que les pentes des sécantes "tournent" dans le sens antihoraire à
+    \(I\setminus \{a\}\).<br>Visuellement, cela signifie que les pentes des sécantes "tournent" dans le sens antihoraire à
     mesure que \(x\) augmente, ou que toutes les sécantes restent "au-dessus" de la courbe à partir du point \(a\).
 
 </div>
@@ -57,7 +105,7 @@ Points clés de la 1ére démonstration <br> Hypothèse de base : <br>On suppos
     <br><br>et on cherche à démontrer l'inégalité suivante : \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\) <br><br>Cette
     inégalité est équivalente à : \((f(a)-f(x))\times \frac{a-y}{a-x}\le f(a)-f(y)\) <br><br><hr>Step 2: Utiliser la convexité de la
     fonction On pose \(t=\frac{a-y}{a-x}\). <br><br>Comme \(x&lt;y&lt;a)\), on a \(0&lt;a-y&lt;a-x\), donc \(t\in ]0,1[\). <br><br>L'inégalité à
-    prouver devient : \(f(a)-f(x)\times t\le f(a)-f(y)\) \(f(y)\le f(a)-t(f(a)-f(x))\) \(f(y)\le (1-t)f(a)+tf(x)\) <br><br>On
+    prouver devient : \(f(a)-f(x)\times t\le f(a)-f(y)\) <br>\(f(y)\le f(a)-t(f(a)-f(x))\) <br> \(f(y)\le (1-t)f(a)+tf(x)\) <br><br>On
     sait que si \(f\) est une fonction convexe, alors pour tout \(t\in [0,1]\), on a \(f((1-t)a+tx)\le
     (1-t)f(a)+tf(x)\). <br><hr><br>Step 3: Vérifier l'égalité des points Il suffit de vérifier que le point \((1-t)a+tx\) est égal à
     \(y\). <br>
