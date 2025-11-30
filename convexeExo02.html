@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+<div style="font-size: 15px;font-family: georgia; background-color:bisque;line-height: 1cm;"></p>
+    <img src="image.png" alt="Description de l'image" width="500"><hr>
+    <br> La
+    condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
+    \(I\setminus \{a\}\). <br>
+    Définition de la convexité : L'image illustre la définition de la convexité d'une fonction \(f\) sur un intervalle
+    \(I\) à l'aide du taux d'accroissement en un point \(a\). <br>
+    L'image présente les éléments suivants : Une fonction \(f\) est une
+    application de \(I\rightarrow \mathbf{R}\). Pour tout \(a\in I\),on définit une fonction \(P_{a}\) (taux
+    d'accroissement) de \(I\setminus \{a\}\rightarrow \mathbf{R}\) par \(P_{a}(x)=\frac{f(x)-f(a)}{x-a}\). <br>Graphiquement,
+    \(P_{a}(x)\) représente la pente de la sécante passant par les points \((a,f(a))\) et \((x,f(x))\) de la courbe.<br> La
+    condition pour que \(f\) soit convexe est que, pour tout \(a\in I\), la fonction \(P_{a}\) soit croissante sur
+    \(I\setminus \{a\}\). <br><br>Visuellement, cela signifie que les pentes des sécantes "tournent" dans le sens antihoraire à
+    mesure que \(x\) augmente, ou que toutes les sécantes restent "au-dessus" de la courbe à partir du point \(a\).
+
+</div>
+
+
+
+<p style="font-size: 15px;font-family: georgia; background-color:bisque;line-height: 1cm;">
+    Définition de fonction convexe Answer: Une application \(f:I\rightarrow \mathbf{R}\) est dite convexe lorsque l'ensemble
+    \(\{(x,y)\in I\times \mathbf{R}\mid y\ge f(x)\}\) est convexe.<br>
+    <hr>
+<div>
+    <div style="font-size: 15px;font-family: georgia; background-color:rgb(214, 244, 166);line-height: 1cm;"></p>
+Points clés de la 1ére démonstration <br> Hypothèse de base : <br>On suppose que la fonction \(f\) est convexe sur un intervalle
+  \(I\).<br>Conditions des points : Trois points \(x\), \(y\), et \(a\) sont choisis tels que \(x&lt;y&lt;a)\)
+   appartiennent à
+    \(I\).<br> Définition de la convexité : Le point \(y\) est exprimé comme une combinaison convexe de \(a\) et \(x\) à
+    l'aide d'un coefficient \(\lambda=\frac{a-y}{a-x}\in ]0,1[\).Application de l'inégalité :<br> L'inégalité de convexité
+    \(f((1-\lambda )a+\lambda x)\le (1-\lambda )f(a)+\lambda f(x)\) est appliquée.<br><br>Résultat principal : Après
+    simplification algébrique, l'inégalité finale suivante est obtenue, montrant que la pente entre \(x\) et \(a\) est
+    inférieure ou égale à la pente entre \(y\) et \(a\):\(\frac{f(x)-f(a)}{x-a}\le \frac{f(y)-f(a)}{y-a}\) 
+</div>
+<div>
+<div style="font-size: 15px;font-family: georgia; background-color:rgb(143, 221, 243);line-height: 1cm;">
+    <h4>Définition de la fonction concave Une fonction \(f:I\rightarrow \mathbb{R}\) est dite concave lorsque son opposée \(-f\)
+est convexe </h4>. <br>Critique pédagogique : L'omission du processus d'analyse dans la présentation des preuves mathématiques
+La présentation de cette preuve mathématique soulève une interrogation fondamentale sur la pédagogie de l'enseignement
+des mathématiques. La démarche du professeur, qui ne présente que la phase de synthèse de la preuve, est problématique.
+En exposant uniquement la version finale, élégante et concise, de l'argumentation, il occulte l'étape cruciale de
+l'analyse, c'est-à-dire le cheminement intellectuel qui permet de découvrir cette preuve.
+Cette approche est doublement préjudiciable pour l'apprentissage :
+Absence de contexte et de sens : Pour l'étudiant, la preuve finale peut sembler tomber du ciel, dénuée de toute logique
+de découverte. Cela donne l'impression que la solution est une création ex nihilo, inaccessible sans un coup de génie.
+L'apprenant, incapable de reproduire un tel raisonnement, risque de se contenter d'un apprentissage par cœur, sans une
+compréhension profonde des mécanismes sous-jacents.
+Difficulté à développer l'intuition mathématique : C'est dans le processus d'analyse, souvent fait d'essais, d'erreurs
+et de déconstruction du problème, que se construit l'intuition mathématique. En cachant cette phase, le professeur prive
+les étudiants d'un modèle d'exploration et de résolution de problèmes. En effet, comme vous le démontrez en
+reconstruisant une approche par la convexité, il est souvent plus instructif de partir d'une réécriture de l'objectif
+pour en déduire les étapes, plutôt que de suivre une chaîne de déduction préétablie.
+En résumé, l'enseignement des mathématiques gagnerait à inclure la démarche heuristique, l'analyse préalable à la
+synthèse. Cela permettrait aux étudiants non seulement de comprendre la solution, mais surtout d'acquérir les
+compétences nécessaires pour la découvrir par eux-mêmes. Un enseignement qui valorise le processus de recherche autant
+que le résultat est un enseignement qui forme des penseurs, et non de simples reproducteurs de solutions.
+</div>    
+   
+
+<hr><hr>
+<h3>une démonstration plus logique</h3>
+<div>
+<hr><br>
+
+<h3>Démontrer une inégalité pour une fonction convexe</h3><br><br>Step 1: Comprendre l'énoncé et les hypothèses On suppose que \(x&lt;y&lt;a)\)
+    <br><br>et on cherche à démontrer l'inégalité suivante : \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\) <br><br>Cette
+    inégalité est équivalente à : \((f(a)-f(x))\times \frac{a-y}{a-x}\le f(a)-f(y)\) <br><br><hr>Step 2: Utiliser la convexité de la
+    fonction On pose \(t=\frac{a-y}{a-x}\). <br><br>Comme \(x&lt;y&lt;a)\), on a \(0&lt;a-y&lt;a-x\), donc \(t\in ]0,1[\). <br><br>L'inégalité à
+    prouver devient : \(f(a)-f(x)\times t\le f(a)-f(y)\) \(f(y)\le f(a)-t(f(a)-f(x))\) \(f(y)\le (1-t)f(a)+tf(x)\) <br><br>On
+    sait que si \(f\) est une fonction convexe, alors pour tout \(t\in [0,1]\), on a \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\). <br><hr><br>Step 3: Vérifier l'égalité des points Il suffit de vérifier que le point \((1-t)a+tx\) est égal à
+    \(y\). <br>
+    <hr><br>\((1-t)a+tx=a-ta+tx=a-t(a-x)\) <br><br>En remplaçant \(t\) par sa valeur \(\frac{a-y}{a-x}\) :
+    \(a-\frac{a-y}{a-x}(a-x)=a-(a-y)=a-a+y=y\) Puisque \((1-t)a+tx=y\),<br><br> l'inégalité de convexité \(f((1-t)a+tx)\le
+    (1-t)f(a)+tf(x)\) devient \(f(y)\le (1-t)f(a)+tf(x)\),<br><br> ce qui est exactement l'inégalité que l'on voulait démontrer.<br>
+    <hr><br>
+    Answer: L'inégalité \(\frac{f(a)-f(x)}{a-x}\le \frac{f(a)-f(y)}{a-y}\) est démontrée en utilisant la définition de
+    la convexité de la fonction \(f\).
+<hr><hr><br><hr>
+</div>
+
+
+ </body>
+
+</html>
