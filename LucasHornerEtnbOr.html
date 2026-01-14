@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <title>Analyse du Théme Suites Fubanici et Lucas et La relation entre les deux Suites par B.F.M</title>
+</head>
+
+<body>
+<h4>Analyse : approche allégée et pratique pour maîtriser les Suites Fobanicci et Lucas à travers des rappels
+    essentiels et des étapes progressives.<h4>
+<h5>Auteur : (B.F.M) whatsApp et Telegram 21621409061</h5>
+
+On considère les suites (\(L_{n}\)) \({}_{n\in \mathbb{N}}\),<br><br>
+ (\(F_{n}\))\({}_{n\in \mathbb{N}}\) et
+(\(S_{n}\))\({}_{n\in \mathbb{N}}\) définie par \(L_{0}=2\),<br><br> \(L_{1}=1\), \(F_{0}=0\), \(F_{1}=1\) et, pour tout \(n\in
+\mathbb{N}\) : \(L_{n+2}=L_{n+1}+L_{n}\quad F_{n+2}=F_{n+1}+F_{n}\quad S_{n}=L_{3\cdot 2^{n}}\)<br><br>On pose \(\Phi
+=\frac{1+\sqrt{5}}{2}, \bar{\Phi }=\frac{1-\sqrt{5}}{2},\omega =2+\sqrt{5}\text{\ et\ }\bar{\omega }=2-\sqrt{5}.\)<br><br><br>
+Partie I :<br><br>
+Premières propriétés<br><h4>1. a) Calculer, pour tout \(n\in \mathbb{N}\), \(F_{n}\) et \(L_{n}\) en fonction de \(\Phi \) et
+\(\bar{\Phi }\)</h4>
+
+<hr>Le problème traite des suites de Fibonacci (\(F_{n}\)) et de Lucas (\(L_{n}\)), qui sont des suites récurrentes
+linéaires classiques,<br> et utilise la formule de Binet ainsi que le nombre d'or (\(\Phi \)) et son conjugué (\(\bar{\Phi
+}\)). <br>Les étapes consistent généralement à résoudre l'équation caractéristique, déterminer la forme générale des termes,
+puis utiliser les conditions initiales pour trouver les constantes spécifiques à chaque suite<hr>
+
+
+
+On se demande d'ou vient l'equation caractéristique et comment résoudre la 1ère question<br>
+<hr>
+<br>Les suites de Fibonacci et de Lucas suivent toutes deux la méme règle: <h5>chaque terme est la
+somme des termes précédents<br><br>\(x_{n}=x_{n-1}+x_{n-2}\) </h5>la suite croît à un rythme presque constant, 
+similaire à la croissance des puissances
+(\(r^{n}\)).<br>
+1. Étape 1 : Supposons que la solution est de la forme \(x_{n}=r^{n}\) pour une constante \(r\ne 0\).<br>
+2. Étape 2 :Substituons cela dans la formule de récurrence : \(r^{n}=r^{n-1}+r^{n-2}\)<br>
+3. Étape 3 :Divisons les deux côtés par \(r^{n-2}\) (la plus petite puissance) pour simplifier l'équation :<br>
+\(r^{2}=r+1\quad \rightarrow \quad \mathbf{r}^{\mathbf{2}}\mathbf{-r-1=0}\)<br>
+Cette dernière équation quadratique est l'équation caractéristique.<br>
+
+<hr>
+<br>« Pourquoi et comment avez-vous estimé le choix de \(r_{n}\) ? »<br><hr>
+<br>L'hypothèse selon laquelle \(r^{n}\) est une solution relève d'une stratégie de type « deviner et vérifier » (guess and
+verify). <br>
+Bien que \(r^{n}\) soit en soi une solution particulière, <br>elle sert de fondement à la construction de la
+solution générale pour toute récurrence linéaire.<br><hr>
+
+<br>« Pourquoi et comment avez-vous calculé Cette dernière équation quadratique ou équation caractéristique  ? »<br>
+<hr>
+<br>« Les racines de cette équation sont <h4>le Nombre d'or (\(\phi =\frac{1+\sqrt{5}}{2}\)) 
+     et son conjugué (\(\bar{\Phi}=\frac{1-\sqrt{5}}{2}\)).</h4> <br>Ces racines sont les "briques élémentaires" fondamentales utilisées dans la formule de Binet<br>
+pour calculer n'importe quel nombre de Fibonacci ou de Lucas directement, sans avoir besoin des termes précédents. »<br>
+
+
+<hr><br>Si r est une solution de (\(x^{2}-x-1=0\))  d'aprés notre 1ère hypothèse \(r_{n}\) est une solution<br>
+
+donc conclusion <br>
+
+<br>
+La formule \(F_{n}=A\phi ^{n}+B\bar\phi ^{n}\) représente la solution générale de la récurrence de Fibonacci<br> car c'est une
+combinaison linéaire de tous les "blocs de construction" possibles de cette suite.<br> Voici une explication simple des
+raisons pour lesquelles cette forme est la réponse définitive :<br>
+
+<br>Le principe de superposition (linéarité) La règle de la suite de Fibonacci, <br>\(x_{n}=x_{n-1}+x_{n-2}\), est une relation
+de récurrence linéaire homogène.<br> Cela signifie qu'elle obéit au principe de superposition : <br>si vous avez deux suites
+différentes, \(G_{n}\) et \(H_{n}\), <br>qui satisfont la règle, alors n'importe quel mélange des deux,<br> \(A\cdot
+G_{n}+B\cdot H_{n}\), <br>satisfera également la règle, quelles que soient les constantes \(A\) et \(B\).<br>Nous avons prouvé
+précédemment que \(\phi ^{n}\) et \(\bar\phi ^{n}\) sont des solutions individuelles (cas particuliers).<br> Par conséquent,
+leur forme combinée, \(A\phi ^{n}+B\bar\phi ^{n}\), <br>est garantie d'être une solution valide qui suit également la règle de
+Fibonacci. <br>
+
+
+
+
+<h3>Pour mieux comprendre pourquoi la forme \(A\phi ^{n}+B\bar\phi ^{n}\) fonctionne, <br>nous pouvons le démontrer par le calcul en
+deux étapes : la vérification de la règle et l'ajustement aux conditions initiales pour trouver A et B.<br></h3>
+
+<br>1. Vérification de la règle de récurrence<br>Nous posons \(F_{n}=A\phi ^{n}+B{\bar\phi }^{n}\). <br>Pour prouver que
+cette
+formule suit la règle de Fibonacci (\(F_{n}=F_{n-1}+F_{n-2}\)), <br>nous calculons la somme des deux termes précédents
+:\(F_{n-1}+F_{n-2}=(A\phi ^{n-1}+B{\bar\phi }^{n-1})+(A\phi ^{n-2}+B{\bar\phi }^{n-2})\)<br>En regroupant les termes par
+constantes : \(F_{n-1}+F_{n-2}=A(\phi ^{n-1}+\phi ^{n-2})+B({\bar\phi }^{n-1}+{\bar\phi }^{n-2})\) <br>   Puisque \(\phi \)
+et \({\bar\phi }\) sont les deux racines de l'équation caractéristique \(x^{2}-x-1=0\),<br> elles vérifient toutes deux la
+propriété \(x^{2}=x+1\). En multipliant par \(x^{n-2}\), on a \(x^{n}=x^{n-1}+x^{n-2}\).<br> On peut donc remplacer les
+parenthèses :<br>\(F_{n-1}+F_{n-2}=A\phi ^{n}+B{\bar\phi }^{n}=F_{n}\)<br>La structure linéaire est donc validée par le calcul.
+
+
+
+<br><hr>
+1. a) Calculer, pour tout \(n\in \mathbb{N}\), \(F_{n}\) et \(L_{n}\) en fonction de \(\Phi \) et \(\overline{\Phi
+}\).<br>Les suites de Fibonacci (\(F_{n}\)) et de Lucas (\(L_{n}\)) sont définies par la même relation de récurrence
+\(u_{n+2}=u_{n+1}+u_{n}\), dont l'équation caractéristique est \(r^{2}-r-1=0\).<br><br> Ses racines sont le nombre d'or \(\Phi
+=\frac{1+\sqrt{5}}{2}\) et \(\overline{\Phi }=\frac{1-\sqrt{5}}{2}\). <br>Les termes généraux sont donc de la forme \(A\Phi
+^{n}+B\overline{\Phi }^{n}\).<br>Pour \(F_{n}\), avec \(F_{0}=0\) et \(F_{1}=1\) :<br>\(A+B=F_{0}=0\implies B=-A\)\(A\Phi
++B\overline{\Phi }=A(\Phi -\overline{\Phi })=F_{1}=1\implies A\sqrt{5}=1\implies A=\frac{1}{\sqrt{5}}\)<br>Pour \(L_{n}\),
+avec \(L_{0}=2\) et \(L_{1}=1\) :<br>\(A+B=L_{0}=2\)\(A\Phi +B\overline{\Phi }=A\Phi +B(1-\Phi )=A\Phi +B-B\Phi =B+\Phi
+(A-B)=L_{1}=1\)<br><br>En combinant \(B=2-A\), <br>
+<br>on obtient \((2-A)+\Phi (A-(2-A))=1\implies 2-A+\Phi (2A-2)=1\implies 2-A+2A\Phi
+-2\Phi =1\).\(A(2\Phi -1)=2\Phi -1\implies A=1\).<br>
+
+Alors \(B=2-A=1\).<br><br>Les formules de Binet sont :<br><h3>\(F_{n}=\frac{\Phi ^{n}-\overline{\Phi
+}^{n}}{\sqrt{5}}\) <br>\(L_{n}=\Phi ^{n}+\overline{\Phi }^{n}\)</h3>
+
+<hr>
+
+<br><br><h3>1. b) Vérifier que, pour tout \(k,r\in \mathbb{N}\),
+\(2L_{2k+r}-L_{r}L_{2k}=5F_{r}F_{k}L_{k}\)</h3>
+Simplifier le côté droit (\(\mathbf{5F}_{\mathbf{r}}\mathbf{F}_{\mathbf{k}}\mathbf{L}_{\mathbf{k}}\))
+<br>\(2L_{2k+r}-L_{r}L_{2k}=2(\Phi ^{2k+r}+\overline{\Phi }^{2k+r})-(\Phi ^{r}+\overline{\Phi }^{r})(\Phi
+^{2k}+\overline{\Phi }^{2k})\)
+<br>\(=2\Phi ^{2k+r}+2\overline{\Phi }^{2k+r}-(\Phi ^{2k+r}+\Phi ^{2k}\overline{\Phi }^{r}+\overline{\Phi }^{2k}\Phi
+^{r}+\overline{\Phi }^{2k+r})\)
+<br>\(=\Phi ^{2k+r}+\overline{\Phi }^{2k+r}-\Phi ^{2k}\overline{\Phi }^{r}-\overline{\Phi }^{2k}\Phi ^{r}\)
+<br>\(=\Phi ^{2k}(\Phi ^{r}-\overline{\Phi }^{r})+\overline{\Phi }^{2k}(\overline{\Phi }^{r}-\Phi ^{r})=(\Phi
+^{2k}-\overline{\Phi }^{2k})(\Phi ^{r}-\overline{\Phi }^{r})\)
+<br>
+<br>\(5F_{r}F_{k}L_{k}=5\left(\frac{\Phi ^{r}-\overline{\Phi }^{r}}{\sqrt{5}}\right)\left(\frac{\Phi ^{k}-\overline{\Phi
+}^{k}}{\sqrt{5}}\right)(\Phi ^{k}+\overline{\Phi }^{k})\)
+<br>Simplifier le côté droit (\(\mathbf{5F}_{\mathbf{r}}\mathbf{F}_{\mathbf{k}}\mathbf{L}_{\mathbf{k}}\))
+<br>\(5F_{r}F_{k}L_{k}=5\left(\frac{\Phi ^{r}-\overline{\Phi }^{r}}{\sqrt{5}}\right)\left(\frac{\Phi ^{k}-\overline{\Phi
+}^{k}}{\sqrt{5}}\right)(\Phi ^{k}+\overline{\Phi }^{k})\)
+<br>\(=\frac{5}{5}(\Phi ^{r}-\overline{\Phi }^{r})(\Phi ^{k}-\overline{\Phi }^{k})(\Phi ^{k}+\overline{\Phi }^{k})\)
+<br>\(=(\Phi ^{r}-\overline{\Phi }^{r})(\Phi ^{2k}-\overline{\Phi }^{2k})\)
+<br>La relation \(2L_{2k+r}-L_{r}L_{2k}=5F_{r}F_{k}L_{k}\) est vérifiée car les deux côtés sont égaux à \((\Phi
+^{2k}-\overline{\Phi }^{2k})(\Phi ^{r}-\overline{\Phi }^{r})\)
+<br>
+
+
+
+<hr><br>
+
+Calculons le membre de droite :<br>\(5F_{r}F_{k}L_{k}=5\left(\frac{\Phi ^{r}-{\bar\Phi
+}^{r}}{\sqrt{5}}\right)\left(\frac{\Phi
+^{k}-{\bar\Phi }^{k}}{\sqrt{5}}\right)(\Phi ^{k}+{\bar\Phi }^{k})\) <br><br>\(=5\left(\frac{\Phi ^{r}-{\bar\Phi
+}^{r}}{5}\right)(\Phi
+^{k}-{\bar\Phi }^{k})(\Phi ^{k}+{\bar\Phi }^{k})\)<br><br>\(=(\Phi ^{r}-{\bar\Phi }^{r})(\Phi ^{2k}-{\bar\Phi }^{2k})\)
+<br><br>
+\(=\Phi ^{r+2k}-\Phi ^{r}{\bar\Phi }^{2k}-{\bar\Phi }^{r}\Phi ^{2k}+ {\bar\Phi }^{r+2k}\) <br><br>
+\(=\Phi ^{2k+r}+{\bar\Phi }^{2k+r}-(\Phi ^{r}{\bar\Phi }^{2k}+{\bar\Phi }^{r}\Phi ^{2k})\)
+<br>
+<hr>
+<br><hr> On note la propriété \(\Phi \overline{\Phi }=-1\), donc \(\overline{\Phi }=-\Phi ^{-1}\) et \(\Phi =-\overline{\Phi
+}^{-1}\). nous n'avons pas utilisés ici<hr>
+<br>
+
+<h3>2.a) Démontrer l'identité \(L_{2n}-L_{n}^{2}=2.(-1)^{n+1}\)</h3> <br>Nous allons démontrer l'identité demandée en utilisant les
+formules de Binet pour \(L_{n}\) et la propriété \(\Phi \={\Phi }=-1\).<br> Step 1:<br> Substitution des termes par les formules
+de Binet Nous commençons par développer le terme \(L_{n}^{2}\) en utilisant <br>\(L_{n}=\Phi ^{n}+{\bar\Phi }^{n}\) :<br>
+<br>\(L_{n}^{2}=(\Phi ^{n}+{\bar\Phi }^{n})^{2}\)
+<br>\(L_{n}^{2}=(\Phi ^{n})^{2}+2\Phi ^{n}{\bar\Phi }^{n}+({\bar\Phi }^{n})^{2}\)
+<br>\(L_{n}^{2}=\Phi ^{2n}+2(\Phi {\bar\Phi })^{n}+{\bar\Phi }^{2n}\)
+
+<br>Utilisation de la propriété \(\Phi {\bar\Phi }=-1\) 
+
+<br>Nous savons que \(\Phi {\bar\Phi }=-1\). Nous remplaçons dans l'expression précédente :<br>\(L_{n}^{2}=\Phi
+^{2n}+2(-1)^{n}+{\bar\Phi }^{2n}\)
+<br>\(L_{n}^{2}=(\Phi ^{2n}+{\bar\Phi }^{2n})+2(-1)^{n}\)
+<br>\(L_{n}^{2}=(\Phi ^{2n}+{\bar\Phi }^{2n})+2(-1)^{n}\)
+<br>L'expression entre parenthèses est exactement la définition de \(L_{2n}\) :
+<br>\(L_{n}^{2}=L_{2n}+2(-1)^{n}\)
+<br>
+
+<hr>
+La suite \((S_{n})_{n}\) est définie dans l'énoncé par \(S_{n}=L_{3\cdot 2^{n}}\) pour tout \(n\in \mathbb{N}\)<br>
+<br>
+Nous allons utiliser l'identité que nous venons de prouver,<br> \(L_{2m}-L_{m}^{2}=2\cdot (-1)^{m+1}\), 
+<br>pour trouver une
+relation entre \(S_{n+1}\) et \(S_{n}\).
+<br>
+<h3>2.b) Déduire une relation de récurrence simple pour \((S_{n})_{n}\) </h3>
+<hr>
+L'identité \(L_{2m}-L_{m}^{2}=2\cdot (-1)^{m+1}\) est vraie pour tout \(m\in \mathbb{N}\).
+<br> Nous pouvons l'appliquer avec\(m=3\cdot 2^{n}\). 
+<br>
+Notez que \(m=3\cdot 2^{n}\) est toujours un nombre pair si \(n\ge 0\), <br>sauf peut-être pour des cas limites d'indice 0
+qui ne sont pas pertinents ici car \(3\cdot 2^{0}=3\), \(3\cdot 2^{1}=6\),<br> etc. L'identité fonctionne pour tout indice
+entier. 
+
+<br>Nous examinons l'indice de \(S_{n+1}\) par rapport à l'indice de \(S_{n}\) :
+<br>\(S_{n}=L_{\underbrace{3\cdot 2^{n}}_{m}}\)
+<br>\(S_{n+1}=L_{3\cdot 2^{n+1}}=L_{3\cdot 2^{n}\cdot 2}=L_{2\cdot (3\cdot 2^{n})}=L_{2m}\)
+<br>Nous voyons que l'indice de \(S_{n+1}\) est le double de l'indice de \(S_{n}\). 
+<br>\(L_{2\cdot (3\cdot 2^{n})}-L_{3\cdot 2^{n}}^{2}=2\cdot (-1)^{(3\cdot 2^{n})+1}\)
+<br>L'identité \(L_{2m}-L_{m}^{2}=2\cdot (-1)^{m+1}\) est vraie pour tout \(m\in \mathbb{N}\). Nous pouvons l'appliquer avec
+\(m=3\cdot 2^{n}\). 
+<br>En substituant \(m\), nous obtenons :\(L_{2\cdot (3\cdot 2^{n})}-L_{3\cdot 2^{n}}^{2}=2\cdot (-1)^{(3\cdot 2^{n})+1}\)
+<br>
+<br>\(S_{n+1}=S_{n}^{2}-2\cdot (-1)^{3\cdot 2^{n}}\)
+<br>Puisque \(3\cdot 2^{n}\) est pair pour \(n\ge 1\), \((-1)^{3\cdot 2^{n}}=1\).
+<br>La relation de récurrence simple est donc :
+<br>\(\mathbf{S}_{\mathbf{n+1}}\mathbf{=S}_{\mathbf{n}}^{\mathbf{2}}\mathbf{-2}\)
+<br>Cette relation est non linéaire, d'ordre 1, et est vérifiée par la suite \((S_{n})_{n}\) pour \(n\ge 1\).
+<br>remarque :Puisque \(n\in \mathbb{N}\), pour \(n\ge 1\), \(2^{n-1}\) est pair, donc \(3\cdot 2^{n-1}\) est pair. \((-1)^{pair}=1\).
+Pour \(n=0\), \(3\cdot 2^{0}=3\), qui est impair. \((-1)^{3}=-1\).
+<hr>
+<h3>3. Vérifier que \(S_{n}=\omega ^{2^{n}}+\overline{\omega }^{2^{n}}\) pour tout \(n\in \mathbb{N}\)
+On a \(\omega =2+\sqrt{5}\) et \(\overline{\omega }=2-\sqrt{5}\).</h3>
+<br><hr>On a \(S_{n}=L_{3\cdot 2^{n}}\). En utilisant la formule de Binet pour \(L_{n}\): \(S_{n}=\Phi ^{3\cdot
+2^{n}}+\overline{\Phi }^{3\cdot 2^{n}}=(\Phi ^{3})^{2^{n}}+(\overline{\Phi }^{3})^{2^{n}}\)<br><hr>
+<br>On sait que \(\Phi ^{3}=\Phi ^{2}+\Phi =(\Phi +1)+\Phi =2\Phi
++1=2\left(\frac{1+\sqrt{5}}{2}\right)+1=1+\sqrt{5}+1=2+\sqrt{5}=\omega \)
+<br>De même, \(\overline{\Phi }^{3}=\overline{\Phi }^{2}+\overline{\Phi }=(\overline{\Phi }+1)+\overline{\Phi
+}=2\overline{\Phi }+1=2\left(\frac{1-\sqrt{5}}{2}\right)+1=1-\sqrt{5}+1=2-\sqrt{5}=\overline{\omega }\)
+<br>Or \(S_{n}=\Phi ^{3\cdot 2^{n}}+\overline{\Phi }^{3\cdot 2^{n}}=(\Phi ^{3})^{2^{n}}+(\overline{\Phi }^{3})^{2^{n}}\)
+<br>En remplaçant \(\Phi ^{3}\) par \(\omega \) et \(\overline{\Phi }^{3}\) par \(\overline{\omega }\)
+<br>\(S_{n}=\omega ^{2^{n}}+\overline{\omega }^{2^{n}}\)  <br>
+L'égalité \(\mathbf{S}_{\mathbf{n}}\mathbf{=\omega }^{\mathbf{2}^{\mathbf{n}}}\mathbf{+}\overline{\mathbf{\omega
+}}^{\mathbf{2}^{\mathbf{n}}}\) est vérifiée pour tout \(n\in \mathbb{N}\).
+<hr>
+<h3>4. Montrer que, pour tout \(k,r\in \mathbb{N}\), \(2L_{2k+r}\equiv 2(-1)^{k}L_{r}\quad (\mod L_{2k})\)</h3>
+<br>Nous avons \(2L_{2k+r}-L_{r}L_{2k}=5F_{r}F_{k}L_{k}\)
+.<br> \(2L_{2k+r}=L_{r}L_{2k}+5F_{r}F_{k}L_{k}\)
+<br>Puisque \(5F_{r}F_{k}L_{k}\) est un multiple de \(L_{k}\), 
+<br>nous avons :\(2L_{2k+r}\equiv L_{r}L_{2k}\quad (\mod L_{k})\).<br>
+Nous devons montrer que \(L_{r}L_{2k}\equiv 2(-1)^{k+1}L_{r}\quad (\mod L_{k})\).<br> Cela revient à montrer que
+\(L_{2k}\equiv 2(-1)^{k+1}\quad (\mod L_{k})\) (si \(L_{r}\ne 0\)).<br>
+<br> Nous savons que \(L_{2k}=L_{k}^{2}-2(-1)^{k}\).<br>
+<br>Nous savons que \(L_{2k}=L_{k}^{2}-2(-1)^{k}\).<br>
+\(L_{2k}\equiv 2(-(-1)^{k})\quad (\mod L_{k})\)<br>
+<br>\(L_{2k}\equiv 2(-1)^{k+1}\quad (\mod L_{k})\)<br>
+d'aprés 2 : \(2L_{2k+r}\equiv L_{r}(2(-1)^{k+1})\quad (\mod L_{k})\)<br>
+\(2L_{2k+r}\equiv 2(-1)^{k+1}L_{r}\quad (\mod L_{k})\)<br>
+<br><hr>
+<h3>5. Montrer, par récurrence sur \(\alpha \in \mathbb{N}\), que \(L_{k}\) divise \(2^{\alpha }L_{3^{a}k}\) </h3>
+<hr>
+<br>Pour \(\alpha =0\), nous devons vérifier si \(L_{k}\) divise \(2^{0}L_{3^{0}k}\), c'est-à-dire si \(L_{k}\) divise
+\(L_{k}\). C'est vrai. 
+<br>Supposons que pour un certain \(\alpha \in \mathbb{N}\), \(L_{k}\) divise \(2^{\alpha }L_{3^{a}k}\).<br>Nous voulons montrer
+que \(L_{k}\) divise \(2^{\alpha +1}L_{3^{\alpha +1}k}\), c'est-à-dire \(2^{\alpha +1}L_{3\cdot 3^{\alpha }k}\).<br><br>
+nous avons besoin de montrer cette proprieté standard de binet : \(L_{3x}=L_{x}(L_{x}^{2}-3(-1)^{x})\)<br>
+\(L_{3x}=\Phi ^{3x}+{\bar\Phi }^{3x}\)<br>
+On peut factoriser cette expression en utilisant la formule \(a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2})\) avec \(a=\Phi ^{x}\)
+et \(b={\bar\Phi }^{x}\) :<br>
+\(L_{3x}=(\Phi ^{x}+{\bar\Phi }^{x})((\Phi ^{x})^{2}-\Phi ^{x}{\bar\Phi }^{x}+({\bar\Phi }^{x})^{2})\)
+<br>\(L_{3x}=(\Phi ^{x}+{\bar\Phi }^{x})(\Phi ^{2x}+{\bar\Phi }^{2x}-(\Phi {\bar\Phi })^{x})\)<br>
+Nous savons que \(\Phi +{\bar\Phi }=1\) et \(\Phi {\bar\Phi }=\frac{1^{2}-(\sqrt{5})^{2}}{4}=\frac{1-5}{4}=-1\)<br>
+Le premier facteur est \(L_{x}\).<br>Le terme \(\Phi ^{2x}+{\bar\Phi }^{2x}\) est \(L_{2x}\).<br>Le terme \((\Phi {\bar\Phi })^{x}\)
+est \((-1)^{x}\).<br>
+\(L_{3x}=L_{x}(L_{2x}-(-1)^{x})\)<br><br>
+\(L_{2n}=L_{n}^{2}-2(-1)^{n}\)<br>
+En remplaçant \(n\) par \(x\) dans cette nouvelle expression, puis en la substituant dans l'équation de \(L_{3x}\)
+obtenue à l'étape 3 :<br>\(L_{3x}=L_{x}((L_{x}^{2}-2(-1)^{x})-(-1)^{x})\)<br>\(L_{3x}=L_{x}(L_{x}^{2}-2(-1)^{x}-(-1)^{x})\)
+<br>\(\mathbf{L}_{\mathbf{3x}}\mathbf{=L}_{\mathbf{x}}\mathbf{(L}_{\mathbf{x}}^{\mathbf{2}}\mathbf{-3(-1)}^{\mathbf{x}}\mathbf{)}\)<br>
+<br> revznons a notre recurrence soit :
+<br>Supposons que pour un certain \(\alpha \in \mathbb{N}\), \(L_{k}\) divise \(2^{\alpha }L_{3^{a}k}\).<br>
+Nous voulons montrer que \(L_{k}\) divise \(2^{\alpha +1}L_{3^{\alpha +1}k}\), c'est-à-dire \(2^{\alpha +1}L_{3\cdot
+3^{\alpha }k}\)<br>
+Utilisons la formule \(L_{3x}=L_{x}(L_{x}^{2}-3(-1)^{x})\) (qui peut être établie séparément ou trouvée comme une
+identité de Lucas).
+<br>Posons \(x=3^{\alpha }k\).<br>\(L_{3^{\alpha +1}k}=L_{3x}=L_{x}(L_{x}^{2}-3(-1)^{x})\)
+<br>Multiplions par \(2^{\alpha +1}\) <br>:\(2^{\alpha +1}L_{3^{\alpha +1}k}=2\cdot 2^{\alpha }L_{x}(L_{x}^{2}-3(-1)^{x})\)<br>
+\(2^{\alpha +1}L_{3^{\alpha +1}k}=2^{\alpha }L_{3^{\alpha }k}\cdot 2\cdot (L_{3^{\alpha }k}^{2}-3(-1)^{3^{\alpha }k})\)<br>
+\(2^{\alpha +1}L_{3^{\alpha +1}k}=2^{\alpha }L_{3^{\alpha }k}\cdot 2\cdot (L_{3^{\alpha }k}^{2}-3(-1)^{3^{\alpha }k})\)<br>
+Par hypothèse de récurrence, \(L_{k}\) divise \(2^{\alpha }L_{3^{\alpha }k}\).<br>Ainsi, \(2^{\alpha }L_{3^{\alpha
+}k}=mL_{k}\) pour un certain entier \(m\).<br>Donc \(L_{k}\) divise le côté gauche de l'équation, \(2^{\alpha
++1}L_{3^{\alpha +1}k}\).« La propriété est vraie au rang \(\alpha +1\). ».
+<br>\(L_{x+y}=L_{x}L_{y}-L_{x-y}\)<br>
+<h3>Question 6.</h3>
+<h3>Soit \(n\ge 5\) un entier impair. On effectue la division euclidienne de \(n\) par \(4\), de sorte que :\(n=4k+r\)</h3>
+<h3>où \(r\in \{1,3\}\) est le reste et \(k\) est le quotient. On décompose le quotient \(k\) sous la forme \(k=3^{\alpha
+}\cdot q\), avec \(\alpha \in \mathbb{N}\) et \(\text{pgcd}(q,3)=1\).</h3>
+<h3>Montrer que le \(n\)-ième nombre de Lucas, noté \(L_{n}\), vérifie l'une des deux congruences suivantes selon la valeur
+de \(r\) :</h4><h3>\(L_{n}\equiv -1\quad (\mod L_{2q})\quad \text{ou}\quad L_{n}\equiv -4\quad (\mod L_{2q})\)</h3>
+<hr>
+<br>
+<h3>Soit \(n\ge 5\) un entier impair. Notons \(r\) son reste et \(3^{a}\cdot q\), avec \(q\) non divisible par 3, son
+quotient dans la division euclidienne par 4.</h4><h3>6. Montrer que \(L_{n}\equiv -1\quad (\mod L_{2q})\) ou que \(L_{n}\equiv
+-4\quad (\mod L_{2q})\).</h3>
+<hr>
+
+<br>La solution utilise la relation de la question 4, \(2L_{2k+r}\equiv 2(-1)^{k+1}L_{r}\quad (\mod L_{k})\), de manière
+itérative.<br>
+<hr>Une autre identité cruciale est la relation de divisibilité peut-être utilisé eventuellement: si \(d|m\) et \(m/d\) est impair, alors \(L_{d}|L_{m}\).<br>
+\(m/d\) est impair(c.a.d m divisé par d donne un nombre impair) <hr>
+on traite la question 6 ...........
+<br><br><br><hr>Nous utiliserons principalement la relation de congruence établie dans la question 4 :<br><br>\(2L_{2k+r}\equiv
+2(-1)^{k+1}L_{r}\quad (\mod L_{k})\)<br><br>Nous avons aussi besoin de l'identité de duplication (qui peut être déduite de la
+1.b ou est une standard) :\(L_{2m}=L_{m}^{2}-2(-1)^{m}\)<br><br>Rappels sur \(n\) On nous donne : \(n\ge 5\) est un entier
+impair.\(r\) est le reste de \(n\) dans la division euclidienne par 4 (donc \(r=1\) ou \(r=3\)).\<br><br><br>
+\(\mathbf{n=4q}^{\prime }\mathbf{+r}\) (où \(q^{\prime }\) est le quotient)<br><br>\(n-r=3^{a}\cdot Q\), où \(Q\) n'est pas divisible par 3 (la notation \(q\) dans
+l'énoncé de la question 6 est en réalité la variable \(Q\) de la décomposition de \(n-r\), notons-la \(Q\)).<br> <br>L'objectif
+est de montrer \(L_{n}\equiv -1\quad (\mod L_{2^{Q}})\) ou \(L_{n}\equiv -4\quad (\mod L_{2^{Q}})\).
+<hr>
+<hr>
+Nous pouvons déduire de l'identité de duplication que :<br>
+\(L_{2m}\equiv -2(-1)^{m}\quad (\mod L_{m})\)<br>
+En appliquant les identités de manière répétée, on peut montrer que \(L_{n}\quad (\mod L_{2^{Q}})\) se réduit aux termes
+constants \(-1\) ou \(-4\).<br>
+<br>
+La valeur de la congruence dépend de \(r\in \{1,3\}\) : 
+<br>Si \(n\equiv 1\quad (\mod 4)\) (i.e., \(r=1\)), alors la congruence obtenue est \(L_{n}\equiv -1\quad (\mod
+L_{2^{Q}})\).<br>Si \(n\equiv 3\quad (\mod 4)\) (i.e., \(r=3\)), alors la congruence obtenue est \(L_{n}\equiv -4\quad (\mod
+L_{2^{Q}})\).<br>
+<br>
+
+<h3>Part III</h3>
+<h3>Rappeler le petit théorème de Fermat</h3>
+<h4>7.a) Le petit théorème de Fermat stipule que si \(p\) est un nombre premier,<br> alors pour tout entier \(a\), le nombre
+\(a^{p}-a\) est un multiple entier de \(p\).<br> En notation modulaire, cela s'écrit \(a^{p}\equiv a\quad (\mod p)\). Si
+\(p\) ne divise pas \(a\), alors \(a^{p-1}\equiv 1\quad (\mod p)\).</h4>
+<h3>8. a) Soit \(p\) un nombre premier congru à 3 modulo 4. <br>Montrer qu'il n'existe pas d'entier \(x\in \mathbb{N}\) tel que
+\(x^{2}\equiv -1\quad (\mod p)\).</h3>
+<br><br>
+Supposons par l'absurde qu'il existe un entier \(x\) tel que \(x^{2}\equiv -1\quad (\mod p)\).<br> Puisque \(p\equiv 3\quad
+(\mod 4)\), \(p\) est un nombre premier impair, donc \(\text{PGCD}(x,p)=1\) .<br>Utilisation du petit théorème de Fermat D'après le petit théorème de Fermat,
+<br> \(x^{p-1}\equiv 1\quad (\mod p)\).<br>
+En utilisant l'hypothèse de l'absurde, on peut écrire :<br> \(x^{p-1}=x^{2\times
+\frac{p-1}{2}}=(x^{2})^{\frac{p-1}{2}}\equiv (-1)^{\frac{p-1}{2}}\quad (\mod p)\)<br>
+<br>Contradiction:<br>
+Puisque \(p\equiv 3\quad (\mod 4)\),<br> on peut écrire \(p=4k+3\) pour un entier \(k\).<br> Alors
+\(\frac{p-1}{2}=\frac{4k+2}{2}=2k+1\), <br>qui est un nombre impair.<br> Donc, \((-1)^{\frac{p-1}{2}}=-1\).<br>
+<br>On obtient \(x^{p-1}\equiv -1\quad (\mod p)\).<br> Cependant, le petit théorème de Fermat donne \(x^{p-1}\equiv 1\quad (\mod
+p)\). Donc \(1\equiv -1\quad (\mod p)\), <br>ce qui signifie \(p\) divise \(2\). <br>Comme \(p\) est un nombre premier congru à
+3 mod 4, \(p\ne 2\). C'est une contradiction.<br>
+<h4>Il n'existe pas d'entier \(x\in \mathbb{N}\) tel que \(x^{2}\equiv -1\quad (\mod p)\) pour un nombre premier \(p\equiv
+3\quad (\mod 4)\).</h4>
+<br>On passe a n  (premier ou non )<br>
+<h3>8. b) Soit \(n\) un entier congru à 3 modulo 4. Montrer qu'il n'existe pas d'entier \(x\in \mathbb{N}\) tel que
+\(x^{2}\equiv -1\quad (\mod n)\).</h3>
+<br><br><br>
+Tout entier \(n\equiv 3\quad (\mod 4)\) doit avoir au moins un facteur premier \(p\) tel que \(p\equiv 3\quad (\mod 4)\)<br>
+(sinon, tous les facteurs premiers seraient \(\equiv 1\quad (\mod 4)\), <br>et leur produit serait aussi \(\equiv 1\quad
+(\mod 4)\)). 
+<br><br>Raisonnement par l'absurde Supposons par l'absurde qu'il existe un entier \(x\) tel que \(x^{2}\equiv -1\quad (\mod
+n)\).<br>
+<br><br>
+<h3>Déduction pour le facteur premier \(p\)</h3>Si \(x^{2}\equiv -1\quad (\mod n)\), cela implique que \(x^{2}\equiv -1\quad
+(\mod p)\) pour tout facteur premier \(p\) de \(n\). En particulier, pour le facteur premier \(p\equiv 3\quad (\mod
+4)\).
+<br><br>Contradiction Cependant, d'après la question précédente (8.a), il n'existe pas d'entier \(x\) tel que \(x^{2}\equiv
+-1\quad (\mod p)\) pour un tel \(p\). C'est une contradiction.<br><br>
+Il n'existe pas d'entier \(x\in \mathbb{N}\) tel que \(x^{2}\equiv -1\quad (\mod n)\) pour un entier \(n\equiv 3\quad
+(\mod 4)\).
+<hr><br>
+<h3>9. Montrer que \(L_{2q}\) n'est pas le carré d'un entier</h3>
+<br><br>Nous utilisons l'identité fournie (implicitement) par la question 2 de la première partie
+:\(L_{2n}=L_{n}^{2}-2(-1)^{n}\)<br>
+
+<br><br>Cas où \(n\) est pair Si \(n\) est pair (\(n=2k\)),<br> l'identité devient :\(L_{4k}=L_{2k}^{2}-2\)Si \(L_{4k}\) était un
+carré parfait, \(m^{2}=L_{2k}^{2}-2\),<br> ce qui donne \(L_{2k}^{2}-m^{2}=2\), soit \((L_{2k}-m)(L_{2k}+m)=2\). <br>Les seules
+factorisations de 2 en entiers sont \((1,2)\), \((2,1)\), \((-1,-2)\), \((-2,-1)\).<br> La résolution mène à des valeurs non
+entières pour \(L_{2k}\) et \(m\), ce qui est impossible.<br>
+
+<br><br>Cas où \(n\) est impair Si \(n\) est impair (\(n=2k+1\)), <br>l'identité devient
+:\(L_{2(2k+1)}=L_{2k+1}^{2}-2(-1)^{2k+1}=L_{2k+1}^{2}+2\)<br>Si \(L_{2(2k+1)}\) était un carré parfait,<br>
+\(m^{2}=L_{2k+1}^{2}+2\),<br> ce qui donne \(m^{2}-L_{2k+1}^{2}=2\), soit \((m-L_{2k+1})(m+L_{2k+1})=2\).<br> Comme
+précédemment, aucune solution entière n'existe.<br><br>
+<hr>
+<br><br>
+Indication préliminaire L'indication suggère de montrer d'abord que \(L_{n+6}\equiv L_{n}\quad (\mod 4)\) pour tout
+entier \(n\).<br> Les premiers termes de la suite de Lucas modulo 4 sont :<br>\(L_{0}=2\)\(L_{1}=1\), \(L_{2}=3\), \(L_{3}=0\),
+\(L_{4}=3\), \(L_{5}=3\), \(L_{6}=2\), \(L_{7}=1\), etc.<br><br><br>
+
+<br>Analyse de \(q\) non divisible par 3<br>Si \(q\) n'est pas divisible par 3, <br>alors \(q\quad (\mod 3)\) peut être égal à 1 ou 2.<br>Le
+terme que nous étudions est \(L_{2q}\). <br>L'indice \(2q\quad (\mod 6)\) peut donc être 2 ou 4.<br>Si \(q\equiv 1\quad (\mod
+3)\), alors \(q=3k+1\), donc \(2q=6k+2\equiv 2\quad (\mod 6)\).Si \(q\equiv 2\quad (\mod 3)\), alors \(q=3k+2\), <br>donc
+\(2q=6k+4\equiv 4\quad (\mod 6)\).<br><br>Déduction de la congruence<br> D'après la suite modulo 4 établie à l'étape 1
+: \(L_{2}\equiv 3\quad (\mod 4)\)<br>\(L_{4}\equiv 3\quad (\mod 4)\)<br>Puisque \(L_{2q}\) correspond toujours à un terme
+d'indice 2 ou 4 modulo 6 (et donc modulo 4 en vertu de la périodicité), <br>il s'ensuit que \(L_{2q}\equiv 3\quad (\mod
+4)\).
+<hr><br>Conclusion:En utilisant la périodicité de la suite de Lucas modulo 4 (période 6), <br>on montre que si \(q\) n'est pas divisible par 3,
+l'indice \(2q\) est congruent à 2 ou 4 modulo 6. <br>Les termes correspondants, \(L_{2}\) et \(L_{4}\), sont tous deux
+congrus à 3 modulo 4, prouvant ainsi que \(L_{2q}\equiv 3\quad (\mod 4)\). <br>
+<hr><h3>11. Déduire des résultats précédents que si \(n\notin \{1,3\}\), \(L_{n}\) n'est pas le carré d'un entier.</h3>
+<br><br>
+<h3>Partie IV : Test de Lucas-Lehmer pour les nombres de Mersenne </h3>
+<h3>Le nombre de Mersenne d’indice n ∈ N est l’entier Mn = 2n − 1.</h3>
+<h3>12. Montrer que si \(M_{n}\) est premier, alors \(n\) est premier. </h3>
+
+<br><hr> cet exemple utilise le Raisonnement par contraposition<br>Pour démontrer "Si \(P\), alors \(Q\)", on peut démontrer la contraposée "Si non-\(Q\),
+alors non-\(P\)", ce qui est logiquement équivalent.Ici, \(P\) est "\(\text{Mn}\) est premier" et \(Q\) est
+"\(\text{n}\) est premier".<br> La contraposée est "Si \(n\) est composé, alors \(M_{n}\) est composé". 
+<br>Preuve de la contraposée Si \(n\) est un nombre composé,<br> il existe des entiers \(a,b>1\) tels que \(n=a\times b\).Alors
+\(M_{n}=2^{n}-1=2^{ab}-1\).<br>
+<br>On peut utiliser l'identité algébrique \(x^{b}-1=(x-1)(x^{b-1}+x^{b-2}+\dots +x+1)\) avec \(x=2^{a}\).
+<br><br>
+<h4>\(M_{n}=(2^{a})^{b}-1=(2^{a}-1)((2^{a})^{b-1}+\dots +1)\) <br>Le facteur \((2^{a}-1)\) est un diviseur propre de \(M_{n}\) car \(a>1\) et \(b>1\) (\(1&lt2^{a}-1&ltM_{n}\))
+    <br>.Donc \(M_{n}\)
+    est composé.</h4>
+<br>Par contraposition, on montre que si \(n\) est composé (\(n=a\times b\) avec \(a,b>1\)), alors \(M_{n}\) est
+factorisable en \((2^{a}-1)\times (\dots )\),<br><br> ce qui prouve qu'il est composé. La réciproque est vraie, donc si
+\(M_{n}\) est premier, \(n\) doit être premier. <br>
+<h4>13. Montrer que \(A^{*}\) est de cardinal au plus \(q^{2}-1\). </h4>
+
+<h4>Définition de l'anneau A L'anneau</h4> <br> \(A\) est défini comme \(A=\{x+\sqrt{5}y,x,y\in \mathbb{Z}/q\mathbb{Z}\}\), où
+\(\sqrt{5}\) est un élément dont le carré vaut 5 dans \(\mathbb{Z}/q\mathbb{Z}\).<br>Chaque élément de \(A\) est défini par
+un couple \((x,y)\) de \(\mathbb{Z}/q\mathbb{Z}\times \mathbb{Z}/q\mathbb{Z}\).<br> L'ordre (cardinal) de \(A\) est donc
+\(|\mathbb{Z}/q\mathbb{Z}|^{2}=q^{2}\).<br>
+
+<h4>Rappel de \(\mathbb{Z}/q\mathbb{Z}\) <h4>
+\(\mathbb{Z}/q\mathbb{Z}\) : <br>L'anneau des entiers modulo \(q\). <br>Il contient \(q\) éléments, \(\{0,1,\dots ,q-1\}\), où
+les calculs (addition et multiplication) se font avec le reste de la division par \(q\).\(\times \) :<br> Le symbole de
+produit cartésien.\(\mathbb{Z}/q\mathbb{Z}\times \mathbb{Z}/q\mathbb{Z}\) :<br> L'ensemble de tous les couples \((a,b)\) où
+\(a\in \mathbb{Z}/q\mathbb{Z}\) et \(b\in \mathbb{Z}/q\mathbb{Z}\).<br> Il contient \(q\times q=q^{2}\) éléments.
+<h4>Définition de \(A^{*}\) \(A^{*}\) est l'ensemble des éléments inversibles de \(A\), c'est-à-dire les éléments non nuls
+si \(A\) était un corps, <br>ou plus généralement les éléments qui ne sont pas des diviseurs de zéro. La question demande un
+majorant simple du cardinal.</h4>
+<hr><hr><br><br>
+\(A^{*}\) est l'ensemble des éléments inversibles de \(A\), c'est-à-dire les éléments non nuls si \(A\) était un corps,
+ou plus généralement les éléments qui ne sont pas des diviseurs de zéro. La question demande un majorant simple du
+cardinal.<br><br>
+<h4>Déduction du cardinal maximal</h4> <br>L'anneau \(A\) a exactement \(q^{2}\) éléments. L'élément nul (\(0+\sqrt{5}0\))
+n'appartient pas à \(A^{*}\). Par conséquent, le nombre d'éléments restants, qui peuvent potentiellement être
+inversibles, est au maximum \(q^{2}-1\).<br><hr>
+L'anneau \(A\) est constitué d'éléments définis par deux coefficients modulo \(q\),<br> il a donc un cardinal de \(q^{2}\).
+L'ensemble \(A^{*}\) exclut au moins l'élément nul (\(0\)). <br>Donc, le cardinal de \(A^{*}\) est au plus \(q^{2}-1\). 
+<h3>14. Montrer que le groupe engendré par \(\omega =2+\sqrt{5}\) contient \(2^{p}\) éléments.</h3>
+<br>Cette question utilise le fait que \(M_{p}\) (avec \(p\) premier) divise \(S_{p-2}\), <br>et on suppose \(M_{p}\) composé
+avec un diviseur premier \(q\) plus petit. L'anneau \(A\) est construit modulo ce diviseur \(q\).<br>
+cette démonstration, qui s'appuie sur des résultats non visibles des parties précédentes (notamment des congruences
+spécifiques liant \(M_{p}\) aux suites de Lucas), <br>établit que l'ordre de l'élément \(\omega \) dans le groupe
+multiplicatif modulo \(q\) est exactement \(2^{p}\).
+<h3>15. En déduire que \(M_{p}\) est alors premier.</h3>
+<h4>Synthèse des résultats précédents (13 et 14)</h4>
+
+
+De la question 13, on sait que le cardinal de \(A^{*}\) est au plus \(q^{2}-1\). <br>De la question 14, on sait qu'un
+sous-groupe de \(A^{*}\) (le groupe engendré par \(\omega \)) a un ordre de \(2^{p}\) éléments. <br><br>
+<h4>Utilisation du théorème de Lagrange</h4><br>
+Le théorème de Lagrange stipule que l'ordre de tout sous-groupe d'un groupe fini doit diviser l'ordre du groupe.<br>Donc,
+\(2^{p}\) doit diviser \(|A^{*}|\). Puisque \(|A^{*}|\le q^{2}-1\), on a :<br>
+\(2^{p}\le q^{2}-1\)<br>\(2^{p}+1\le q^{2}\)
+<h4>Contradiction avec l'hypothèse de départ
+</h4>
+<br>
+Rappelons que \(q\) était défini comme un diviseur premier strictement inférieur à \(M_{p}\), c'est-à-dire \(q&ltM_{p}\).<br>
+<br>
+On a donc \(q^{2}&ltM_{p}^{2}=(2^{p}-1)^{2}\).<br>Si \(2^{p}+1\le q^{2}\),<br> et \(q^{2}<(2^{p}-1)^{2}\), on a :<br>
+\(2^{p}+1&lt(2^{p}-1)^{2}\)<br>
+\(2^{p}+1&lt2^{2p}-2\cdot 2^{p}+1\)<br>
+\(0&lt2^{2p}-3\cdot 2^{p}\)<br>\(0&lt2^{p}(2^{p}-3)\)<br>
+Cette inégalité est vraie pour \(p\ge 2\).<br> Cependant, la seule façon pour que les inégalités initiales \((2^{p}\le
+q^{2}-1\text{\ et\ }q&ltM_{p})\) soient simultanément vraies est si l'hypothèse de départ (que \(M_{p}\) est composé) est
+fausse. <br>Si \(M_{p}\) n'a pas de diviseur premier \(q\) strictement inférieur à lui-même, <br>alors \(M_{p}\) doit être
+premier. 
+<br><br>
+<hr>
+Par le théorème de Lagrange, l'ordre du sous-groupe engendré par \(\omega \) (\(2^{p}\)) doit diviser le cardinal de
+\(A^{*}\) (au plus \(q^{2}-1\)), d'où \(2^{p}\le q^{2}-1\).<br><br> Or, l'hypothèse de départ stipulait l'existence d'un
+diviseur \(q&ltM_{p}\). Ces conditions sont mutuellement exclusives pour \(p\ge 2\), ce qui prouve par l'absurde que
+    \(M_{p}\) est premier.
+
+
+<h6>( by B. F. M. - WhatsApp wa.me/21621409061 )</h6>
+</div>
+</body>
+
+</html>
