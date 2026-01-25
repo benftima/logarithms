@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <title>Analyse du Théme Developpements Limitées par B.F.M</title>
+</head>
+
+<body>
+<h4>Analyse .<h4>
+<h5>Auteur : (B.F.M) whatsApp et Telegram 21621409061</h5>
+
+
+
+
+<br><hr>
+On considère la matrice carrée d'ordre \(n\) <br><br><br>\(A_{n}(x_{1},\dots ,x_{n})=\left(\begin{matrix}x_{1}&a&a&\dots &a\\
+b&x_{2}&a&\dots &a\\ b&b&x_{3}&\dots &a\\ \vdots &\vdots &\vdots &\ddots &\vdots \\ b&b&b&\dots
+&x_{n}\end{matrix}\right)\) \(a\), \(b\) et les \(x_{i}\) étant des réels.<br><br> On désigne par \(D(A_{n})\) le déterminant de
+\(A_{n}\).<br><br> Montrer que si \(a\ne b\) :<br> <br>\(D(A_{n})=\frac{bf(a)-af(b)}{b-a}\)<br><br> et que si \(a=b\) :
+\(D(A_{n})=f(a)-af^{\prime }(a)\) <br><br>où l'on a posé \(f(x)=(x_{1}-x)(x_{2}-x)\dots (x_{n}-x)\).<br><br><hr>
+
+<div>
+    <div>Démarches: <hr>Pour \(a\ne b\):</div>
+    <div>Montrer que \(D(A_{n})=(x_{n}-a)D(A_{n-1})-(b-x_{n-1})\left|\begin{matrix}x_{1}&a&\dots &a\\ b&x_{2}&\dots &a\\ \vdots &\vdots
+    &\ddots &\vdots \\ b&b&\dots x_{n-2}&a\ \\ b&b&\dots b&a\end{matrix}\right|\)</div>
+
+
+</div>
+
+<div><br>
+Montrer que \(\left|\begin{matrix}x_{1}&a&\dots &a\\ b&x_{2}&\dots &a\\ \vdots &\vdots
+&\ddots &\vdots \\ b&b&\dots x_{n-2}&a\ \\ b&b&\dots b&a\end{matrix}\right|=a(x_{1}-b)(x_{2}-b)\dots (x_{n-2}-b)\) 
+
+
+</div>
+<br>
+<div><br>
+    3.En déduire que \(D(A_{n})=(x_{n}-a)D(A_{n-1})+\frac{af(b)-bf(a)}{a-b}\) et que<br>
+    <div><br>
+        \(D(A_{n})=(x_{n}-b)D(A_{n-1})+\frac{bf(a)-af(b)}{b-a}\)<br>
+    </div>
+</div><br><br>
+<div>De 3) Montrer que \(D(A_{n})=\frac{bf(a)-af(b)}{b-a}\)</div>
+
+<br>
+<div><br><br>
+   5. Pour \(a=b\), <br><br>poser dans (4) \(b=a+\lambda \) <br><br> et En déduire que \(D(A_{n})=f(a)-af^{\prime }(a)\)
+</div>
+<hr>--- ( by B. F. M. - wa/21621409061)
+
+
+</div>
+<hr>
+<hr>
+<br><h3>démarche pour le point 1 : <br><br>
+C'est l'étape la plus technique car elle repose sur une astuce de calcul de déterminant. </h3>
+<hr>
+<div>
+    Soit le déterminant d'ordre \(n\) :
+</div>
+<div>
+    \(D(A_{n})=\left|\begin{matrix}x_{1}&a&a&\dots &a\\ b&x_{2}&a&\dots &a\\ b&b&x_{3}&\dots &a\\ \vdots &\vdots &\vdots
+    &\ddots &\vdots \\ b&b&b&\dots &x_{n}\end{matrix}\right|\)
+</div>
+<br>
+<div>
+    L'astuce des colonnes
+</div>
+<br>
+<div>
+    Pour faire apparaître des zéros et simplifier le calcul, <br>on effectue l'opération suivante :<br> on soustrait la dernière
+    colonne (\(C_{n}\)) à toutes les autres colonnes (\(C_{1},C_{2},\dots ,C_{n-1}\)).<br>L'opération est : \(C_{j}\leftarrow
+    C_{j}-C_{n}\). 
+</div>
+<br>
+<div>
+    Le déterminant devient :<br><br>\(D(A_{n})=\left|\begin{matrix}x_{1}-a&0&0&\dots &a\\ b-a&x_{2}-a&0&\dots &a\\
+    b-a&b-a&x_{3}-a&\dots &a\\ \vdots &\vdots &\vdots &\ddots &\vdots \\ b-x_{n}&b-x_{n}&b-x_{n}&\dots
+    &x_{n}\end{matrix}\right|\)
+<br>
+<h3>Le développement par la dernière ligne</h3>
+
+Maintenant, on développe ce déterminant suivant la dernière ligne (la ligne \(n\)).
+<br><br>1. Le dernier terme est \(x_{n}\times (\text{son\ mineur})\).<br><br> Le mineur de \(x_{n}\) est le déterminant de la matrice
+privée de la dernière ligne et dernière colonne. <br><br>En regardant la matrice initiale, ce mineur est exactement
+\(D(A_{n-1})\).
+</div><br>
+.!.Mais attention :<br> avec notre manipulation de colonnes, <br>le bloc en haut à gauche a été modifié. Si on revient à la forme
+initiale pour développer, on utilise une autre astuce :<br> on écrit \(x_{n}=(x_{n}-a)+a\).
+
+<h3>La décomposition linéaire:</h3>
+<br>On peut séparer la dernière ligne en deux vecteurs : \((b,b,\dots ,b,a)\) et \((0,0,\dots ,0,x_{n}-a)\).<br>
+<h3>Par linéarité du déterminant par rapport à la dernière ligne :</h3><br>
+\(D(A_{n})=\left|\begin{matrix}x_{1}&a&\dots &a\\ \vdots &\vdots &\ddots &\vdots \\ b&b&\dots &a\\
+\mathbf{b}&\mathbf{b}&\dots &\mathbf{a}\end{matrix}\right|+\left|\begin{matrix}x_{1}&a&\dots &a\\ \vdots &\vdots &\ddots
+&\vdots \\ b&b&\dots &a\\ \mathbf{0}&\mathbf{0}&\dots &\mathbf{x}_{\mathbf{n}}\mathbf{-a}\end{matrix}\right|\)
+
+   <br>1.1 Le deuxième déterminant (à droite) se développe par la dernière ligne. <br>Il vaut immédiatement : \((x_{n}-a)\times
+D(A_{n-1})\).<br>
+   <br>Le premier déterminant (à gauche) est celui où la dernière ligne est \((b,b,\dots ,b,a)\).<br> Pour faire apparaître le
+terme \((b-x_{n-1})\) de votre énoncé,<br> on développe ce bloc par rapport à sa dernière ligne ou on effectue une
+soustraction de lignes (\(L_{n-1}-L_{n}\)).<br><br> <hr>
+C'est ainsi que l'on obtient la formule de récurrence <br>:\(D(A_{n})=(x_{n}-a)D(A_{n-1})+\text{Terme\ Correctif}\)<br><br>
+<br><br>
+Le "terme correctif" est précisément le produit \(a(x_{1}-b)(x_{2}-b)\dots (x_{n-1}-b)\) que vous devez calculer au
+point 2.<br>
+
+<br> Note : Pour \(f(x)=\prod _{i=1}^{n}(x_{i}-x)\), ce terme est lié à \(f(b)\). <br><br>
+<h3>3. Relations de récurrence
+</h3>
+
+<br>En injectant le résultat précédent dans la relation du (1), et en utilisant la définition de \(f(b)=(x_{1}-b)\dots
+(x_{n}-b)\), on obtient : <h3> 1. \(D(A_{n})=(x_{n}-a)D(A_{n-1})+a\frac{f(b)}{x_{n}-b}\)</h3>
+<br>Par symétrie des rôles de \(a\) et \(b\) (en transposant et changeant les signes), on établit la relation miroir :<br>
+<hr><br>
+\(D(A_{n})=(x_{n}-b)D(A_{n-1})+b\frac{f(a)}{x_{n}-a}\) <br><br>En réorganisant, on obtient les formes demandées qui lient
+\(D(A_{n})\) aux fonctions \(f(a)\) et \(f(b)\). <br><br>
+<h3>4. Cas \(a\ne b\) : Expression générale</h3>
+<h4>On cherche une solution de la forme \(D(A_{n})=\lambda f(a)+\mu f(b)\).<br> En testant pour \(n=1\) (\(D(A_{1})=x_{1}\)), on
+vérifie que :</h4>
+<h3>\(D(A_{n})=\frac{bf(a)-af(b)}{b-a}\)</h3><br><br>
+<br><div>Cette formule satisfait la relation de récurrence :</div><br><h2></h2>\((x_{n}-a)\left[\frac{bf_{n-1}(a)-af_{n-1}(b)}{b-a}\right]+a\frac{f_{n}(b)}{x_{n}-b}=\dots
+=\frac{bf_{n}(a)-af_{n}(b)}{b-a}\)<h2></h2><br>(où \(f_{n}\) est le polynôme de degré \(n\)).<br>
+</body>
+<h3>5. Cas \(a=b\) : Passage à la limite</h3>
+<br>Si \(a=b\), la formule précédente présente une forme indéterminée "0/0". <br>On pose \(b=a+\epsilon \) et on utilise un
+développement limité (ou la définition de la dérivée) quand \(\epsilon \rightarrow 0\) :
+<br><h1>\(D(A_{n})=\lim _{b\rightarrow a}\frac{bf(a)-af(b)}{b-a}\)</h1>
+<br>On reconnaît le taux d'accroissement. En dérivant par rapport à \(b\) au numérateur et dénominateur (règle de l'Hôpital)
+:<br><br><br>\(\frac{d}{db}(bf(a)-af(b))=f(a)-af^{\prime }(b)\)<br><br>En évaluant en \(b=a\), on obtient :
+<h1>\(D(A_{n})=f(a)-af^{\prime }(a)\)</h1>
+fin de l'exercice .
+</html>
