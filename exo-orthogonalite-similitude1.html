@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Similitude indirecte</title>
+
+<!-- ================================================= -->
+<!-- MATHJAX -->
+<!-- ================================================= -->
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']]
+}
+};
+</script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!-- ================================================= -->
+<!-- CSS -->
+<!-- ================================================= -->
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#ececec;
+font-family:"Times New Roman",serif;
+}
+
+.page{
+width:900px;
+margin:30px auto;
+background:white;
+padding:40px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title h1{
+color:#0077cc;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.title h2{
+font-size:24px;
+font-weight:normal;
+}
+
+.bar{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:35px 0 20px 0;
+}
+
+.line{
+height:3px;
+background:#00bfff;
+width:180px;
+}
+
+.label{
+background:#00bfff;
+color:white;
+padding:10px 35px;
+border-radius:12px;
+margin:0 15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.box{
+border:2px solid #00bfff;
+border-radius:12px;
+padding:25px;
+margin-bottom:30px;
+background:#eef9ff;
+}
+
+.box-white{
+border:2px solid #00bfff;
+border-radius:12px;
+padding:25px;
+margin-bottom:30px;
+background:white;
+}
+
+h3{
+color:#0066aa;
+font-size:30px;
+margin-top:0;
+}
+
+h4{
+color:#0066aa;
+font-size:24px;
+}
+
+.math{
+text-align:center;
+margin:20px 0;
+font-size:25px;
+}
+
+.figure{
+text-align:center;
+margin:40px 0;
+}
+
+ul{
+line-height:2;
+}
+
+.conclusion{
+background:#dff5ff;
+border:2px solid #00bfff;
+border-radius:12px;
+padding:25px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+margin-top:40px;
+}
+
+.footer{
+margin-top:50px;
+border-top:2px solid #00bfff;
+padding-top:15px;
+display:flex;
+justify-content:space-between;
+font-size:15px;
+}
+
+hr{
+border:none;
+height:2px;
+background:#00bfff;
+margin:40px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- ================================================= -->
+<!-- TITRE -->
+<!-- ================================================= -->
+
+<div class="title">
+
+<h1>Similitude indirecte</h1>
+
+<h2>Projet de Géométrie</h2>
+
+</div>
+
+<!-- ================================================= -->
+<!-- ENONCE -->
+<!-- ================================================= -->
+
+<div class="bar">
+<div class="line"></div>
+<div class="label">Cours</div>
+<div class="line"></div>
+</div>
+
+<div class="box">
+
+<h3>Enoncé</h3>
+
+<p>
+Soit $ABC$ un triangle isocèle rectangle en $A$.
+</p>
+
+<p>
+Le point $E$ est le symétrique du point $A$
+par rapport au point $B$.
+</p>
+
+<p>
+Le point $F$ est le projeté orthogonal du point $A$
+sur la droite $(CE)$.
+</p>
+
+<p>
+On considère une similitude indirecte $g$
+telle que :
+</p>
+
+<div class="math">
+$
+g(F)=A
+\qquad \text{et} \qquad
+g(A)=E
+$
+</div>
+
+<p><b>1)</b> Montrer que $g$ admet un centre.</p>
+
+<p><b>2)</b> Déterminer :</p>
+
+<div class="math">
+$
+g((EC))
+\qquad \text{et} \qquad
+g((AC))
+$
+</div>
+
+<p><b>3)</b> Déduire le centre de $g$.</p>
+
+<p><b>4)</b> Montrer que le rapport vaut :</p>
+
+<div class="math">
+$
+\sqrt{5}
+$
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FIGURE -->
+<!-- ================================================= -->
+
+<div class="figure">
+
+<svg width="500" height="260">
+
+<!-- Triangle -->
+<line x1="100" y1="220" x2="100" y2="40"
+stroke="black" stroke-width="2"/>
+
+<line x1="100" y1="40" x2="420" y2="220"
+stroke="black" stroke-width="2"/>
+
+<line x1="100" y1="220" x2="420" y2="220"
+stroke="black" stroke-width="2"/>
+
+<!-- Segment -->
+<line x1="100" y1="40" x2="260" y2="220"
+stroke="black" stroke-width="2"/>
+
+<!-- Projection -->
+<line x1="100" y1="220" x2="190" y2="120"
+stroke="red" stroke-dasharray="5,5"
+stroke-width="2"/>
+
+<!-- Points -->
+<circle cx="100" cy="220" r="4" fill="#0066aa"/>
+<circle cx="100" cy="40" r="4" fill="#0066aa"/>
+<circle cx="260" cy="220" r="4" fill="#0066aa"/>
+<circle cx="420" cy="220" r="4" fill="#0066aa"/>
+<circle cx="190" cy="120" r="4" fill="red"/>
+
+<!-- Labels -->
+<text x="85" y="235">A</text>
+<text x="90" y="30">C</text>
+<text x="255" y="240">B</text>
+<text x="420" y="240">E</text>
+<text x="200" y="120">F</text>
+
+</svg>
+
+</div>
+
+<!-- ================================================= -->
+<!-- PREREQUIS -->
+<!-- ================================================= -->
+
+<div class="bar">
+<div class="line"></div>
+<div class="label">Cours</div>
+<div class="line"></div>
+</div>
+
+<div class="box-white">
+
+<h3>Prérequis</h3>
+
+<ul>
+
+<li>Triangle rectangle</li>
+
+<li>Triangle isocèle</li>
+
+<li>Projection orthogonale</li>
+
+<li>Symétrie centrale</li>
+
+<li>Similitude indirecte</li>
+
+<li>Conservation des angles</li>
+
+<li>Image d’une droite</li>
+
+<li>Rapport d’une similitude</li>
+
+</ul>
+
+</div>
+
+<!-- ================================================= -->
+<!-- RAPPELS -->
+<!-- ================================================= -->
+
+<div class="bar">
+<div class="line"></div>
+<div class="label">Cours</div>
+<div class="line"></div>
+</div>
+
+<div class="box">
+
+<h3>Rappels de cours</h3>
+
+<p>
+Une similitude indirecte :
+</p>
+
+<ul>
+
+<li>conserve les angles,</li>
+
+<li>conserve les formes,</li>
+
+<li>multiplie les longueurs par un rapport $k>0$,</li>
+
+<li>inverse l’orientation.</li>
+
+</ul>
+
+<p>
+Elle transforme :
+</p>
+
+<ul>
+
+<li>une droite en une droite,</li>
+
+<li>deux droites perpendiculaires
+en deux droites perpendiculaires.</li>
+
+</ul>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SOLUTION -->
+<!-- ================================================= -->
+
+<div class="bar">
+<div class="line"></div>
+<div class="label">Cours</div>
+<div class="line"></div>
+</div>
+
+<div class="box-white">
+
+<h3>Solution détaillée</h3>
+
+<h4>1) Montrer que $g$ admet un centre</h4>
+
+<p>
+On sait que :
+</p>
+
+<div class="math">
+$
+g(F)=A
+\qquad \text{et} \qquad
+g(A)=E
+$
+</div>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+F\neq A
+\qquad \text{et} \qquad
+A\neq E
+$
+</div>
+
+<p>
+La transformation n’est donc pas l’identité.
+</p>
+
+<p>
+Or toute similitude indirecte non triviale
+admet un centre.
+</p>
+
+<div class="math">
+$
+\boxed{
+g \text{ admet un centre}
+}
+$
+</div>
+
+<hr>
+
+<h4>2) Déterminer $g((EC))$</h4>
+
+<p>
+Le point $F$ appartient à $(EC)$
+car il est le projeté orthogonal de $A$
+sur $(CE)$.
+</p>
+
+<div class="math">
+$
+F\in (EC)
+$
+</div>
+
+<p>
+Or :
+</p>
+
+<div class="math">
+$
+g(F)=A
+$
+</div>
+
+<p>
+Donc l’image de $(EC)$
+est une droite passant par $A$.
+</p>
+
+<p>
+Comme :
+</p>
+
+<div class="math">
+$
+AF\perp EC
+$
+</div>
+
+<p>
+Une similitude conserve les angles.
+</p>
+
+<div class="math">
+$
+g((AF))\perp g((EC))
+$
+</div>
+
+<p>
+Or :
+</p>
+
+<div class="math">
+$
+g(A)=E
+$
+</div>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+g((AF))=(AE)
+$
+</div>
+
+<p>
+Ainsi :
+</p>
+
+<div class="math">
+$
+(AE)\perp g((EC))
+$
+</div>
+
+<p>
+Dans le triangle rectangle en $A$ :
+</p>
+
+<div class="math">
+$
+AC\perp AE
+$
+</div>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+\boxed{
+g((EC))=(AC)
+}
+$
+</div>
+
+<hr>
+
+<h4>3) Déterminer le centre de $g$</h4>
+
+<p>
+Le centre d’une similitude appartient
+à l’intersection d’une droite
+et de son image.
+</p>
+
+<p>
+Or :
+</p>
+
+<div class="math">
+$
+g((EC))=(AC)
+$
+</div>
+
+<p>
+Donc le centre appartient à :
+</p>
+
+<div class="math">
+$
+(EC)\cap(AC)
+$
+</div>
+
+<p>
+Mais :
+</p>
+
+<div class="math">
+$
+(EC)\cap(AC)=C
+$
+</div>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+\boxed{
+C \text{ est le centre de } g
+}
+$
+</div>
+
+<hr>
+
+<h4>4) Montrer que le rapport vaut $\sqrt{5}$</h4>
+
+<p>
+Comme le centre de la similitude est le point $C$,
+le rapport est :
+</p>
+
+<div class="math">
+$
+k=\frac{CE}{CA}
+$
+</div>
+
+<p>
+Dans le triangle rectangle $ACE$,
+on applique le théorème de Pythagore.
+</p>
+
+<div class="math">
+$
+CE^2 = AC^2 + AE^2
+$
+</div>
+
+<p>
+Or le triangle $ABC$ est isocèle rectangle en $A$,
+donc :
+</p>
+
+<div class="math">
+$
+AB = AC
+$
+</div>
+
+<p>
+Comme $E$ est le symétrique de $A$
+par rapport à $B$,
+alors $B$ est le milieu de $[AE]$.
+</p>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+AE = 2AB
+$
+</div>
+
+<p>
+Et puisque :
+</p>
+
+<div class="math">
+$
+AB = AC
+$
+</div>
+
+<p>
+on obtient :
+</p>
+
+<div class="math">
+$
+AE = 2AC
+$
+</div>
+
+<p>
+On remplace dans la relation de Pythagore :
+</p>
+
+<div class="math">
+$
+CE^2 = AC^2 + (2AC)^2
+$
+</div>
+
+<div class="math">
+$
+CE^2 = AC^2 + 4AC^2
+$
+</div>
+
+<div class="math">
+$
+CE^2 = 5AC^2
+$
+</div>
+
+<p>
+En prenant la racine carrée :
+</p>
+
+<div class="math">
+$
+CE = \sqrt{5}\,AC
+$
+</div>
+
+<p>
+Donc :
+</p>
+
+<div class="math">
+$
+\frac{CE}{CA}=\sqrt{5}
+$
+</div>
+
+<p>
+Finalement :
+</p>
+
+<div class="math">
+$
+\boxed{
+k=\sqrt{5}
+}
+$
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- CONCLUSION -->
+<!-- ================================================= -->
+
+<div class="conclusion">
+
+La transformation $g$
+est une similitude indirecte
+de centre $C$
+et de rapport :
+
+<div class="math">
+$
+\boxed{\sqrt{5}}
+$
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<div class="footer">
+
+<div>
+<b>Logarithme.tn</b>
+</div>
+
+<div>
+WhatsApp / Telegram : +216 21 409 061
+</div>
+
+<div>
+A4
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
