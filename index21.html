@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Isométries et orthogonalité
+</title>
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$']]
+}
+};
+</script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#ececec;
+font-family:"Times New Roman",serif;
+}
+
+.page{
+width:1100px;
+margin:30px auto;
+background:white;
+padding:40px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#0077cc;
+margin-bottom:30px;
+}
+
+.card{
+background:#dff3ff;
+border:2px solid #00bfff;
+border-radius:25px;
+padding:30px;
+display:flex;
+gap:30px;
+position:relative;
+overflow:visible;
+}
+
+.number{
+width:100px;
+height:100px;
+border-radius:50%;
+background:#13b5f1;
+color:white;
+font-size:52px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.content{
+flex:1;
+}
+
+.content h2{
+font-size:50px;
+margin:0;
+color:#0066aa;
+}
+
+.content p{
+font-size:22px;
+line-height:1.8;
+}
+
+.badge{
+display:inline-block;
+background:#3737c7;
+color:white;
+padding:8px 18px;
+border-radius:10px;
+font-size:18px;
+margin-right:10px;
+}
+
+.open-btn{
+display:inline-block;
+margin-top:25px;
+background:#0077cc;
+color:white;
+padding:14px 30px;
+border-radius:12px;
+font-size:28px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ================================================= */
+/* TOOLTIP */
+/* ================================================= */
+
+.tooltip-container{
+position:relative;
+display:inline-block;
+}
+
+.tooltip-box{
+
+visibility:hidden;
+opacity:0;
+
+position:absolute;
+
+left:500px;
+top:-120px;
+
+width:600px;
+
+background:white;
+
+border:2px solid #00bfff;
+
+border-radius:20px;
+
+padding:20px;
+
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
+z-index:999;
+
+}
+
+.tooltip-container:hover .tooltip-box{
+
+visibility:visible;
+opacity:1;
+
+}
+
+.tooltip-box h3{
+
+text-align:center;
+font-size:42px;
+color:#0077cc;
+
+margin-top:0;
+
+}
+
+.tooltip-box p{
+
+font-size:22px;
+line-height:1.7;
+
+}
+
+.math{
+font-size:28px;
+text-align:center;
+margin:20px 0;
+}
+
+.footer{
+margin-top:50px;
+padding-top:15px;
+border-top:2px solid #00bfff;
+display:flex;
+justify-content:space-between;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="title">
+
+Isométries et orthogonalité
+
+</div>
+
+<div class="card">
+
+<div class="number">
+1
+</div>
+
+<div class="content">
+
+<h2>
+Rotation
+</h2>
+
+<p>
+
+Utilisation de la conservation
+de l’orthogonalité dans les rotations.
+
+</p>
+
+<div>
+
+<span class="badge">
+Isométries
+</span>
+
+<span class="badge">
+2 Bac
+</span>
+
+<span class="badge">
+★★☆
+</span>
+
+</div>
+
+<div class="tooltip-container">
+
+<a href="index211.html"
+class="open-btn">
+
+Ouvrir l’exercice
+
+</a>
+
+<!-- ================================================= -->
+<!-- TOOLTIP -->
+<!-- ================================================= -->
+
+<div class="tooltip-box">
+
+<h3>
+Exercice 2
+</h3>
+
+<p>
+
+Soit $ABC$ un triangle équilatéral direct.
+
+$I$, $J$ et $K$ sont les milieux
+respectifs des segments :
+
+</p>
+
+<div class="math">
+
+$
+[AB], [BC]
+\quad \text{et} \quad
+[AC]
+$
+
+</div>
+
+<p>
+
+Soit $r$ la rotation de centre $A$
+qui transforme $B$ en $C$.
+
+</p>
+
+<p>
+
+<b>1)</b>
+Déterminer l’image de $J$ par $r$.
+
+</p>
+
+<p>
+
+<b>2)</b>
+Construire $C'$ image de $C$
+par $r$ puis montrer que :
+
+</p>
+
+<div class="math">
+
+$
+(KC') \perp (AC)
+$
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<div>
+Logarithme.tn
+</div>
+
+<div>
+WhatsApp / Telegram :
++216 21 409 061
+</div>
+
+<div>
+index21.html
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

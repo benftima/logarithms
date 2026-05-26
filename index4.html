@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orthogonalité</title>
+
+<!-- ================================================= -->
+<!-- MATHJAX -->
+<!-- ================================================= -->
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']]
+}
+};
+</script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!-- ================================================= -->
+<!-- CSS -->
+<!-- ================================================= -->
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#ececec;
+font-family:"Times New Roman",serif;
+}
+
+.page{
+width:950px;
+margin:30px auto;
+background:white;
+padding:40px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title h1{
+font-size:44px;
+color:#0077cc;
+margin-bottom:10px;
+}
+
+.title h2{
+font-size:24px;
+font-weight:normal;
+color:#444;
+}
+
+.bar{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:40px 0 25px 0;
+}
+
+.line{
+height:3px;
+background:#2f2fbf;
+width:220px;
+}
+
+.label{
+background:#2f2fbf;
+color:white;
+padding:10px 40px;
+border-radius:14px;
+margin:0 15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.description{
+font-size:22px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.exercise-grid{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.card{
+display:flex;
+align-items:flex-start;
+background:#eef9ff;
+border:2px solid #00bfff;
+border-radius:18px;
+padding:25px;
+transition:0.3s;
+position:relative;
+overflow:visible;
+}
+
+.card:hover{
+transform:translateX(8px);
+background:#dff5ff;
+}
+
+.number{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#00bfff;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+font-weight:bold;
+margin-right:25px;
+flex-shrink:0;
+}
+
+.content{
+flex:1;
+}
+
+.content h3{
+margin:0;
+font-size:30px;
+color:#0066aa;
+}
+
+.content p{
+font-size:18px;
+line-height:1.7;
+margin-top:10px;
+}
+
+.badges{
+margin-top:15px;
+}
+
+.badge{
+display:inline-block;
+background:#2f2fbf;
+color:white;
+padding:6px 14px;
+border-radius:8px;
+font-size:15px;
+margin-right:10px;
+}
+
+.open-btn{
+display:inline-block;
+margin-top:18px;
+padding:12px 22px;
+background:#00bfff;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.open-btn:hover{
+background:#0077cc;
+}
+
+/* ================================================= */
+/* TOOLTIP */
+/* ================================================= */
+
+.tooltip-container{
+
+position:relative;
+display:inline-block;
+
+}
+
+.tooltip-box{
+
+visibility:hidden;
+opacity:0;
+
+position:absolute;
+
+top:auto;
+bottom:110%;
+left:0;
+
+
+
+width:700px;
+padding:12px;
+max-height:320px;
+overflow-y:auto;
+
+background:white;
+
+border:2px solid #00bfff;
+
+border-radius:16px;
+
+
+
+box-shadow:0 0 18px rgba(0,0,0,0.25);
+
+transition:0.3s;
+
+z-index:999;
+
+font-size:16px;
+
+}
+
+.tooltip-container:hover .tooltip-box{
+
+visibility:visible;
+opacity:1;
+
+}
+
+.tooltip-box h4{
+
+margin-top:0;
+margin-bottom:15px;
+
+color:#0077cc;
+
+font-size:26px;
+
+text-align:center;
+
+}
+
+.tooltip-box p{
+
+line-height:1.7;
+
+font-size:16px;
+
+}
+
+.tooltip-box .math{
+
+font-size:22px;
+
+text-align:center;
+
+margin:15px 0;
+
+}
+
+.tooltip-box svg{
+
+display:block;
+margin:auto;
+margin-bottom:15px;
+
+}
+
+.footer{
+margin-top:50px;
+border-top:2px solid #00bfff;
+padding-top:15px;
+display:flex;
+justify-content:space-between;
+font-size:15px;
+}
+
+.math{
+text-align:center;
+font-size:24px;
+margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- ================================================= -->
+<!-- TITRE -->
+<!-- ================================================= -->
+
+<div class="title">
+
+<h1>Conservation de l’orthogonalité</h1>
+
+<h2>
+Applications des transformations du plan
+</h2>
+
+</div>
+
+<!-- ================================================= -->
+<!-- BAR -->
+<!-- ================================================= -->
+
+<div class="bar">
+
+<div class="line"></div>
+
+<div class="label">
+Exercices
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- DESCRIPTION -->
+<!-- ================================================= -->
+
+<div class="description">
+
+Cette propriété permet de montrer que :
+
+<div class="math">
+$
+d_1 \perp d_2
+\Longrightarrow
+f(d_1)\perp f(d_2)
+$
+</div>
+
+Les exercices suivants utilisent la conservation
+de la perpendicularité dans les isométries
+et les similitudes.
+
+</div>
+
+<!-- ================================================= -->
+<!-- EXERCICES -->
+<!-- ================================================= -->
+
+<div class="exercise-grid">
+
+<!-- ================================================= -->
+<!-- EXERCICE 1 -->
+<!-- ================================================= -->
+
+<div class="card">
+
+<div class="number">
+1
+</div>
+
+<div class="content">
+
+<h3>Similitude indirecte</h3>
+
+<p>
+
+Détermination de l’image d’une droite
+en utilisant la conservation
+de l’orthogonalité.
+
+</p>
+
+<div class="badges">
+
+<span class="badge">
+Similitudes
+</span>
+
+<span class="badge">
+2 Bac
+</span>
+
+<span class="badge">
+★★☆
+</span>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- BOUTON + TOOLTIP -->
+<!-- ================================================= -->
+
+<div class="tooltip-container">
+
+<a href="exo-orthogonalite-similitude1.html"
+class="open-btn">
+
+Ouvrir l’exercice
+
+</a>
+
+<div class="tooltip-box">
+
+<h4>
+Similitude indirecte
+</h4>
+
+<!-- ================================================= -->
+<!-- FIGURE SVG -->
+<!-- ================================================= -->
+
+<svg width="260" height="160">
+
+<!-- Triangle -->
+
+<line x1="40" y1="120"
+x2="40" y2="40"
+stroke="black"
+stroke-width="2"/>
+
+<line x1="40" y1="40"
+x2="190" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<line x1="40" y1="120"
+x2="190" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<!-- Segment -->
+
+<line x1="40" y1="40"
+x2="110" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<!-- Projection -->
+
+<line x1="40" y1="120"
+x2="100" y2="80"
+stroke="red"
+stroke-width="2"
+stroke-dasharray="5,5"/>
+
+<!-- Points -->
+
+<circle cx="40"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="40"
+cy="40"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="110"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="190"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<!-- Labels -->
+
+<text x="25" y="135">A</text>
+
+<text x="25" y="35">C</text>
+
+<text x="105" y="135">B</text>
+
+<text x="190" y="135">E</text>
+
+<text x="95" y="80">F</text>
+
+</svg>
+
+<!-- ================================================= -->
+<!-- ENONCE -->
+<!-- ================================================= -->
+
+<p>
+
+Soit $ABC$ un triangle isocèle rectangle en $A$.
+
+Le point $E$ est le symétrique du point $A$
+par rapport au point $B$.
+
+Le point $F$ est le projeté orthogonal du point $A$
+sur la droite $(CE)$.
+
+</p>
+
+<div class="math">
+
+$
+g(F)=A
+\qquad
+g(A)=E
+$
+
+</div>
+
+<p>
+
+<b>1)</b> Montrer que $g$ admet un centre.
+
+<br><br>
+
+<b>2)</b> Déterminer :
+
+</p>
+
+<div class="math">
+
+$
+g((EC))
+\qquad
+g((AC))
+$
+
+</div>
+
+<p>
+
+<b>3)</b> Déduire le centre de $g$.
+
+<br><br>
+
+<b>4)</b> Montrer que le rapport vaut :
+
+</p>
+
+<div class="math">
+
+$
+\sqrt{5}
+$
+
+</div>
+
+<div style="margin-top:15px;">
+
+<span class="badge">
+Orthogonalité
+</span>
+
+<span class="badge">
+Similitudes
+</span>
+
+<span class="badge">
+★★☆
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================================================= -->
+<!-- EXERCICE 1 -->
+<!-- ================================================= -->
+
+<div class="card">
+
+<div class="number">
+1
+</div>
+
+<div class="content">
+
+<h3>Similitude indirecte</h3>
+
+<p>
+
+Détermination de l’image d’une droite
+en utilisant la conservation
+de l’orthogonalité.
+
+</p>
+
+<div class="badges">
+
+<span class="badge">
+Similitudes
+</span>
+
+<span class="badge">
+2 Bac
+</span>
+
+<span class="badge">
+★★☆
+</span>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- BOUTON + TOOLTIP -->
+<!-- ================================================= -->
+
+<div class="tooltip-container">
+
+<a href="exo-similitude.html"
+class="open-btn">
+
+Ouvrir l’exercice
+
+</a>
+
+<div class="tooltip-box">
+
+<h4>
+Similitude indirecte
+</h4>
+
+<!-- ================================================= -->
+<!-- FIGURE SVG -->
+<!-- ================================================= -->
+
+<svg width="260" height="160">
+
+<!-- Triangle -->
+
+<line x1="40" y1="120"
+x2="40" y2="40"
+stroke="black"
+stroke-width="2"/>
+
+<line x1="40" y1="40"
+x2="190" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<line x1="40" y1="120"
+x2="190" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<!-- Segment -->
+
+<line x1="40" y1="40"
+x2="110" y2="120"
+stroke="black"
+stroke-width="2"/>
+
+<!-- Projection -->
+
+<line x1="40" y1="120"
+x2="100" y2="80"
+stroke="red"
+stroke-width="2"
+stroke-dasharray="5,5"/>
+
+<!-- Points -->
+
+<circle cx="40"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="40"
+cy="40"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="110"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<circle cx="190"
+cy="120"
+r="3"
+fill="#0066aa"/>
+
+<!-- Labels -->
+
+<text x="25" y="135">A</text>
+
+<text x="25" y="35">C</text>
+
+<text x="105" y="135">B</text>
+
+<text x="190" y="135">E</text>
+
+<text x="95" y="80">F</text>
+
+</svg>
+
+<!-- ================================================= -->
+<!-- ENONCE -->
+<!-- ================================================= -->
+
+<p>
+
+Soit $ABC$ un triangle isocèle rectangle en $A$.
+
+Le point $E$ est le symétrique du point $A$
+par rapport au point $B$.
+
+Le point $F$ est le projeté orthogonal du point $A$
+sur la droite $(CE)$.
+
+</p>
+
+<div class="math">
+
+$
+g(F)=A
+\qquad
+g(A)=E
+$
+
+</div>
+
+<p>
+
+<b>1)</b> Montrer que $g$ admet un centre.
+
+<br><br>
+
+<b>2)</b> Déterminer :
+
+</p>
+
+<div class="math">
+
+$
+g((EC))
+\qquad
+g((AC))
+$
+
+</div>
+
+<p>
+
+<b>3)</b> Déduire le centre de $g$.
+
+<br><br>
+
+<b>4)</b> Montrer que le rapport vaut :
+
+</p>
+
+<div class="math">
+
+$
+\sqrt{5}
+$
+
+</div>
+
+<div style="margin-top:15px;">
+
+<span class="badge">
+Orthogonalité
+</span>
+
+<span class="badge">
+Similitudes
+</span>
+
+<span class="badge">
+★★☆
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<div class="footer">
+
+<div>
+<b>Logarithme.tn</b>
+</div>
+
+<div>
+WhatsApp / Telegram : +216 21 409 061
+</div>
+
+<div>
+orthogonalite.html
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

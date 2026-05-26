@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Préparation Bac 2027
+</title>
+
+<style>
+
+body{
+
+margin:0;
+padding:4px;
+
+font-family:Arial,sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#eef5ff,
+#f7fbff,
+#edf7f2
+);
+
+}
+
+/* ================================================= */
+/* TOP BAR */
+/* ================================================= */
+
+.top-bar{
+
+height:4px;
+
+background:
+linear-gradient(
+90deg,
+#27ae60,
+#2980b9,
+#e67e22,
+#8e44ad
+);
+
+border-radius:8px 8px 0 0;
+
+}
+
+/* ================================================= */
+/* MAIN CARD */
+/* ================================================= */
+
+.affiche-table{
+
+width:100%;
+max-width:760px;
+
+background:white;
+
+border-radius:10px;
+
+border-collapse:collapse;
+
+margin:0 auto;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+
+overflow:hidden;
+
+animation:fadeUp 0.7s ease;
+
+}
+
+.cell-pad{
+
+padding:8px 14px;
+
+}
+
+/* ================================================= */
+/* TOP GROUP */
+/* ================================================= */
+
+.top-group{
+
+background:#25d366;
+
+color:white;
+
+text-align:center;
+
+padding:6px;
+
+font-size:13px;
+
+font-weight:bold;
+
+}
+
+.top-group a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+/* ================================================= */
+/* INTRO */
+/* ================================================= */
+
+.txt-intro{
+
+border:3px solid #0e2d4d;
+
+border-radius:10px;
+
+padding:10px;
+
+text-align:center;
+
+font-size:15px;
+
+font-weight:800;
+
+color:#0e2d4d;
+
+background:#f8fbff;
+
+line-height:1.4;
+
+}
+
+.badge-bac{
+
+background:#0e2d4d;
+
+color:white;
+
+font-size:10px;
+
+font-weight:bold;
+
+padding:8px;
+
+border-radius:18px;
+
+text-align:center;
+
+display:block;
+
+margin-top:4px;
+
+}
+
+.grand-titre{
+
+color:#27ae60;
+
+font-size:34px;
+
+font-weight:900;
+
+text-align:center;
+
+margin:2px 0 0 0;
+
+text-shadow:
+0 3px 8px rgba(0,0,0,0.15);
+
+line-height:1;
+
+}
+
+.sous-titre{
+
+color:#0e2d4d;
+
+font-size:13px;
+
+font-weight:800;
+
+text-align:center;
+
+margin:4px 0 10px 0;
+
+line-height:1.4;
+
+}
+
+/* ================================================= */
+/* LEVEL */
+/* ================================================= */
+
+.badge-level{
+
+background:#0e2d4d;
+
+color:white;
+
+padding:6px 14px;
+
+font-size:11px;
+
+font-weight:bold;
+
+border-radius:4px;
+
+display:inline-block;
+
+}
+
+/* ================================================= */
+/* MINI CARD */
+/* ================================================= */
+
+.math-card{
+
+background:#f8fbff;
+
+border:2px solid #d6e4f0;
+
+border-radius:12px;
+
+padding:8px;
+
+display:inline-block;
+
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+
+}
+
+.math-title{
+
+font-size:14px;
+
+font-weight:bold;
+
+margin-bottom:5px;
+
+}
+
+.complex{
+color:#1565c0;
+}
+
+.transform{
+color:#27ae60;
+}
+
+.math-form{
+
+font-size:12px;
+
+line-height:1.5;
+
+font-weight:bold;
+
+color:#333;
+
+}
+
+.sep{
+
+height:2px;
+
+background:#d0dce8;
+
+margin:7px 0;
+
+}
+
+/* ================================================= */
+/* PARTIES */
+/* ================================================= */
+
+.table-partie{
+
+width:100%;
+
+border:2px solid #ddd;
+
+border-collapse:collapse;
+
+margin-bottom:8px;
+
+border-radius:7px;
+
+transition:0.3s;
+
+background:white;
+
+}
+
+.table-partie:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 5px 14px rgba(0,0,0,0.12);
+
+}
+
+.num-box{
+
+color:white;
+
+text-align:center;
+
+width:62px;
+
+padding:8px;
+
+font-weight:bold;
+
+}
+
+.num-box big{
+
+font-size:28px;
+
+display:block;
+
+line-height:1;
+
+}
+
+.num-box small{
+
+font-size:9px;
+
+font-weight:bold;
+
+}
+
+.date-box{
+
+width:120px;
+
+text-align:center;
+
+font-weight:800;
+
+font-size:12px;
+
+border-right:1px dashed #ccc;
+
+padding:8px;
+
+line-height:1.4;
+
+}
+
+.content-box{
+
+padding:8px 12px;
+
+}
+
+.content-box h3{
+
+margin:0 0 3px 0;
+
+font-size:13px;
+
+font-weight:900;
+
+text-transform:uppercase;
+
+}
+
+.content-box p{
+
+margin:0;
+
+font-size:12px;
+
+font-weight:600;
+
+color:#333;
+
+line-height:1.5;
+
+}
+
+/* ================================================= */
+/* COLORS */
+/* ================================================= */
+
+.p1{
+border-color:#27ae60 !important;
+}
+
+.p1 .num-box{
+background:#27ae60;
+}
+
+.p1 .date-box,
+.p1 h3{
+color:#27ae60;
+}
+
+.p2{
+border-color:#2980b9 !important;
+}
+
+.p2 .num-box{
+background:#2980b9;
+}
+
+.p2 .date-box,
+.p2 h3{
+color:#2980b9;
+}
+
+.p3{
+border-color:#e67e22 !important;
+}
+
+.p3 .num-box{
+background:#e67e22;
+}
+
+.p3 .date-box,
+.p3 h3{
+color:#e67e22;
+}
+
+.p4{
+border-color:#8e44ad !important;
+}
+
+.p4 .num-box{
+background:#8e44ad;
+}
+
+.p4 .date-box,
+.p4 h3{
+color:#8e44ad;
+}
+
+/* ================================================= */
+/* BONUS */
+/* ================================================= */
+
+.bonus-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.bonus-card{
+
+border:2px solid #ccc;
+
+border-radius:8px;
+
+padding:10px;
+
+font-size:11px;
+
+font-weight:600;
+
+vertical-align:top;
+
+width:50%;
+
+background:white;
+
+line-height:1.5;
+
+}
+
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
+
+.footer-table{
+
+width:100%;
+
+background:#0e2d4d;
+
+color:white;
+
+border-collapse:collapse;
+
+}
+
+.btn-wa{
+
+background:#25d366;
+
+color:white;
+
+text-decoration:none;
+
+padding:10px 15px;
+
+border-radius:6px;
+
+font-weight:bold;
+
+font-size:12px;
+
+display:inline-block;
+
+transition:0.3s;
+
+}
+
+.btn-wa:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 12px rgba(37,211,102,0.5);
+
+}
+
+/* ================================================= */
+/* ANIMATION */
+/* ================================================= */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top-bar"></div>
+
+<table class="affiche-table">
+
+<tr>
+
+<td class="top-group">
+
+<a href="https://chat.whatsapp.com/LQzKU1OYNp37g5q10dpF3f"
+target="_blank">
+
+💬 Rejoindre le groupe officiel WhatsApp — Préparation Bac 2027
+
+</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="cell-pad">
+
+<table style="width:100%; border-collapse:collapse;">
+
+<tr>
+
+<td style="
+width:25%;
+vertical-align:middle;
+text-align:center;">
+
+<span style="font-size:26px;">
+📢
+</span>
+
+<span class="badge-bac">
+
+FORMATION POUR
+ÉLÈVES BAC MATH 2027
+
+</span>
+
+</td>
+
+<td style="
+width:50%;
+padding:0 8px;">
+
+<div class="txt-intro">
+
+Maîtrise les bases essentielles
+avant la rentrée
+et prépare sereinement
+la 4ème Mathématiques.
+
+</div>
+
+</td>
+
+<td style="
+width:25%;
+text-align:center;
+vertical-align:middle;">
+
+<div class="math-card">
+
+<div class="math-title complex">
+
+Nombres Complexes
+
+</div>
+
+<div class="math-form">
+
+z = a + bi
+
+<br>
+
+|z| = √(a²+b²)
+
+</div>
+
+<div class="sep"></div>
+
+<div class="math-title transform">
+
+Transformations
+
+</div>
+
+<svg width="90"
+height="65">
+
+<polygon points="
+18,50
+35,20
+52,50
+"
+
+fill="none"
+
+stroke="#1565c0"
+
+stroke-width="2.5"/>
+
+<polygon points="
+40,45
+58,15
+76,45
+"
+
+fill="none"
+
+stroke="#27ae60"
+
+stroke-width="2.5"/>
+
+<line x1="34"
+y1="15"
+x2="58"
+y2="15"
+stroke="#e67e22"
+stroke-width="2"/>
+
+<polygon points="
+58,15
+52,11
+52,19
+"
+
+fill="#e67e22"/>
+
+</svg>
+
+<div style="
+font-size:10px;
+font-weight:bold;
+color:#666;">
+
+Rotation • Translation
+
+</div>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="
+text-align:center;
+padding:6px 0;">
+<!-- ================================================= -->
+<!-- BOUTON COURS -->
+<!-- ================================================= -->
+
+<div style="
+text-align:center;
+margin:18px 0 25px 0;
+">
+
+<a href="index2.html"
+
+style="
+
+background:#1565c0;
+
+color:white;
+
+padding:16px 32px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-size:24px;
+
+font-weight:bold;
+
+display:inline-block;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+
+transition:0.3s;
+
+">
+
+📘  LES COURS Commencent ici ...
+
+</a>
+
+</div>
+<h1 class="grand-titre">
+
+3<sup>ème</sup> → 4<sup>ème</sup> SECTION MATHÉMATIQUES
+
+</h1>
+
+<div class="sous-titre">
+
+NOMBRES COMPLEXES
+& TRANSFORMATIONS DU PLAN
+
+</div>
+
+<div class="badge-level">
+
+3<sup>ème</sup> → 4<sup>ème</sup> Math
+
+</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="cell-pad">
+
+<table class="table-partie p1">
+
+<tr>
+
+<td class="num-box">
+
+<big>
+1
+</big>
+
+<small>
+PARTIE
+</small>
+
+</td>
+
+<td class="date-box">
+
+14 → 27 JUIN
+
+<br>
+
+<span style="
+font-size:10px;
+color:#666;">
+
+10h
+
+</span>
+
+</td>
+
+<td class="content-box">
+
+<h3>
+RAPPEL
+</h3>
+
+<p>
+Nombres complexes
++ notions avancées
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+<table class="table-partie p2">
+
+<tr>
+
+<td class="num-box">
+
+<big>
+2
+</big>
+
+<small>
+PARTIE
+</small>
+
+</td>
+
+<td class="date-box">
+
+28 JUIN
+→ 11 JUILLET
+
+<br>
+
+<span style="
+font-size:10px;
+color:#666;">
+
+10h
+
+</span>
+
+</td>
+
+<td class="content-box">
+
+<h3>
+
+FORMES GÉOMÉTRIQUES
+
+</h3>
+
+<p>
+
+Rotation,
+translation,
+symétrie
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+<table class="table-partie p3">
+
+<tr>
+
+<td class="num-box">
+
+<big>
+3
+</big>
+
+<small>
+PARTIE
+</small>
+
+</td>
+
+<td class="date-box">
+
+12 → 25 JUILLET
+
+<br>
+
+<span style="
+font-size:10px;
+color:#666;">
+
+10h
+
+</span>
+
+</td>
+
+<td class="content-box">
+
+<h3>
+TRANSFORMATIONS
+</h3>
+
+<p>
+
+Isométries,
+applications,
+déplacements
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+<table class="table-partie p4">
+
+<tr>
+
+<td class="num-box">
+
+<big>
+4
+</big>
+
+<small>
+PARTIE
+</small>
+
+</td>
+
+<td class="date-box">
+
+26 JUILLET
+→ 8 AOÛT
+
+<br>
+
+<span style="
+font-size:10px;
+color:#666;">
+
+10h
+
+</span>
+
+</td>
+
+<td class="content-box">
+
+<h3>
+
+SIMILITUDES
+
+</h3>
+
+<p>
+
+Similitudes
+et nombres complexes
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="cell-pad"
+style="padding-top:0;">
+
+<table class="bonus-table">
+
+<tr>
+
+<td class="bonus-card"
+style="
+border-color:#27ae60;
+color:#27ae60;">
+
+<b>
++30 MINUTES OFFERTES
+CHAQUE JOUR
+</b>
+
+<ul style="
+margin:6px 0 0 0;
+padding-left:15px;
+color:#333;">
+
+<li>
+Questions non comprises
+</li>
+
+<li>
+Suivi personnalisé
+</li>
+
+</ul>
+
+</td>
+
+<td style="width:10px;">
+</td>
+
+<td class="bonus-card"
+style="
+border-color:#8e44ad;
+text-align:center;
+color:#8e44ad;">
+
+<b>
+
+AUCUNE ABSENCE =
+RÉDUCTION SUR
+LA 4ème PARTIE
+
+</b>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table class="footer-table">
+
+<tr>
+
+<td class="cell-pad"
+style="width:60%;">
+
+<a href="https://chat.whatsapp.com/LQzKU1OYNp37g5q10dpF3f"
+target="_blank"
+class="btn-wa">
+
+💬 REJOINDRE LE GROUPE
+
+</a>
+
+<div style="
+font-size:10px;
+color:#a2d9ce;
+margin-top:5px;
+font-weight:bold;">
+
+Logarithme.tn
+
+</div>
+
+</td>
+
+<td class="cell-pad"
+style="
+width:40%;
+text-align:right;
+font-size:11px;
+font-weight:bold;
+line-height:1.6;">
+
+BEN FTIMA MOHAMED
+
+<br>
+
+📞 +216 21 409 061
+
+<br>
+
+WhatsApp & Telegram
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>

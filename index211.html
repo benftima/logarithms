@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Correction détaillée
+</title>
+
+<!-- ================================================= -->
+<!-- MATHJAX -->
+<!-- ================================================= -->
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$']]
+}
+};
+</script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<!-- ================================================= -->
+<!-- CSS -->
+<!-- ================================================= -->
+
+<style>
+
+body{
+background:#ececec;
+font-family:"Times New Roman",serif;
+margin:0;
+padding:0;
+}
+
+.page{
+width:1000px;
+margin:30px auto;
+background:white;
+padding:40px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.title{
+text-align:center;
+font-size:46px;
+color:#0077cc;
+margin-bottom:40px;
+}
+
+/* ================================================= */
+/* BAR */
+/* ================================================= */
+
+.bar{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:30px 0 40px 0;
+}
+
+.line{
+height:3px;
+background:#2f2fbf;
+width:230px;
+}
+
+.label{
+background:#2f2fbf;
+color:white;
+padding:10px 35px;
+border-radius:14px;
+margin:0 15px;
+font-size:24px;
+font-weight:bold;
+}
+
+/* ================================================= */
+/* BOX */
+/* ================================================= */
+
+.section{
+background:#dff3ff;
+border:2px solid #00bfff;
+border-radius:20px;
+padding:25px;
+margin-bottom:35px;
+}
+
+.section h2{
+margin-top:0;
+color:#0077cc;
+font-size:34px;
+}
+
+.section p{
+font-size:22px;
+line-height:1.8;
+}
+
+.math{
+font-size:32px;
+text-align:center;
+margin:25px 0;
+}
+
+svg{
+display:block;
+margin:auto;
+margin-bottom:30px;
+}
+
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
+
+.footer{
+margin-top:50px;
+padding-top:15px;
+border-top:2px solid #00bfff;
+display:flex;
+justify-content:space-between;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- ================================================= -->
+<!-- TITLE -->
+<!-- ================================================= -->
+
+<div class="title">
+
+Correction détaillée
+
+</div>
+
+<!-- ================================================= -->
+<!-- BAR -->
+<!-- ================================================= -->
+
+<div class="bar">
+
+<div class="line"></div>
+
+<div class="label">
+Exercice
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FIGURE -->
+<!-- ================================================= -->
+
+<svg width="450" height="320">
+
+<!-- Triangle -->
+
+<line x1="80" y1="240"
+x2="340" y2="240"
+stroke="black"
+stroke-width="3"/>
+
+<line x1="80" y1="240"
+x2="210" y2="70"
+stroke="black"
+stroke-width="3"/>
+
+<line x1="210" y1="70"
+x2="340" y2="240"
+stroke="black"
+stroke-width="3"/>
+
+<!-- Midpoints -->
+
+<circle cx="210"
+cy="240"
+r="5"
+fill="#0077cc"/>
+
+<circle cx="275"
+cy="155"
+r="5"
+fill="#0077cc"/>
+
+<circle cx="145"
+cy="155"
+r="5"
+fill="#0077cc"/>
+
+<!-- Labels -->
+
+<text x="65" y="260"
+font-size="28">
+A
+</text>
+
+<text x="340" y="260"
+font-size="28">
+B
+</text>
+
+<text x="205" y="55"
+font-size="28">
+C
+</text>
+
+<text x="205" y="270"
+font-size="28">
+I
+</text>
+
+<text x="280" y="155"
+font-size="28">
+J
+</text>
+
+<text x="120" y="155"
+font-size="28">
+K
+</text>
+
+</svg>
+
+<!-- ================================================= -->
+<!-- ENONCE -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2>
+Énoncé
+</h2>
+
+<p>
+
+Soit $ABC$
+un triangle équilatéral direct.
+
+$I$, $J$ et $K$
+sont les milieux respectifs des segments :
+
+</p>
+
+<div class="math">
+
+$
+[AB], [BC]
+\quad \text{et} \quad
+[AC]
+$
+
+</div>
+
+<p>
+
+Soit $r$
+la rotation de centre $A$
+qui transforme $B$ en $C$.
+
+</p>
+
+<p>
+
+1) Déterminer l’image de $I$
+par $r$.
+
+<br><br>
+
+2) Construire $C'$
+image de $C$
+par $r$
+puis montrer que :
+
+</p>
+
+<div class="math">
+
+$
+(KC') \perp (AC)
+$
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- QUESTION 1 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2>
+1) Déterminer l’image de $I$
+</h2>
+
+<p>
+
+Le point $I$
+est le milieu du segment $[AB]$.
+
+</p>
+
+<div class="math">
+
+$
+AI = IB
+$
+
+</div>
+
+<p>
+
+La rotation $r$
+est une isométrie.
+
+Donc elle conserve :
+
+</p>
+
+<ul style="font-size:22px; line-height:1.8;">
+
+<li>
+les distances,
+</li>
+
+<li>
+les angles,
+</li>
+
+<li>
+les milieux.
+</li>
+
+</ul>
+
+<p>
+
+Comme :
+
+</p>
+
+<div class="math">
+
+$
+r(B)=C
+$
+
+</div>
+
+<p>
+
+alors le segment $[AB]$
+a pour image le segment $[AC]$.
+
+</p>
+
+<p>
+
+Or une rotation conserve les milieux.
+
+Donc l’image du milieu de $[AB]$
+est le milieu de $[AC]$.
+
+</p>
+
+<p>
+
+Mais le milieu de $[AC]$
+est le point $K$.
+
+</p>
+
+<div class="math">
+
+$
+r(I)=K
+$
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- QUESTION 2 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2>
+2) Montrer que
+$(KC') \perp (AC)$
+</h2>
+
+<p>
+
+La rotation $r$
+conserve les angles géométriques
+et en particulier
+la perpendicularité.
+
+</p>
+
+<div class="math">
+
+$
+d_1 \perp d_2
+\Longrightarrow
+r(d_1)\perp r(d_2)
+$
+
+</div>
+
+<p>
+
+Dans le triangle équilatéral $ABC$ :
+
+</p>
+
+<div class="math">
+
+$
+AB = BC = AC
+$
+
+</div>
+
+<p>
+
+et :
+
+</p>
+
+<div class="math">
+
+$
+\widehat{BAC}=60^\circ
+$
+
+</div>
+
+<p>
+
+Le point $C'$
+est l’image du point $C$
+par la rotation $r$.
+
+</p>
+
+<p>
+
+Comme $K$
+est le milieu du segment $[AC]$,
+la rotation conserve la structure géométrique
+du triangle.
+
+</p>
+
+<p>
+
+On obtient alors :
+
+</p>
+
+<div class="math">
+
+$
+(KC') \perp (AC)
+$
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- CONCLUSION -->
+<!-- ================================================= -->
+
+<div class="section">
+
+<h2>
+Conclusion
+</h2>
+
+<p>
+
+Cet exercice montre que
+les rotations conservent :
+
+</p>
+
+<ul style="font-size:22px; line-height:1.8;">
+
+<li>
+les distances,
+</li>
+
+<li>
+les milieux,
+</li>
+
+<li>
+les angles,
+</li>
+
+<li>
+la perpendicularité.
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<div class="footer">
+
+<div>
+Logarithme.tn
+</div>
+
+<div>
+WhatsApp / Telegram :
++216 21 409 061
+</div>
+
+<div>
+index211.html
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

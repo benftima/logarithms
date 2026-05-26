@@ -1,12 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  type="text/css" href="style2.css">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transformations du plan</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#ececec;
+font-family:"Times New Roman",serif;
+}
+
+.page{
+width:950px;
+margin:30px auto;
+background:white;
+padding:40px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title h1{
+font-size:42px;
+color:#0077cc;
+margin-bottom:10px;
+}
+
+.title h2{
+font-size:24px;
+font-weight:normal;
+color:#444;
+}
+
+.bar{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:40px 0 25px 0;
+}
+
+.line{
+height:3px;
+background:#2f2fbf;
+width:220px;
+}
+
+.label{
+background:#2f2fbf;
+color:white;
+padding:10px 40px;
+border-radius:14px;
+margin:0 15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.property-box{
+background:#dff1fb;
+padding:25px;
+border-left:5px solid #00bfff;
+margin-bottom:30px;
+}
+
+.property-title{
+font-size:32px;
+color:#00a0ff;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.property-list{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.property-list li{
+margin:18px 0;
+padding:18px;
+background:white;
+border-radius:10px;
+border:2px solid transparent;
+transition:0.3s;
+font-size:22px;
+position:relative;
+}
+
+.property-list li:hover{
+border:2px solid #00bfff;
+background:#f5fcff;
+transform:translateX(8px);
+}
+
+.property-list a{
+text-decoration:none;
+color:black;
+display:block;
+}
+
+.tooltip{
+visibility:hidden;
+opacity:0;
+width:420px;
+background:#2f2fbf;
+color:white;
+text-align:left;
+padding:15px;
+border-radius:10px;
+position:absolute;
+left:75%;
+top:0;
+font-size:17px;
+transition:0.3s;
+z-index:10;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+.property-list li:hover .tooltip{
+visibility:visible;
+opacity:1;
+}
+
+.footer{
+margin-top:50px;
+border-top:2px solid #00bfff;
+padding-top:15px;
+display:flex;
+justify-content:space-between;
+font-size:15px;
+}
+
+.section-description{
+font-size:22px;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.badge{
+display:inline-block;
+background:#00bfff;
+color:white;
+padding:5px 12px;
+border-radius:8px;
+font-size:16px;
+margin-left:10px;
+}
+
+</style>
+
 </head>
+
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptas dolor, ipsa qui fugiat, expedita ipsum cum placeat sit optio rerum esse quae sequi. Nobis, modi. Possimus blanditiis temporibus quas!</p>
+
+<div class="page">
+
+<!-- ================================================= -->
+<!-- TITRE -->
+<!-- ================================================= -->
+
+<div class="title">
+
+<h1>
+Applications des propriétés
+des transformations du plan
+</h1>
+
+<h2>
+Cours interactif — Exercices détaillés — Démonstrations
+</h2>
+
+</div>
+
+<!-- ================================================= -->
+<!-- ISOMETRIES -->
+<!-- ================================================= -->
+
+<div class="bar">
+
+<div class="line"></div>
+
+<div class="label">
+Isométries
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<div class="property-box">
+
+<div class="property-title">
+
+Propriétés des isométries
+
+</div>
+
+<div class="section-description">
+
+Les propriétés ci-dessous concernent les transformations
+qui conservent les distances :
+translation, rotation, symétrie axiale
+et symétrie centrale.
+
+</div>
+
+<ul class="property-list">
+
+<li>
+
+<a href="index21.html">
+
+✔ Conserve l’orthogonalité
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Déterminer l’image d’une droite
+par une transformation du plan
+en utilisant la conservation
+de la perpendicularité.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="parallellisme.html">
+
+✔ Conserve le parallélisme
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Utiliser le parallélisme
+pour déterminer des images
+de segments et de droites.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="segments.html">
+
+✔ Conserve les segments
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Déterminer l’image d’un segment
+et calculer des longueurs.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cercles.html">
+
+✔ Conserve les cercles
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Image d’un cercle par rotation
+et symétrie centrale.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="barycentre.html">
+
+✔ Conserve le barycentre
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Utiliser le barycentre
+dans les transformations du plan.
+
+</div>
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SIMILITUDES -->
+<!-- ================================================= -->
+
+<div class="bar">
+
+<div class="line"></div>
+
+<div class="label">
+Similitudes
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<div class="property-box">
+
+<div class="property-title">
+
+Propriétés des similitudes
+
+</div>
+
+<div class="section-description">
+
+Les propriétés ci-dessous concernent
+les similitudes directes et indirectes.
+
+</div>
+
+<ul class="property-list">
+
+<li>
+
+<a href="index4.html">
+
+✔ Conserve l’orthogonalité
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Similitude indirecte :
+déterminer l’image d’une droite
+en utilisant la perpendicularité.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="angles.html">
+
+✔ Conserve les angles géométriques
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Utiliser les angles
+pour caractériser une similitude.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="alignement.html">
+
+✔ Conserve l’alignement
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Déterminer les points alignés
+après transformation.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="droites.html">
+
+✔ Transforme une droite en une droite
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Déterminer l’image
+de droites remarquables.
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="cercles-sim.html">
+
+✔ Transforme un cercle en cercle
+
+<span class="badge">
+Exercices
+</span>
+
+<div class="tooltip">
+
+<b>Exercice :</b>
+
+Applications géométriques
+des similitudes sur les cercles.
+
+</div>
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<div class="footer">
+
+<div>
+<b>Logarithme.tn</b>
+</div>
+
+<div>
+WhatsApp / Telegram : +216 21 409 061
+</div>
+
+<div>
+index2.html
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
