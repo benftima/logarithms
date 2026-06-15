@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Initiation aux Nombres Complexes | Logarithme.tn</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    displayMath: [['\\[','\\]']]
+  }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+:root{
+    --bleu:#0d6efd;
+    --vert:#198754;
+    --orange:#fd7e14;
+    --rouge:#dc3545;
+    --fond:#f4f7fb;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:var(--fond);
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.8;
+    color:#222;
+}
+
+.page{
+    max-width:1100px;
+    margin:30px auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.chapter-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.chapter-badge{
+    display:inline-block;
+    background:#e7f1ff;
+    color:var(--bleu);
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.chapter-header h1{
+    color:var(--bleu);
+    margin-top:15px;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    background:#eef4ff;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:30px;
+}
+
+.navigation a{
+    text-decoration:none;
+    color:#1e2fa8;
+    font-weight:bold;
+}
+
+h2{
+    color:var(--vert);
+    border-bottom:3px solid var(--vert);
+    padding-bottom:10px;
+    margin-top:50px;
+}
+
+.definition,
+.propriete,
+.exemple,
+.important,
+.remarque{
+    padding:20px;
+    border-radius:15px;
+    margin:25px 0;
+}
+
+.definition{
+    background:#eef5ff;
+    border-left:6px solid var(--bleu);
+}
+
+.propriete{
+    background:#eefcf3;
+    border-left:6px solid var(--vert);
+}
+
+.exemple{
+    background:#fff8e8;
+    border-left:6px solid var(--orange);
+}
+
+.important{
+    background:#fff0f0;
+    border-left:6px solid var(--rouge);
+}
+
+.remarque{
+    background:#f9f9f9;
+    border-left:6px solid #888;
+}
+
+.definition-title,
+.propriete-title,
+.exemple-title,
+.important-title,
+.remarque-title{
+    font-weight:bold;
+    font-size:1.1rem;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:var(--bleu);
+    color:white;
+}
+
+svg{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:auto;
+}
+
+mjx-container{
+    overflow-x:auto;
+    overflow-y:hidden;
+    max-width:100%;
+}
+
+@media (max-width:768px){
+
+    .page{
+        margin:5px;
+        padding:15px;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    .navigation{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="chapter-header">
+
+<div class="chapter-badge">
+Chapitre 1
+</div>
+
+<h1>Initiation aux Nombres Complexes</h1>
+
+<p>
+Les nombres complexes constituent une extension de l'ensemble
+des nombres réels. Ils permettent de résoudre des équations
+qui n'admettent aucune solution dans ℝ.
+</p>
+
+</div>
+
+<div class="navigation">
+
+<a href="../tablecoursnombrescomplexes.html">
+⬅ Retour au chapitre
+</a>
+
+<a href="../index01.html">
+🏠 Sommaire général
+</a>
+
+<a href="/nombrescomplexes/monj.html">
+Cours suivant ➡
+</a>
+
+</div>
+
+<h2>I. Pourquoi introduire les nombres complexes ?</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Situation problème
+</div>
+
+<p>Considérons l'équation :</p>
+
+\[
+x^2+3x-4=0
+\]
+
+<p>Son discriminant est :</p>
+
+\[
+\Delta=25
+\]
+
+<p>Cette équation possède deux solutions réelles :</p>
+
+\[
+x_1=1
+\qquad ; \qquad
+x_2=-4
+\]
+
+<hr>
+
+<p>Considérons maintenant :</p>
+
+\[
+x^2+3x+4=0
+\]
+
+<p>Son discriminant est :</p>
+
+\[
+\Delta=-7
+\]
+
+<p>
+Le discriminant est négatif.
+Aucun nombre réel n'a pour carré −7.
+</p>
+
+<p>
+Il devient donc nécessaire d'introduire
+un nouvel ensemble de nombres.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- II. L'UNITE IMAGINAIRE -->
+<!-- ========================================= -->
+
+<h2>II. L'unité imaginaire</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+<p>
+On introduit un nouveau nombre noté
+<strong>\(i\)</strong>,
+appelé unité imaginaire.
+</p>
+
+\[
+i^2=-1
+\]
+
+<p>
+Ce nombre n'appartient pas à l'ensemble
+des nombres réels.
+</p>
+
+\[
+i \notin \mathbb{R}
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Exemple
+</div>
+
+<p>
+Grâce à l'unité imaginaire, on peut écrire :
+</p>
+
+\[
+\sqrt{-7}=i\sqrt7
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- III. FORME ALGEBRIQUE -->
+<!-- ========================================= -->
+
+<h2>III. Forme algébrique d'un nombre complexe</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+<p>
+Tout nombre complexe s'écrit sous la forme :
+</p>
+
+\[
+z=a+bi
+\]
+
+<p>
+où \(a\) et \(b\) sont deux nombres réels.
+</p>
+
+</div>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Partie réelle et partie imaginaire
+</div>
+
+<p>
+Pour \(z=a+bi\) :
+</p>
+
+\[
+\operatorname{Re}(z)=a
+\]
+
+\[
+\operatorname{Im}(z)=b
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemples
+</div>
+
+<table>
+
+<tr>
+<th>Nombre complexe</th>
+<th>Partie réelle</th>
+<th>Partie imaginaire</th>
+</tr>
+
+<tr>
+<td>\(3+2i\)</td>
+<td>3</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>\(-5+i\)</td>
+<td>-5</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>\(4\)</td>
+<td>4</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>\(-7i\)</td>
+<td>0</td>
+<td>-7</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+À retenir
+</div>
+
+<p>
+Un nombre complexe est réel si sa partie imaginaire est nulle.
+</p>
+
+<p>
+Un nombre complexe est imaginaire pur si sa partie réelle est nulle.
+</p>
+
+\[
+\mathbb{R}\subset\mathbb{C}
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- IV. CALCULS DANS C -->
+<!-- ========================================= -->
+
+<h2>IV. Calculs dans \(\mathbb C\)</h2>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Addition
+</div>
+
+\[
+(a+bi)+(c+di)
+=
+(a+c)+(b+d)i
+\]
+
+</div>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Multiplication
+</div>
+
+\[
+(a+bi)(c+di)
+=
+(ac-bd)+(ad+bc)i
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+(2-3i)(4+5i)
+\]
+
+\[
+=8+10i-12i+15
+\]
+
+\[
+=23-2i
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Identités remarquables
+</div>
+
+\[
+(a+ib)^2
+=
+a^2-b^2+2abi
+\]
+
+<br><br>
+
+\[
+(a-ib)^2
+=
+a^2-b^2-2abi
+\]
+
+<br><br>
+
+\[
+(a+ib)(a-ib)
+=
+a^2+b^2
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Mise sous forme algébrique
+</div>
+
+\[
+z=
+\frac{2+3i}{3-4i}
+\]
+
+<p>
+On multiplie le numérateur et le dénominateur
+par le conjugué du dénominateur.
+</p>
+
+\[
+z=
+\frac{(2+3i)(3+4i)}
+{(3-4i)(3+4i)}
+\]
+
+\[
+z=
+\frac{-6+17i}{25}
+\]
+
+\[
+z=
+-\frac6{25}
++
+\frac{17}{25}i
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- V. REPRESENTATION GEOMETRIQUE -->
+<!-- ========================================= -->
+
+<h2>V. Représentation géométrique des nombres complexes</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Affixe d'un point
+</div>
+
+<p>
+Dans un repère orthonormé \((O;\vec i,\vec j)\),
+à tout point \(M(a,b)\),
+on associe le nombre complexe :
+</p>
+
+\[
+z_M=a+ib
+\]
+
+<p>
+Ce nombre complexe est appelé
+<strong>affixe du point M</strong>.
+</p>
+
+</div>
+
+<svg viewBox="0 0 600 350">
+
+<line x1="80" y1="280"
+      x2="550" y2="280"
+      stroke="#333"
+      stroke-width="3"/>
+
+<line x1="100" y1="320"
+      x2="100" y2="40"
+      stroke="#333"
+      stroke-width="3"/>
+
+<circle cx="320"
+        cy="120"
+        r="6"
+        fill="#0d6efd"/>
+
+<text x="330" y="115">M(a,b)</text>
+
+<text x="560" y="290">x</text>
+<text x="110" y="40">y</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+À retenir
+</div>
+
+<p>
+Un point possède une position unique dans le plan.
+Son affixe permet de repérer cette position.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- VI. AFFIXE D'UN VECTEUR -->
+<!-- ========================================= -->
+
+<h2>VI. Affixe d'un vecteur</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+<p>
+Soit :
+</p>
+
+\[
+\vec u=
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}
+\]
+
+<p>
+Son affixe est :
+</p>
+
+\[
+\operatorname{aff}(\vec u)=a+ib
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+Deux vecteurs ayant les mêmes coordonnées
+possèdent la même affixe,
+même s'ils ne sont pas placés au même endroit.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- VII. AFFIXE DU VECTEUR AB -->
+<!-- ========================================= -->
+
+<h2>VII. Affixe du vecteur \(\overrightarrow{AB}\)</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Propriété fondamentale
+</div>
+
+<p>
+Soient :
+</p>
+
+\[
+z_A=a+ib
+\]
+
+\[
+z_B=c+id
+\]
+
+<p>
+Alors :
+</p>
+
+\[
+\boxed{
+\operatorname{aff}(\overrightarrow{AB})
+=
+z_B-z_A
+}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Justification
+</div>
+
+\[
+z_B-z_A
+=(c+id)-(a+ib)
+\]
+
+\[
+=(c-a)+i(d-b)
+\]
+
+<p>
+Or les coordonnées de
+\(\overrightarrow{AB}\)
+sont :
+</p>
+
+\[
+\begin{pmatrix}
+c-a\\
+d-b
+\end{pmatrix}
+\]
+
+<p>
+On retrouve donc exactement son affixe.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- VIII. MILIEU D'UN SEGMENT -->
+<!-- ========================================= -->
+
+<h2>VIII. Milieu d'un segment</h2>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Propriété
+</div>
+
+<p>
+Si \(I\) est le milieu du segment \([AB]\),
+alors :
+</p>
+
+\[
+\boxed{
+z_I=
+\frac{z_A+z_B}{2}
+}
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- IX. PROPRIETES DE LINEARITE -->
+<!-- ========================================= -->
+
+<h2>IX. Propriétés des affixes</h2>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Multiplication par un réel
+</div>
+
+\[
+\operatorname{aff}(\alpha\vec u)
+=
+\alpha\,\operatorname{aff}(\vec u)
+\]
+
+</div>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Somme de deux vecteurs
+</div>
+
+\[
+\operatorname{aff}(\vec u+\vec v)
+=
+\operatorname{aff}(\vec u)
++
+\operatorname{aff}(\vec v)
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- X. CENTRE DE GRAVITE -->
+<!-- ========================================= -->
+
+<h2>X. Centre de gravité d'un triangle</h2>
+
+<div class="important">
+
+<div class="important-title">
+Théorème
+</div>
+
+<p>
+Si \(G\) est le centre de gravité
+du triangle \(ABC\),
+alors :
+</p>
+
+\[
+z_G=
+\frac{z_A+z_B+z_C}{3}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+z_A=1+i
+\]
+
+\[
+z_B=3+6i
+\]
+
+\[
+z_C=5+2i
+\]
+
+<p>
+Alors :
+</p>
+
+\[
+z_G=
+\frac{(1+i)+(3+6i)+(5+2i)}{3}
+\]
+
+\[
+z_G=
+\frac{9+9i}{3}
+\]
+
+\[
+\boxed{
+z_G=3+3i
+}
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- XI. DISTANCE ENTRE DEUX POINTS -->
+<!-- ========================================= -->
+
+<h2>XI. Distance entre deux points</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Formule
+</div>
+
+<p>
+Soient deux points \(A\) et \(B\)
+d'affixes respectives
+\(z_A=a+ib\) et \(z_B=c+id\).
+</p>
+
+<p>
+La distance \(AB\) est :
+</p>
+
+\[
+AB=
+\sqrt{
+(c-a)^2+(d-b)^2
+}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+z_A=1+i
+\]
+
+\[
+z_B=5+4i
+\]
+
+\[
+AB=
+\sqrt{(5-1)^2+(4-1)^2}
+\]
+
+\[
+AB=
+\sqrt{16+9}
+\]
+
+\[
+AB=5
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- XII. LONGUEUR D'UN VECTEUR -->
+<!-- ========================================= -->
+
+<h2>XII. Longueur d'un vecteur</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Norme
+</div>
+
+\[
+\vec u=
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}
+\]
+
+<p>
+La longueur du vecteur est :
+</p>
+
+\[
+||\vec u||
+=
+\sqrt{a^2+b^2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Lien avec l'affixe
+</div>
+
+\[
+\operatorname{aff}(\vec u)=a+ib
+\]
+
+\[
+||\vec u||
+=
+\sqrt{
+(\operatorname{Re}(z))^2
++
+(\operatorname{Im}(z))^2
+}
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- XIII. LE CONJUGUE -->
+<!-- ========================================= -->
+
+<h2>XIII. Le conjugué d'un nombre complexe</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+\[
+z=a+ib
+\]
+
+<p>
+Le conjugué de \(z\) est :
+</p>
+
+\[
+\boxed{
+\overline z=a-ib
+}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+z=4+3i
+\]
+
+\[
+\overline z=4-3i
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Interprétation géométrique
+</div>
+
+<p>
+Le point d'affixe \(\overline z\)
+est le symétrique du point d'affixe \(z\)
+par rapport à l'axe réel.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- XIV. LE NOMBRE j -->
+<!-- ========================================= -->
+
+<h2>XIV. Le nombre complexe \(j\)</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+\[
+j=
+\frac{-1+i\sqrt3}{2}
+\]
+
+<p>
+Le nombre \(j\) est une racine cubique
+de l'unité.
+</p>
+
+</div>
+
+<div class="propriete">
+
+<div class="propriete-title">
+Propriétés
+</div>
+
+\[
+j^3=1
+\]
+
+\[
+1+j+j^2=0
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- XV. EXERCICE -->
+<!-- ========================================= -->
+
+<h2>XV. Exercice d'application</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Énoncé
+</div>
+
+<p>
+On considère les points
+d'affixes :
+</p>
+
+\[
+A(1)
+\]
+
+\[
+B(j)
+\]
+
+\[
+C(j^2)
+\]
+
+<p>
+Montrer que le triangle
+\(ABC\) est équilatéral.
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Indication
+</div>
+
+<p>
+Les trois points appartiennent
+au cercle trigonométrique et sont
+répartis régulièrement.
+</p>
+
+<p>
+L'angle entre deux sommets
+consécutifs vaut :
+</p>
+
+\[
+120^\circ
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- SYNTHESE -->
+<!-- ========================================= -->
+
+<h2>Synthèse du chapitre</h2>
+
+<div class="important">
+
+<div class="important-title">
+À retenir
+</div>
+
+<ul>
+
+<li>\(i^2=-1\)</li>
+
+<li>\(z=a+bi\)</li>
+
+<li>\(\operatorname{Re}(z)=a\)</li>
+
+<li>\(\operatorname{Im}(z)=b\)</li>
+
+<li>\(\operatorname{aff}(\overrightarrow{AB})=z_B-z_A\)</li>
+
+<li>\(z_I=\dfrac{z_A+z_B}{2}\)</li>
+
+<li>\(z_G=\dfrac{z_A+z_B+z_C}{3}\)</li>
+
+<li>\(\overline z=a-ib\)</li>
+
+<li>\(j^3=1\)</li>
+
+<li>\(1+j+j^2=0\)</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
