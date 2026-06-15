@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Initiation aux Nombres Complexes | Logarithme.tn</title>
+
+<!-- MathJax -->
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['\\[','\\]']]
+    }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eef4ff;
+    border:1px solid #b7c8ff;
+    padding:12px 20px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.navigation a{
+    text-decoration:none;
+    color:#1e2fa8;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    text-decoration:underline;
+}
+
+
+/* =======================
+   STYLE LOGARITHME.TN
+======================= */
+
+:root{
+
+    --bleu:#0d6efd;
+    --vert:#198754;
+    --orange:#fd7e14;
+    --rouge:#dc3545;
+
+    --fond:#f4f7fb;
+
+    --ombre:
+    0 8px 25px rgba(0,0,0,.08);
+
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+
+    background:var(--fond);
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    color:#222;
+
+    line-height:1.8;
+
+}
+
+/* =======================
+   PAGE
+======================= */
+
+.page{
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    box-shadow:var(--ombre);
+
+}
+
+/* =======================
+   TITRE CHAPITRE
+======================= */
+
+.chapter-header{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.chapter-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#e7f1ff;
+
+    color:var(--bleu);
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.chapter-header h1{
+
+    color:var(--bleu);
+
+    font-size:2.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.chapter-header p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+
+    color:#555;
+
+}
+
+/* =======================
+   TITRES
+======================= */
+
+h2{
+
+    color:var(--vert);
+
+    margin-top:50px;
+
+    padding-bottom:10px;
+
+    border-bottom:
+    3px solid var(--vert);
+
+}
+
+h3{
+
+    color:var(--bleu);
+
+}
+
+/* =======================
+   BLOCS
+======================= */
+
+.definition,
+.propriete,
+.exemple,
+.important,
+.remarque{
+
+    padding:22px;
+
+    border-radius:15px;
+
+    margin:25px 0;
+
+}
+
+.definition{
+
+    background:#eef5ff;
+
+    border-left:
+    6px solid var(--bleu);
+
+}
+
+.propriete{
+
+    background:#eefcf3;
+
+    border-left:
+    6px solid var(--vert);
+
+}
+
+.exemple{
+
+    background:#fff8e8;
+
+    border-left:
+    6px solid var(--orange);
+
+}
+
+.important{
+
+    background:#fff0f0;
+
+    border-left:
+    6px solid var(--rouge);
+
+}
+
+.remarque{
+
+    background:#f9f9f9;
+
+    border-left:
+    6px solid #777;
+
+}
+
+.definition-title,
+.propriete-title,
+.exemple-title,
+.important-title,
+.remarque-title{
+
+    font-weight:bold;
+
+    font-size:1.1rem;
+
+    margin-bottom:10px;
+
+}
+
+/* =======================
+   TABLEAUX
+======================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+
+}
+
+th{
+
+    background:var(--bleu);
+
+    color:white;
+
+}
+
+th,
+td{
+
+    border:1px solid #ddd;
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+/* =======================
+   SVG
+======================= */
+
+svg{
+
+    max-width:100%;
+
+    display:block;
+
+    margin:auto;
+
+}
+
+/* =======================
+   FORMULES
+======================= */
+
+.MathJax{
+
+    font-size:1.05em !important;
+
+}
+
+hr{
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+    margin:20px 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="chapter-header">
+
+    <div class="chapter-badge">
+        Chapitre 1
+    </div>
+
+    <h1>
+        Initiation aux Nombres Complexes
+    </h1>
+
+    <p>
+        Les nombres complexes constituent une extension
+        de l'ensemble des nombres réels.
+        Ils permettent de résoudre des équations qui
+        n'admettent aucune solution dans
+        \(\mathbb{R}\) et jouent un rôle essentiel
+        dans l'algèbre, la géométrie et la physique.
+    </p>
+
+<!DOCTYPE html>
+<html>
+<head>
+...
+</head>
+
+<body>
+<div class="navigation">
+
+    <a href="../tablecoursnombrescomplexes.html">⬅ Retour au chapitre</a>
+
+    <a href="../index01.html">🏠 Sommaire général</a>
+
+    <a href="/nombrescomplexes/monj.html">Cours suivant ➡</a>
+
+</div>
+<div class="page">
+
+<!-- Partie 1 -->
+<!-- ========================================= -->
+<!-- I. POURQUOI INTRODUIRE LES COMPLEXES ? -->
+<!-- ========================================= -->
+
+<h2>I. Pourquoi introduire les nombres complexes ?</h2>
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Situation problème
+    </div>
+
+    <p>
+        Considérons l'équation :
+    </p>
+
+    \[
+    x^2+3x-4=0
+    \]
+
+    <p>
+        Son discriminant est :
+    </p>
+
+    \[
+    \Delta=3^2-4\times1\times(-4)=25
+    \]
+
+    <p>
+        Cette équation possède deux solutions réelles :
+    </p>
+
+    \[
+    x_1=1
+    \qquad ; \qquad
+    x_2=-4
+    \]
+
+    <hr>
+
+    <p>
+        Considérons maintenant :
+    </p>
+
+    \[
+    x^2+3x+4=0
+    \]
+
+    <p>
+        Son discriminant est :
+    </p>
+
+    \[
+    \Delta=3^2-4\times1\times4=-7
+    \]
+
+    <p>
+        Le discriminant est négatif.
+        Aucun nombre réel n'a pour carré \(-7\).
+    </p>
+
+    <p>
+        Il devient donc nécessaire d'introduire
+        un nouvel ensemble de nombres.
+    </p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- II. UNITE IMAGINAIRE -->
+<!-- ========================================= -->
+
+<h2>II. L'unité imaginaire</h2>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Définition
+    </div>
+
+    <p>
+        On introduit un nouveau nombre noté
+        <strong>\(i\)</strong>,
+        appelé unité imaginaire.
+    </p>
+
+    \[
+    i^2=-1
+    \]
+
+    <p>
+        Ce nombre n'appartient pas à
+        l'ensemble des nombres réels.
+    </p>
+
+    \[
+    i\notin\mathbb{R}
+    \]
+
+</div>
+
+<div class="remarque">
+
+    <div class="remarque-title">
+        Exemple
+    </div>
+
+    \[
+    \sqrt{-7}=i\sqrt7
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- III. FORME ALGEBRIQUE -->
+<!-- ========================================= -->
+
+<h2>III. Forme algébrique d'un nombre complexe</h2>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Définition
+    </div>
+
+    <p>
+        Tout nombre complexe s'écrit sous la forme :
+    </p>
+
+    \[
+    z=a+bi
+    \]
+
+    <p>
+        où \(a\) et \(b\) sont deux nombres réels.
+    </p>
+
+</div>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Partie réelle et partie imaginaire
+    </div>
+
+    <p>
+        Pour \(z=a+bi\) :
+    </p>
+
+    \[
+    \operatorname{Re}(z)=a
+    \]
+
+    \[
+    \operatorname{Im}(z)=b
+    \]
+
+</div>
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Exemples
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Nombre complexe</th>
+            <th>Partie réelle</th>
+            <th>Partie imaginaire</th>
+        </tr>
+
+        <tr>
+            <td>\(3+2i\)</td>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>\(-5+i\)</td>
+            <td>-5</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>\(4\)</td>
+            <td>4</td>
+            <td>0</td>
+        </tr>
+
+        <tr>
+            <td>\(-7i\)</td>
+            <td>0</td>
+            <td>-7</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="important">
+
+    <div class="important-title">
+        À retenir
+    </div>
+
+    <p>
+        Un nombre complexe est réel si sa partie
+        imaginaire est nulle.
+    </p>
+
+    <p>
+        Un nombre complexe est imaginaire pur
+        si sa partie réelle est nulle.
+    </p>
+
+    \[
+    \mathbb{R}\subset\mathbb{C}
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- IV. CALCULS DANS C -->
+<!-- ========================================= -->
+
+<h2>IV. Calculs dans \(\mathbb C\)</h2>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Addition
+    </div>
+
+    \[
+    (a+bi)+(c+di)
+    =
+    (a+c)+(b+d)i
+    \]
+
+</div>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Multiplication
+    </div>
+
+    \[
+    (a+bi)(c+di)
+    =
+    (ac-bd)+(ad+bc)i
+    \]
+
+</div>
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Exemple
+    </div>
+
+    \[
+    (2-3i)(4+5i)
+    \]
+
+    \[
+    =8+10i-12i+15
+    \]
+
+    \[
+    =23-2i
+    \]
+
+</div>
+
+<div class="important">
+
+    <div class="important-title">
+        Identités remarquables
+    </div>
+
+    \[
+    (a+ib)^2
+    =
+    a^2-b^2+2abi
+    \]
+
+    <br><br>
+
+    \[
+    (a-ib)^2
+    =
+    a^2-b^2-2abi
+    \]
+
+    <br><br>
+
+    \[
+    (a+ib)(a-ib)
+    =
+    a^2+b^2
+    \]
+
+</div>
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Mise sous forme algébrique
+    </div>
+
+    \[
+    z=
+    \frac{2+3i}{3-4i}
+    \]
+
+    <p>
+        On multiplie par le conjugué du dénominateur.
+    </p>
+
+    \[
+    z=
+    \frac{(2+3i)(3+4i)}
+         {(3-4i)(3+4i)}
+    \]
+
+    \[
+    z=
+    \frac{-6+17i}{25}
+    \]
+
+    \[
+    z=
+    -\frac6{25}
+    +
+    \frac{17}{25}i
+    \]
+
+</div>
+<!-- Ici tu colleras la Partie 2 -->
+
+<!-- Puis Partie 3 -->
+<!-- ========================================= -->
+<!-- V. REPRESENTATION GEOMETRIQUE -->
+<!-- ========================================= -->
+
+<h2>V. Représentation géométrique des nombres complexes</h2>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Affixe d'un point
+    </div>
+
+    <p>
+        Dans un repère orthonormé
+        \((O;\vec i,\vec j)\),
+        à tout point
+        \(M(a,b)\),
+        on associe le nombre complexe :
+    </p>
+
+    \[
+    z_M=a+ib
+    \]
+
+    <p>
+        Ce nombre complexe est appelé
+        <strong>affixe du point \(M\)</strong>.
+    </p>
+
+</div>
+
+<svg viewBox="0 0 600 350">
+
+    <defs>
+
+        <marker id="arrow"
+        markerWidth="10"
+        markerHeight="10"
+        refX="8"
+        refY="3"
+        orient="auto">
+
+            <polygon
+            points="0 0, 10 3, 0 6"
+            fill="#333"/>
+
+        </marker>
+
+    </defs>
+
+    <!-- axes -->
+
+    <line x1="80" y1="280"
+          x2="550" y2="280"
+          stroke="#333"
+          stroke-width="3"
+          marker-end="url(#arrow)"/>
+
+    <line x1="100" y1="320"
+          x2="100" y2="40"
+          stroke="#333"
+          stroke-width="3"
+          marker-end="url(#arrow)"/>
+
+    <!-- point -->
+
+    <circle cx="320"
+            cy="120"
+            r="6"
+            fill="#0d6efd"/>
+
+    <text x="330"
+          y="115"
+          font-size="18">
+          M(a,b)
+    </text>
+
+    <text x="560" y="290">x</text>
+    <text x="110" y="40">y</text>
+
+</svg>
+
+<div class="important">
+
+    <div class="important-title">
+        À retenir
+    </div>
+
+    <p>
+        Un point possède une position unique dans le plan.
+        Son affixe permet de repérer cette position.
+    </p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- VI. AFFIXE D'UN VECTEUR -->
+<!-- ========================================= -->
+
+<h2>VI. Affixe d'un vecteur</h2>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Définition
+    </div>
+
+    <p>
+        Soit le vecteur :
+    </p>
+
+    \[
+    \vec u=
+    \begin{pmatrix}
+    a\\
+    b
+    \end{pmatrix}
+    \]
+
+    <p>
+        Son affixe est :
+    </p>
+
+    \[
+    \operatorname{aff}(\vec u)=a+ib
+    \]
+
+</div>
+
+<svg viewBox="0 0 700 260">
+
+    <defs>
+
+        <marker id="arrow2"
+        markerWidth="10"
+        markerHeight="10"
+        refX="8"
+        refY="3"
+        orient="auto">
+
+            <polygon
+            points="0 0,10 3,0 6"
+            fill="#198754"/>
+
+        </marker>
+
+    </defs>
+
+    <!-- premier vecteur -->
+
+    <line x1="100"
+          y1="190"
+          x2="220"
+          y2="80"
+          stroke="#198754"
+          stroke-width="5"
+          marker-end="url(#arrow2)"/>
+
+    <!-- deuxième vecteur -->
+
+    <line x1="420"
+          y1="210"
+          x2="540"
+          y2="100"
+          stroke="#198754"
+          stroke-width="5"
+          marker-end="url(#arrow2)"/>
+
+    <text x="170"
+          y="70"
+          font-size="20">
+          u
+    </text>
+
+    <text x="500"
+          y="90"
+          font-size="20">
+          u
+    </text>
+
+</svg>
+
+<div class="remarque">
+
+    <div class="remarque-title">
+        Observation
+    </div>
+
+    <p>
+        Ces deux vecteurs ont la même direction,
+        le même sens et la même longueur.
+    </p>
+
+    <p>
+        Ils représentent donc le même vecteur
+        et possèdent la même affixe.
+    </p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- NE PAS CONFONDRE -->
+<!-- ========================================= -->
+
+<h2>⚠️ Ne pas confondre</h2>
+
+<div class="important">
+
+    <div class="important-title">
+        Affixe d'un point et affixe d'un vecteur
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Affixe d'un point</th>
+            <th>Affixe d'un vecteur</th>
+        </tr>
+
+        <tr>
+            <td>\(z_M=a+ib\)</td>
+            <td>\(\operatorname{aff}(\vec u)=a+ib\)</td>
+        </tr>
+
+        <tr>
+            <td>Le point est fixé.</td>
+            <td>Le vecteur est libre.</td>
+        </tr>
+
+        <tr>
+            <td>Une seule position.</td>
+            <td>Peut être déplacé parallèlement.</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <p>
+        Même si les écritures se ressemblent,
+        elles ne représentent pas le même objet mathématique.
+    </p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- VII. AFFIXE DU VECTEUR AB -->
+<!-- ========================================= -->
+
+<h2>VII. Affixe du vecteur \(\overrightarrow{AB}\)</h2>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Propriété fondamentale
+    </div>
+
+    <p>
+        Soient :
+    </p>
+
+    \[
+    z_A=a+ib
+    \]
+
+    \[
+    z_B=c+id
+    \]
+
+    <p>
+        Alors :
+    </p>
+
+    \[
+    \boxed{
+    \operatorname{aff}(\overrightarrow{AB})
+    =
+    z_B-z_A
+    }
+    \]
+
+</div>
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Justification
+    </div>
+
+    \[
+    z_B-z_A
+    =(c+id)-(a+ib)
+    \]
+
+    \[
+    =(c-a)+i(d-b)
+    \]
+
+    <p>
+        Or les coordonnées du vecteur
+        \(\overrightarrow{AB}\)
+        sont :
+    </p>
+
+    \[
+    \begin{pmatrix}
+    c-a\\
+    d-b
+    \end{pmatrix}
+    \]
+
+    <p>
+        On retrouve donc exactement son affixe.
+    </p>
+
+</div>
+<!-- Puis Partie 4 -->
+<!-- ========================================= -->
+<!-- VIII. MILIEU D'UN SEGMENT -->
+<!-- ========================================= -->
+
+<h2>VIII. Milieu d'un segment</h2>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Propriété
+    </div>
+
+    <p>
+        Si \(I\) est le milieu du segment \([AB]\),
+        alors :
+    </p>
+
+    \[
+    \boxed{
+    z_I=
+    \frac{z_A+z_B}{2}
+    }
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- IX. PROPRIETES DE LINEARITE -->
+<!-- ========================================= -->
+
+<h2>IX. Propriétés des affixes</h2>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Multiplication par un réel
+    </div>
+
+    \[
+    \boxed{
+    \operatorname{aff}(\alpha\vec u)
+    =
+    \alpha\operatorname{aff}(\vec u)
+    }
+    \]
+
+</div>
+
+<div class="propriete">
+
+    <div class="propriete-title">
+        Somme de deux vecteurs
+    </div>
+
+    \[
+    \boxed{
+    \operatorname{aff}(\vec u+\vec v)
+    =
+    \operatorname{aff}(\vec u)
+    +
+    \operatorname{aff}(\vec v)
+    }
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- X. CENTRE DE GRAVITE -->
+<!-- ========================================= -->
+
+<h2>X. Application : Centre de gravité d'un triangle</h2>
+
+<div class="important">
+
+    <div class="important-title">
+        Théorème
+    </div>
+
+    <p>
+        Si \(G\) est le centre de gravité du triangle \(ABC\),
+        alors :
+    </p>
+
+    \[
+    \overrightarrow{OG}
+    =
+    \frac13
+    \left(
+    \overrightarrow{OA}
+    +
+    \overrightarrow{OB}
+    +
+    \overrightarrow{OC}
+    \right)
+    \]
+
+    <p>
+        En écriture complexe :
+    </p>
+
+    \[
+    \boxed{
+    z_G=
+    \frac{z_A+z_B+z_C}{3}
+    }
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- EXEMPLE GUIDE -->
+<!-- ========================================= -->
+
+<div class="exemple">
+
+    <div class="exemple-title">
+        Exemple guidé
+    </div>
+
+    <p>
+        On considère :
+    </p>
+
+    \[
+    z_A=1+i
+    \]
+
+    \[
+    z_B=3+6i
+    \]
+
+    \[
+    z_C=5+2i
+    \]
+
+    <p>
+        Déterminer l'affixe du centre de gravité \(G\).
+    </p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- FIGURE TRIANGLE -->
+<!-- ========================================= -->
+
+<svg viewBox="0 0 800 550">
+
+    <defs>
+
+        <pattern
+            id="grid"
+            width="50"
+            height="50"
+            patternUnits="userSpaceOnUse">
+
+            <path
+                d="M 50 0 L 0 0 0 50"
+                fill="none"
+                stroke="#dddddd"
+                stroke-width="1"/>
+
+        </pattern>
+
+    </defs>
+
+    <rect
+        width="800"
+        height="550"
+        fill="url(#grid)"/>
+
+    <!-- axes -->
+
+    <line
+        x1="80"
+        y1="470"
+        x2="720"
+        y2="470"
+        stroke="black"
+        stroke-width="3"/>
+
+    <line
+        x1="120"
+        y1="520"
+        x2="120"
+        y2="40"
+        stroke="black"
+        stroke-width="3"/>
+
+    <!-- triangle -->
+
+    <line
+        x1="220"
+        y1="400"
+        x2="320"
+        y2="150"
+        stroke="#8e44ad"
+        stroke-width="4"/>
+
+    <line
+        x1="320"
+        y1="150"
+        x2="540"
+        y2="330"
+        stroke="#8e44ad"
+        stroke-width="4"/>
+
+    <line
+        x1="220"
+        y1="400"
+        x2="540"
+        y2="330"
+        stroke="#8e44ad"
+        stroke-width="4"/>
+
+    <!-- mediane -->
+
+    <line
+        x1="220"
+        y1="400"
+        x2="430"
+        y2="240"
+        stroke="#27ae60"
+        stroke-width="4"/>
+
+    <!-- autre mediane -->
+
+    <line
+        x1="320"
+        y1="150"
+        x2="380"
+        y2="365"
+        stroke="#27ae60"
+        stroke-width="3"
+        stroke-dasharray="10 10"/>
+
+    <!-- centre -->
+
+    <circle
+        cx="360"
+        cy="295"
+        r="7"
+        fill="#27ae60"/>
+
+    <!-- milieu -->
+
+    <circle
+        cx="430"
+        cy="240"
+        r="6"
+        fill="#3498db"/>
+
+    <!-- sommets -->
+
+    <circle
+        cx="220"
+        cy="400"
+        r="6"
+        fill="#e74c3c"/>
+
+    <circle
+        cx="320"
+        cy="150"
+        r="6"
+        fill="#e74c3c"/>
+
+    <circle
+        cx="540"
+        cy="330"
+        r="6"
+        fill="#e74c3c"/>
+
+    <!-- etiquettes -->
+
+    <text x="205" y="425" font-size="22">A</text>
+
+    <text x="310" y="135" font-size="22">B</text>
+
+    <text x="550" y="335" font-size="22">C</text>
+
+    <text x="440" y="235" font-size="22">I</text>
+
+    <text x="372" y="290" font-size="22">G</text>
+
+</svg>
+
+<!-- ========================================= -->
+<!-- SOLUTION -->
+<!-- ========================================= -->
+
+<div class="definition">
+
+    <div class="definition-title">
+        Méthode 1
+    </div>
+
+    \[
+    z_G=
+    \frac{z_A+z_B+z_C}{3}
+    \]
+
+    \[
+    z_G=
+    \frac{
+    (1+i)
+    +(3+6i)
+    +(5+2i)
+    }{3}
+    \]
+
+    \[
+    z_G=
+    \frac{9+9i}{3}
+    \]
+
+    \[
+    \boxed{
+    z_G=3+3i
+    }
+    \]
+
+</div>
+
+<div class="definition">
+
+    <div class="definition-title">
+        Méthode 2 (à partir du milieu)
+    </div>
+
+    <p>
+        Le milieu \(I\) du segment \([BC]\) vérifie :
+    </p>
+
+    \[
+    z_I=
+    \frac{z_B+z_C}{2}
+    \]
+
+    \[
+    z_I=
+    \frac{(3+6i)+(5+2i)}{2}
+    \]
+
+    \[
+    z_I=4+4i
+    \]
+
+    <p>
+        Comme :
+    </p>
+
+    \[
+    \overrightarrow{AG}
+    =
+    \frac23
+    \overrightarrow{AI}
+    \]
+
+    on obtient :
+
+    \[
+    z_G-z_A
+    =
+    \frac23
+    (z_I-z_A)
+    \]
+
+    \[
+    z_G-(1+i)
+    =
+    \frac23[(4+4i)-(1+i)]
+    \]
+
+    \[
+    z_G-(1+i)
+    =
+    \frac23(3+3i)
+    \]
+
+    \[
+    z_G-(1+i)
+    =
+    2+2i
+    \]
+
+    \[
+    \boxed{
+    z_G=3+3i
+    }
+    \]
+
+</div>
+
+<!-- ========================================= -->
+<!-- SYNTHESE -->
+<!-- ========================================= -->
+
+<div class="important">
+
+    <div class="important-title">
+        Synthèse du chapitre
+    </div>
+
+    <ul>
+        <li>\(i^2=-1\)</li>
+        <li>\(z=a+bi\)</li>
+        <li>\(\operatorname{Re}(z)=a\)</li>
+        <li>\(\operatorname{Im}(z)=b\)</li>
+        <li>\(\operatorname{aff}(\overrightarrow{AB})=z_B-z_A\)</li>
+        <li>\(z_I=\dfrac{z_A+z_B}{2}\)</li>
+        <li>\(z_G=\dfrac{z_A+z_B+z_C}{3}\)</li>
+    </ul>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- X BIS. DISTANCE ET LONGUEUR -->
+<!-- ========================================= -->
+
+<h2>X bis. Distance entre deux points</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Distance entre deux points
+</div>
+
+<p>
+Soient deux points \(A\) et \(B\) d'affixes respectives
+\(z_A=a+ib\) et \(z_B=c+id\).
+</p>
+
+<p>
+La distance \(AB\) est donnée par :
+</p>
+
+\[
+AB=
+\sqrt{
+(c-a)^2+(d-b)^2
+}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+<p>
+Soient :
+</p>
+
+\[
+z_A=1+i
+\]
+
+\[
+z_B=5+4i
+\]
+
+<p>
+Alors :
+</p>
+
+\[
+AB
+=
+\sqrt{
+(5-1)^2+(4-1)^2
+}
+\]
+
+\[
+AB
+=
+\sqrt{16+9}
+\]
+
+\[
+AB=5
+\]
+
+</div>
+
+<!-- ========================================= -->
+
+<h2>XI. Longueur d'un vecteur</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Norme d'un vecteur
+</div>
+
+<p>
+Soit :
+</p>
+
+\[
+\vec u=
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}
+\]
+
+<p>
+La longueur du vecteur \(\vec u\) est :
+</p>
+
+\[
+||\vec u||
+=
+\sqrt{a^2+b^2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Lien avec les affixes
+</div>
+
+<p>
+Si :
+</p>
+
+\[
+\operatorname{aff}(\vec u)=a+ib
+\]
+
+<p>
+alors la longueur du vecteur est obtenue
+à partir des coordonnées de son affixe.
+</p>
+
+\[
+||\vec u||
+=
+\sqrt{
+(\operatorname{Re}(z))^2
++
+(\operatorname{Im}(z))^2
+}
+\]
+
+</div>
+
+<!-- ========================================= -->
+
+<h2>XII. Activité préparatoire</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+À faire
+</div>
+
+<p>
+Calculer les longueurs :
+</p>
+
+\[
+OA
+\]
+
+\[
+OB
+\]
+
+\[
+OC
+\]
+
+<p>
+où :
+</p>
+
+\[
+A(1,0)
+\]
+
+\[
+B
+\left(
+-\frac12,
+\frac{\sqrt3}{2}
+\right)
+\]
+
+\[
+C
+\left(
+-\frac12,
+-\frac{\sqrt3}{2}
+\right)
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Observation
+</div>
+
+<p>
+Les trois points sont situés sur un même cercle
+de centre \(O\).
+</p>
+
+<p>
+Cette configuration apparaîtra dans l'étude
+du nombre complexe \(j\).
+</p>
+
+</div>
+<!-- ========================================= -->
+<!-- PARTIE 5 : COMPLEMENTS ET EXERCICE BONUS -->
+<!-- ========================================= -->
+
+<h2>XI. Compléments géométriques utiles</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Triangle équilatéral
+</div>
+
+<p>
+Un triangle est dit équilatéral lorsque ses trois côtés
+ont la même longueur.
+</p>
+
+\[
+AB=BC=CA
+\]
+
+<p>
+Dans un triangle équilatéral :
+</p>
+
+<ul>
+<li>Les trois angles mesurent \(60^\circ\).</li>
+<li>Les médianes sont aussi des hauteurs.</li>
+<li>Les médianes sont aussi des médiatrices.</li>
+<li>Les quatre centres remarquables sont confondus.</li>
+</ul>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Médiane
+</div>
+
+<p>
+Une médiane est une droite passant par un sommet
+et le milieu du côté opposé.
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Médiatrice
+</div>
+
+<p>
+La médiatrice d'un segment est la droite
+perpendiculaire à ce segment passant par son milieu.
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Hauteur
+</div>
+
+<p>
+Une hauteur est une droite passant par un sommet
+et perpendiculaire au côté opposé.
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Centre de gravité
+</div>
+
+<p>
+Le centre de gravité est le point d'intersection
+des trois médianes.
+</p>
+
+<p>
+On le note généralement \(G\).
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Orthocentre
+</div>
+
+<p>
+L'orthocentre est le point d'intersection
+des trois hauteurs.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- CONJUGUE -->
+<!-- ========================================= -->
+
+<h2>XII. Le conjugué d'un nombre complexe</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Définition
+</div>
+
+<p>
+Soit :
+</p>
+
+\[
+z=a+ib
+\]
+
+<p>
+Le conjugué de \(z\) est :
+</p>
+
+\[
+\boxed{
+\overline z=a-ib
+}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+z=4+3i
+\]
+
+\[
+\overline z=4-3i
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Interprétation géométrique
+</div>
+
+<p>
+Le point d'affixe \(\overline z\)
+est le symétrique du point d'affixe \(z\)
+par rapport à l'axe réel.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- EXERCICE -->
+<!-- ========================================= -->
+
+<h2>XIII. Exercice d'approfondissement</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Énoncé
+</div>
+
+<p>
+Soit :
+</p>
+
+\[
+j=
+\frac{-1+i\sqrt3}{2}
+\]
+
+<p>
+Dans le plan complexe,
+on considère les points d'affixes :
+</p>
+
+\[
+A(1)
+\]
+
+\[
+B(j)
+\]
+
+\[
+C(j^2)
+\]
+
+<p>
+Montrer que le triangle \(ABC\)
+est équilatéral.
+</p>
+
+</div>
+
+<!-- ========================================= -->
+<!-- FIGURE -->
+<!-- ========================================= -->
+
+<svg viewBox="0 0 600 420">
+
+<circle
+cx="300"
+cy="200"
+r="120"
+fill="none"
+stroke="#444"
+stroke-width="2"/>
+
+<line
+x1="70"
+y1="200"
+x2="530"
+y2="200"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="300"
+y1="40"
+x2="300"
+y2="360"
+stroke="black"
+stroke-width="2"/>
+
+<polygon
+points="420,200 240,96 240,304"
+fill="rgba(13,110,253,.08)"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<circle cx="420" cy="200" r="5" fill="#dc3545"/>
+<circle cx="240" cy="96" r="5" fill="#dc3545"/>
+<circle cx="240" cy="304" r="5" fill="#dc3545"/>
+
+<text x="432" y="205">A(1)</text>
+<text x="210" y="88">B(j)</text>
+<text x="205" y="322">C(j²)</text>
+
+<text x="308" y="210">O</text>
+
+</svg>
+
+<!-- ========================================= -->
+<!-- CORRECTION -->
+<!-- ========================================= -->
+
+<div class="definition">
+
+<div class="definition-title">
+Correction
+</div>
+
+<p>
+Calculons le module de \(j\).
+</p>
+
+\[
+|j|
+=
+\sqrt{
+\left(
+-\frac12
+\right)^2
++
+\left(
+\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+|j|
+=
+\sqrt{
+\frac14+\frac34
+}
+\]
+
+\[
+|j|=1
+\]
+
+<p>
+Les points d'affixes
+\(1\), \(j\) et \(j^2\)
+appartiennent donc au cercle trigonométrique.
+</p>
+
+<p>
+On sait également que :
+</p>
+
+\[
+j^3=1
+\]
+
+\[
+1+j+j^2=0
+\]
+
+<p>
+Les trois racines cubiques de l'unité
+sont réparties régulièrement sur le cercle.
+</p>
+
+<p>
+L'angle au centre entre deux sommets
+consécutifs vaut :
+</p>
+
+\[
+120^\circ
+\]
+
+<p>
+Les trois côtés sont donc de même longueur.
+</p>
+
+\[
+AB=BC=CA
+\]
+
+<p>
+Ainsi :
+</p>
+
+\[
+\boxed{
+ABC
+\text{ est un triangle équilatéral}
+}
+\]
+
+</div>
+
+<!-- ========================================= -->
+<!-- SYNTHESE -->
+<!-- ========================================= -->
+
+<div class="important">
+
+<div class="important-title">
+À retenir
+</div>
+
+\[
+\overline z=a-ib
+\]
+
+\[
+j^3=1
+\]
+
+\[
+1+j+j^2=0
+\]
+
+<p>
+Les images des racines cubiques de l'unité
+forment un triangle équilatéral.
+</p>
+
+<p>
+Dans un triangle équilatéral :
+</p>
+
+<ul>
+<li>Les médianes sont aussi des hauteurs.</li>
+<li>Les médiatrices sont aussi des médianes.</li>
+<li>Le centre de gravité et l'orthocentre sont confondus.</li>
+</ul>
+
+</div>
+</body>
+</html>
+</div>
+
+</body>
+</html>
+
+</div>
