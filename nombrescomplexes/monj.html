@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Les nombres complexes par un exemple concret
+</title>
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['\\(','\\)']],
+displayMath: [['\\[','\\]']]
+}
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+:root{
+--bleu:#0d6efd;
+--vert:#198754;
+--orange:#fd7e14;
+--rouge:#dc3545;
+--fond:#f4f7fb;
+}
+
+body{
+
+margin:0;
+padding:0;
+
+font-family:
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:var(--fond);
+
+line-height:1.8;
+
+color:#222;
+
+}
+
+.page{
+
+max-width:1100px;
+
+margin:40px auto;
+
+background:white;
+
+padding:50px;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.chapter-header{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#eaf2ff;
+
+color:var(--bleu);
+
+border-radius:30px;
+
+font-weight:bold;
+
+margin-bottom:15px;
+
+}
+
+h1{
+
+color:var(--bleu);
+
+margin-bottom:10px;
+
+}
+
+h2{
+
+color:var(--vert);
+
+border-bottom:
+3px solid var(--vert);
+
+padding-bottom:10px;
+
+margin-top:50px;
+
+}
+
+.definition,
+.exemple,
+.important,
+.remarque{
+
+padding:22px;
+
+border-radius:15px;
+
+margin:25px 0;
+
+}
+
+.definition{
+
+background:#eef5ff;
+
+border-left:
+6px solid var(--bleu);
+
+}
+
+.exemple{
+
+background:#fff8e8;
+
+border-left:
+6px solid var(--orange);
+
+}
+
+.important{
+
+background:#fff0f0;
+
+border-left:
+6px solid var(--rouge);
+
+}
+
+.remarque{
+
+background:#f6fff8;
+
+border-left:
+6px solid var(--vert);
+
+}
+
+.definition-title,
+.exemple-title,
+.important-title,
+.remarque-title{
+
+font-weight:bold;
+
+margin-bottom:10px;
+
+font-size:1.1rem;
+
+}
+
+svg{
+
+max-width:100%;
+
+display:block;
+
+margin:auto;
+
+}
+
+.MathJax{
+font-size:1.05em !important;
+}
+
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eef4ff;
+    border:1px solid #b7c8ff;
+    padding:12px 20px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.navigation a{
+    text-decoration:none;
+    color:#1e2fa8;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    text-decoration:underline;
+}
+
+
+</style>
+
+</head>
+
+<body>
+<div class="navigation">
+
+    <a href="../tablecoursnombrescomplexes.html">⬅ Retour au chapitre</a>
+
+    <a href="../index01.html">🏠 Sommaire général</a>
+
+    <a href="/nombrescomplexes/monj2.html">Cours suivant ➡</a>
+
+</div>
+<div class="page">
+
+<div class="chapter-header">
+
+<div class="badge">
+
+Exercice de Bac expliqué pas à pas
+
+</div>
+
+<h1>
+
+Les nombres complexes par un exemple concret
+
+</h1>
+
+<p>
+
+Dans ce chapitre, nous allons découvrir
+les nombres complexes à partir d'une figure
+géométrique très particulière.
+
+Nous n'allons pas commencer par des définitions
+abstraites mais par une observation simple
+qui nous conduira naturellement à la création
+de nouveaux nombres.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+<!-- PARTIE 1 -->
+<!-- ===================================== -->
+
+<h2>
+1. Une figure mystérieuse
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+
+Observation
+
+</div>
+
+<p>
+
+Dans le plan muni d'un repère orthonormé,
+on considère les points :
+
+</p>
+
+\[
+A(1,0)
+\]
+
+\[
+J
+\left(
+-\frac12,
+\frac{\sqrt3}{2}
+\right)
+\]
+
+\[
+J'
+\left(
+-\frac12,
+-\frac{\sqrt3}{2}
+\right)
+\]
+
+</div>
+
+<!-- FIGURE -->
+
+<svg viewBox="0 0 700 500">
+
+<!-- cercle -->
+
+<circle
+cx="350"
+cy="250"
+r="150"
+fill="none"
+stroke="#666"
+stroke-width="2"/>
+
+<!-- axes -->
+
+<line
+x1="50"
+y1="250"
+x2="650"
+y2="250"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="350"
+y1="50"
+x2="350"
+y2="450"
+stroke="black"
+stroke-width="2"/>
+
+<!-- triangle -->
+
+<polygon
+points="500,250 275,120 275,380"
+fill="rgba(13,110,253,.08)"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<!-- points -->
+
+<circle cx="500" cy="250" r="5" fill="#dc3545"/>
+<circle cx="275" cy="120" r="5" fill="#dc3545"/>
+<circle cx="275" cy="380" r="5" fill="#dc3545"/>
+
+<!-- labels -->
+
+<text x="515" y="255">A</text>
+
+<text x="250" y="110">J</text>
+
+<text x="245" y="400">J'</text>
+
+<text x="360" y="265">O</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+
+Questions
+
+</div>
+
+<ol>
+
+<li>
+Calculer la distance \(OA\).
+</li>
+
+<li>
+Calculer la distance \(OJ\).
+</li>
+
+<li>
+Calculer la distance \(OJ'\).
+</li>
+
+<li>
+Que remarque-t-on ?
+</li>
+
+</ol>
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+
+Première observation
+
+</div>
+
+<p>
+
+Le point \(J'\) semble être le symétrique
+du point \(J\) par rapport à l'axe horizontal.
+
+</p>
+
+<p>
+
+De plus, les trois points semblent situés
+sur un même cercle.
+
+</p>
+
+</div>
+<!-- ===================================== -->
+<!-- PARTIE 2 -->
+<!-- ===================================== -->
+
+<h2>
+2. Que nous apprend la figure ?
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Calcul de la distance \(OA\)
+</div>
+
+<p>
+Le point \(A\) a pour coordonnées :
+</p>
+
+\[
+A(1,0)
+\]
+
+<p>
+Par conséquent :
+</p>
+
+\[
+OA
+=
+\sqrt{1^2+0^2}
+\]
+
+\[
+OA=1
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Calcul de la distance \(OJ\)
+</div>
+
+<p>
+Le point \(J\) a pour coordonnées :
+</p>
+
+\[
+J
+\left(
+-\frac12,
+\frac{\sqrt3}{2}
+\right)
+\]
+
+<p>
+Ainsi :
+</p>
+
+\[
+OJ
+=
+\sqrt{
+\left(
+-\frac12
+\right)^2
++
+\left(
+\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+OJ
+=
+\sqrt{
+\frac14+\frac34
+}
+\]
+
+\[
+OJ=1
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Calcul de la distance \(OJ'\)
+</div>
+
+<p>
+Le point \(J'\) a pour coordonnées :
+</p>
+
+\[
+J'
+\left(
+-\frac12,
+-\frac{\sqrt3}{2}
+\right)
+\]
+
+<p>
+Donc :
+</p>
+
+\[
+OJ'
+=
+\sqrt{
+\left(
+-\frac12
+\right)^2
++
+\left(
+-\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+OJ'
+=
+\sqrt{
+\frac14+\frac34
+}
+\]
+
+\[
+OJ'=1
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Conclusion
+</div>
+
+<p>
+
+Nous avons obtenu :
+
+</p>
+
+\[
+OA=OJ=OJ'=1
+\]
+
+<p>
+
+Les trois points sont donc situés à la même
+distance de \(O\).
+
+</p>
+
+<p>
+
+Ils appartiennent donc à un cercle
+de centre \(O\) et de rayon \(1\).
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+3. Nature du triangle
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul de la longueur \(JJ'\)
+</div>
+
+\[
+JJ'
+=
+\sqrt{
+\left(
+-\frac12+\frac12
+\right)^2
++
+\left(
+-\frac{\sqrt3}{2}
+-\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+JJ'
+=
+\sqrt3
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul de la longueur \(AJ\)
+</div>
+
+\[
+AJ
+=
+\sqrt{
+\left(
+-\frac12-1
+\right)^2
++
+\left(
+\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+AJ
+=
+\sqrt{
+\frac94+\frac34
+}
+\]
+
+\[
+AJ=\sqrt3
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul de la longueur \(AJ'\)
+</div>
+
+\[
+AJ'
+=
+\sqrt{
+\left(
+-\frac12-1
+\right)^2
++
+\left(
+-\frac{\sqrt3}{2}
+\right)^2
+}
+\]
+
+\[
+AJ'
+=
+\sqrt{
+\frac94+\frac34
+}
+\]
+
+\[
+AJ'
+=
+\sqrt3
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Résultat
+</div>
+
+\[
+AJ=AJ'=JJ'
+\]
+
+<p>
+
+Les trois côtés sont égaux.
+
+</p>
+
+\[
+\boxed{
+AJJ'
+\text{ est un triangle équilatéral}
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+4. Une symétrie remarquable
+</h2>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+
+Les points \(J\) et \(J'\) ont la même
+abscisse :
+
+</p>
+
+\[
+-\frac12
+\]
+
+<p>
+
+mais leurs ordonnées sont opposées :
+
+</p>
+
+\[
+\frac{\sqrt3}{2}
+\qquad
+\text{et}
+\qquad
+-\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Le point \(J'\) est donc le symétrique
+de \(J\) par rapport à l'axe réel.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+5. Une question naturelle
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Question
+</div>
+
+<p>
+
+Pourquoi les coordonnées du point \(J\)
+sont-elles précisément :
+
+</p>
+
+\[
+\left(
+-\frac12,
+\frac{\sqrt3}{2}
+\right)
+\]
+
+<p>
+
+D'où proviennent ces nombres ?
+
+</p>
+
+<p>
+
+Existe-t-il une équation dont ce point
+serait naturellement une solution ?
+
+</p>
+
+<p>
+
+C'est cette question qui va nous conduire
+à la découverte des nombres complexes.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+<!-- PARTIE 3 -->
+<!-- ===================================== -->
+
+<h2>
+6. À la recherche du point \(J\)
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Une équation surprenante
+</div>
+
+<p>
+
+Essayons de trouver une équation dont les solutions
+pourraient être liées aux sommets du triangle.
+
+</p>
+
+<p>
+
+Considérons l'équation :
+
+</p>
+
+\[
+x^2+x+1=0
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+7. Le problème
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Calcul du discriminant
+</div>
+
+\[
+\Delta=b^2-4ac
+\]
+
+avec :
+
+\[
+a=1
+\qquad
+b=1
+\qquad
+c=1
+\]
+
+Alors :
+
+\[
+\Delta=1^2-4\times1\times1
+\]
+
+\[
+\Delta=1-4
+\]
+
+\[
+\boxed{\Delta=-3}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Difficulté
+</div>
+
+<p>
+
+Dans l'ensemble des nombres réels,
+il n'existe aucun nombre dont le carré vaut \(-3\).
+
+</p>
+
+<p>
+
+L'équation semble donc impossible à résoudre.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+8. Une nouvelle idée
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Naissance de l'unité imaginaire
+</div>
+
+<p>
+
+Pour résoudre de telles équations,
+les mathématiciens ont introduit un nouveau nombre :
+
+</p>
+
+\[
+\boxed{i^2=-1}
+\]
+
+<p>
+
+Ce nombre est appelé
+<b>unité imaginaire</b>.
+
+</p>
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Conséquence
+</div>
+
+\[
+\sqrt{-1}=i
+\]
+
+et donc :
+
+\[
+\sqrt{-3}
+=
+\sqrt3\,i
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+9. Résolution de l'équation
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Formule du discriminant
+</div>
+
+\[
+x=
+\frac{-b\pm\sqrt{\Delta}}
+{2a}
+\]
+
+Ici :
+
+\[
+x=
+\frac{-1\pm\sqrt{-3}}
+{2}
+\]
+
+\[
+x=
+\frac{-1\pm i\sqrt3}
+{2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Les deux solutions
+</div>
+
+\[
+x_1=
+\frac{-1+i\sqrt3}{2}
+\]
+
+\[
+x_2=
+\frac{-1-i\sqrt3}{2}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+10. Apparition des points \(J\) et \(J'\)
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Comparaison avec la figure
+</div>
+
+<p>
+
+Observons la première solution :
+
+</p>
+
+\[
+x_1=
+\frac{-1+i\sqrt3}{2}
+\]
+
+\[
+x_1=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Sa partie réelle est :
+
+</p>
+
+\[
+-\frac12
+\]
+
+<p>
+
+Sa partie imaginaire est :
+
+</p>
+
+\[
+\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Ce sont exactement les coordonnées du point \(J\).
+
+</p>
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Deuxième solution
+</div>
+
+\[
+x_2=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Cette fois :
+
+</p>
+
+\[
+\left(
+-\frac12,
+-\frac{\sqrt3}{2}
+\right)
+\]
+
+<p>
+
+Ce sont exactement les coordonnées du point \(J'\).
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+11. Une découverte importante
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Conclusion
+</div>
+
+<p>
+
+Les points \(J\) et \(J'\) ne sont pas apparus par hasard.
+
+</p>
+
+<p>
+
+Ils sont les solutions de l'équation :
+
+</p>
+
+\[
+x^2+x+1=0
+\]
+
+<p>
+
+La géométrie nous a conduits naturellement
+à la création des nombres complexes.
+
+</p>
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J'=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+12. Vers de nouvelles découvertes...
+</h2>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Question
+</div>
+
+<p>
+
+Que se passe-t-il si l'on multiplie \(J\) par lui-même ?
+
+</p>
+
+<p>
+
+Retrouvera-t-on un point déjà présent
+sur notre figure ?
+
+</p>
+
+<p>
+
+La réponse est surprenante...
+
+</p>
+
+</div>
+<!-- ===================================== -->
+<!-- PARTIE 4 -->
+<!-- ===================================== -->
+
+<h2>
+13. Que vaut \(J\times J\) ?
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul de \(J^2\)
+</div>
+
+<p>
+
+Nous avons trouvé :
+
+</p>
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Calculons :
+
+</p>
+
+\[
+J^2
+=
+\left(
+-\frac12
++
+i\frac{\sqrt3}{2}
+\right)^2
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Développement
+</div>
+
+\[
+J^2
+=
+\left(
+-\frac12
+\right)^2
++
+2
+\left(
+-\frac12
+\right)
+\left(
+i\frac{\sqrt3}{2}
+\right)
++
+\left(
+i\frac{\sqrt3}{2}
+\right)^2
+\]
+
+\[
+J^2
+=
+\frac14
+-
+i\frac{\sqrt3}{2}
++
+i^2\frac34
+\]
+
+Or :
+
+\[
+i^2=-1
+\]
+
+donc :
+
+\[
+J^2
+=
+\frac14
+-
+i\frac{\sqrt3}{2}
+-
+\frac34
+\]
+
+\[
+J^2
+=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Résultat
+</div>
+
+\[
+\boxed{
+J^2
+=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+14. Une surprise géométrique
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Comparaison
+</div>
+
+<p>
+
+Or nous avions déjà rencontré le point :
+
+</p>
+
+\[
+J'
+=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Donc :
+
+</p>
+
+\[
+\boxed{
+J^2=J'
+}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Observation
+</div>
+
+<p>
+
+Multiplier \(J\) par lui-même
+nous fait passer du point \(J\)
+au point \(J'\).
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+15. Et si l'on multipliait encore une fois ?</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul de \(J^3\)
+</div>
+
+\[
+J^3
+=
+J\times J^2
+\]
+
+\[
+=
+\left(
+-\frac12
++
+i\frac{\sqrt3}{2}
+\right)
+\left(
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\right)
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Produit remarquable
+</div>
+
+\[
+(a+b)(a-b)
+=
+a^2-b^2
+\]
+
+Ainsi :
+
+\[
+J^3
+=
+\left(
+-\frac12
+\right)^2
+-
+\left(
+i\frac{\sqrt3}{2}
+\right)^2
+\]
+
+\[
+J^3
+=
+\frac14
+-
+i^2\frac34
+\]
+
+\[
+J^3
+=
+\frac14+\frac34
+\]
+
+\[
+J^3=1
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Découverte
+</div>
+
+\[
+\boxed{
+J^3=1
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+16. Retour au point de départ
+</h2>
+
+<svg viewBox="0 0 800 450">
+
+<circle
+cx="400"
+cy="220"
+r="150"
+fill="none"
+stroke="#666"
+stroke-width="2"/>
+
+<line
+x1="100"
+y1="220"
+x2="700"
+y2="220"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="400"
+y1="40"
+x2="400"
+y2="400"
+stroke="black"
+stroke-width="2"/>
+
+<polygon
+points="550,220 325,90 325,350"
+fill="rgba(13,110,253,.08)"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<circle cx="550" cy="220" r="6" fill="#dc3545"/>
+<circle cx="325" cy="90" r="6" fill="#dc3545"/>
+<circle cx="325" cy="350" r="6" fill="#dc3545"/>
+
+<text x="565" y="225">1</text>
+
+<text x="295" y="80">J</text>
+
+<text x="285" y="370">J²</text>
+
+<text x="390" y="240">O</text>
+
+<line
+x1="520"
+y1="200"
+x2="355"
+y2="105"
+stroke="#198754"
+stroke-width="3"/>
+
+<line
+x1="340"
+y1="120"
+x2="340"
+y2="315"
+stroke="#198754"
+stroke-width="3"/>
+
+<line
+x1="350"
+y1="335"
+x2="520"
+y2="235"
+stroke="#198754"
+stroke-width="3"/>
+
+</svg>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Lecture de la figure
+</div>
+
+<p>
+
+Nous avons obtenu :
+
+</p>
+
+\[
+1
+\longrightarrow
+J
+\longrightarrow
+J^2
+\longrightarrow
+1
+\]
+
+<p>
+
+Après trois multiplications successives,
+nous revenons exactement au point de départ.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+17. Une équation inattendue
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Conséquence
+</div>
+
+<p>
+
+Puisque :
+
+</p>
+
+\[
+J^3=1
+\]
+
+<p>
+
+alors \(J\) est solution de :
+
+</p>
+
+\[
+x^3=1
+\]
+
+<p>
+
+ou encore :
+
+</p>
+
+\[
+x^3-1=0
+\]
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Factorisation
+</div>
+
+\[
+x^3-1
+=
+(x-1)(x^2+x+1)
+\]
+
+<p>
+
+Les trois solutions sont donc :
+
+</p>
+
+\[
+1
+\]
+
+\[
+J
+\]
+
+\[
+J^2
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+18. Ce qu'il faut retenir
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Synthèse
+</div>
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J^2=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J^3=1
+\]
+
+<p>
+
+Les trois nombres
+
+\[
+1,\;J,\;J^2
+\]
+
+sont les trois solutions de :
+
+\[
+x^3=1
+\]
+
+et correspondent aux trois sommets
+d'un triangle équilatéral inscrit dans
+le cercle unité.
+
+</p>
+
+</div>
+<h2>
+19. Une interprétation géométrique surprenante
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Les angles au centre
+</div>
+
+<p>
+
+Considérons les trois points :
+
+</p>
+
+\[
+1=(1,0)
+\]
+
+\[
+J=
+-\frac12+
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J^2=
+-\frac12-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Ils appartiennent tous au cercle de centre \(O\)
+et de rayon \(1\).
+
+</p>
+
+</div>
+
+<svg viewBox="0 0 700 500">
+
+<circle
+cx="350"
+cy="250"
+r="170"
+fill="none"
+stroke="#444"
+stroke-width="2"/>
+
+<line
+x1="80"
+y1="250"
+x2="620"
+y2="250"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="350"
+y1="40"
+x2="350"
+y2="460"
+stroke="black"
+stroke-width="2"/>
+
+<!-- rayons -->
+
+<line
+x1="350"
+y1="250"
+x2="520"
+y2="250"
+stroke="#dc3545"
+stroke-width="4"/>
+
+<line
+x1="350"
+y1="250"
+x2="265"
+y2="103"
+stroke="#198754"
+stroke-width="4"/>
+
+<line
+x1="350"
+y1="250"
+x2="265"
+y2="397"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<!-- points -->
+
+<circle cx="520" cy="250" r="6" fill="#dc3545"/>
+<circle cx="265" cy="103" r="6" fill="#198754"/>
+<circle cx="265" cy="397" r="6" fill="#0d6efd"/>
+
+<text x="530" y="255">1</text>
+
+<text x="240" y="95">J</text>
+
+<text x="230" y="415">J²</text>
+
+<text x="360" y="270">O</text>
+
+<!-- angles -->
+
+<text x="410" y="180">
+\( \frac{2\pi}{3} \)
+</text>
+
+<text x="280" y="255">
+\( \frac{2\pi}{3} \)
+</text>
+
+<text x="410" y="330">
+\( \frac{2\pi}{3} \)
+</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+Observation
+</div>
+
+<p>
+
+Le cercle complet correspond à un angle de :
+
+</p>
+
+\[
+2\pi
+\]
+
+<p>
+
+Les trois sommets partagent ce cercle
+en trois parties égales.
+
+</p>
+
+<p>
+
+Ainsi :
+
+</p>
+
+\[
+\widehat{(O1,OJ)}
+=
+\frac{2\pi}{3}
+\]
+
+\[
+\widehat{(OJ,OJ^2)}
+=
+\frac{2\pi}{3}
+\]
+
+\[
+\widehat{(OJ^2,O1)}
+=
+\frac{2\pi}{3}
+\]
+
+</div>
+
+<h2>
+20. Que fait la multiplication par \(J\) ?
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Premier calcul
+</div>
+
+\[
+1\times J=J
+\]
+
+<p>
+
+Le point \(1\) devient le point \(J\).
+
+</p>
+
+<p>
+
+On passe donc d'un sommet au suivant.
+
+</p>
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Deuxième calcul
+</div>
+
+\[
+J\times J=J^2
+\]
+
+<p>
+
+On avance encore d'un sommet.
+
+</p>
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Troisième calcul
+</div>
+
+\[
+J^2\times J=1
+\]
+
+<p>
+
+On revient au point de départ.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Interprétation géométrique
+</div>
+
+<p>
+
+Multiplier par \(J\) revient à effectuer
+un déplacement d'un sommet au suivant.
+
+</p>
+
+<p>
+
+À chaque multiplication par \(J\),
+on tourne de :
+
+</p>
+
+\[
+\boxed{
+\frac{2\pi}{3}
+}
+\]
+
+<p>
+
+autour du centre \(O\).
+
+</p>
+
+<p>
+
+Après trois multiplications :
+
+</p>
+
+\[
+3\times\frac{2\pi}{3}
+=
+2\pi
+\]
+
+<p>
+
+On effectue un tour complet et l'on revient
+au point de départ.
+
+</p>
+
+\[
+1
+\longrightarrow
+J
+\longrightarrow
+J^2
+\longrightarrow
+1
+\]
+
+</div>
+<!-- ===================================== -->
+<!-- PARTIE 5 -->
+<!-- ===================================== -->
+
+<h2>
+21. Que représente l'addition de deux nombres complexes ?
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Rappel
+</div>
+
+<p>
+
+À tout nombre complexe
+
+</p>
+
+\[
+z=a+ib
+\]
+
+<p>
+
+on associe le point :
+
+</p>
+
+\[
+M(a,b)
+\]
+
+<p>
+
+ou encore le vecteur :
+
+</p>
+
+\[
+\overrightarrow{OM}
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Exemple
+</div>
+
+\[
+z_1=2+i
+\]
+
+\[
+z_2=1+3i
+\]
+
+Alors :
+
+\[
+z_1+z_2
+=
+3+4i
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Interprétation géométrique
+</div>
+
+<p>
+
+L'affixe de la somme de deux vecteurs
+est obtenue en ajoutant leurs coordonnées.
+
+</p>
+
+<p>
+
+On retrouve exactement la règle
+du parallélogramme étudiée en géométrie.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+22. Illustration géométrique
+</h2>
+
+<svg viewBox="0 0 800 500">
+
+<line x1="80" y1="420"
+x2="740" y2="420"
+stroke="black"
+stroke-width="2"/>
+
+<line x1="120" y1="460"
+x2="120" y2="50"
+stroke="black"
+stroke-width="2"/>
+
+<circle cx="280" cy="320" r="5" fill="#0d6efd"/>
+<circle cx="220" cy="180" r="5" fill="#198754"/>
+<circle cx="380" cy="80" r="6" fill="#dc3545"/>
+
+<text x="290" y="320">z₁</text>
+
+<text x="230" y="180">z₂</text>
+
+<text x="390" y="80">z₁+z₂</text>
+
+<line x1="120" y1="420"
+x2="280" y2="320"
+stroke="#0d6efd"
+stroke-width="3"/>
+
+<line x1="120" y1="420"
+x2="220" y2="180"
+stroke="#198754"
+stroke-width="3"/>
+
+<line x1="220" y1="180"
+x2="380" y2="80"
+stroke="#0d6efd"
+stroke-width="2"
+stroke-dasharray="8 6"/>
+
+<line x1="280" y1="320"
+x2="380" y2="80"
+stroke="#198754"
+stroke-width="2"
+stroke-dasharray="8 6"/>
+
+</svg>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Conclusion
+</div>
+
+<p>
+
+Additionner deux nombres complexes revient
+à additionner les vecteurs associés.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+21. Une question beaucoup plus difficile...</h2>
+
+<div class="important">
+
+<div class="important-title">
+Question
+</div>
+
+<p>
+
+Que signifie géométriquement la multiplication
+de deux nombres complexes ?
+
+</p>
+
+<p>
+
+L'addition correspond aux vecteurs.
+
+Mais la multiplication ?
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+23. L'expérience avec \(J\)
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Ce que nous avons observé
+</div>
+
+\[
+1\times J=J
+\]
+
+\[
+J\times J=J^2
+\]
+
+\[
+J^2\times J=1
+\]
+
+</div>
+
+<svg viewBox="0 0 700 420">
+
+<circle
+cx="350"
+cy="210"
+r="140"
+fill="none"
+stroke="#444"
+stroke-width="2"/>
+
+<line
+x1="70"
+y1="210"
+x2="630"
+y2="210"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="350"
+y1="40"
+x2="350"
+y2="380"
+stroke="black"
+stroke-width="2"/>
+
+<polygon
+points="490,210 280,90 280,330"
+fill="rgba(13,110,253,.08)"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<circle cx="490" cy="210" r="5" fill="#dc3545"/>
+<circle cx="280" cy="90" r="5" fill="#dc3545"/>
+<circle cx="280" cy="330" r="5" fill="#dc3545"/>
+
+<text x="505" y="215">1</text>
+
+<text x="255" y="85">J</text>
+
+<text x="245" y="345">J²</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+Observation
+</div>
+
+<p>
+
+À chaque multiplication par \(J\),
+nous passons au sommet suivant du triangle.
+
+</p>
+
+<p>
+
+Après trois multiplications,
+nous revenons au point de départ.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+23. Que retenir ?
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Bilan
+</div>
+
+<ul>
+
+<li>
+L'addition de nombres complexes
+correspond à l'addition de vecteurs.
+</li>
+
+<li>
+Les solutions de
+\(
+x^3=1
+\)
+forment un triangle équilatéral.
+</li>
+
+<li>
+Le cercle de centre \(O\) et de rayon \(1\)
+joue un rôle fondamental.
+</li>
+
+<li>
+Multiplier par \(J\)
+déplace un point sur ce cercle.
+</li>
+
+</ul>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+24. Pour aller plus loin...
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Prochain chapitre
+</div>
+
+<p>
+
+Nous avons découvert que certains nombres complexes
+peuvent être décrits grâce à leur position sur un cercle.
+
+</p>
+
+<p>
+
+Dans le prochain chapitre,
+nous chercherons une nouvelle manière
+de représenter les nombres complexes
+à l'aide d'une distance à l'origine
+et d'une position sur le cercle.
+
+</p>
+
+<p>
+
+Cette nouvelle écriture simplifiera considérablement
+les calculs de produits et de puissances.
+
+</p>
+
+</div>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Racines de l'unité et triangle équilatéral fondamental</title>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eef4ff;
+    border:1px solid #b7c8ff;
+    padding:12px 20px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.navigation a{
+    text-decoration:none;
+    color:#1e2fa8;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    text-decoration:underline;
+}
+
+
+body{
+    font-family: Georgia, serif;
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+    line-height:1.8;
+    background:white;
+    color:#222;
+}
+
+h1{
+    text-align:center;
+    color:#0b5394;
+    border-bottom:4px solid #0b5394;
+    padding-bottom:10px;
+}
+
+h2{
+    color:#0b5394;
+    margin-top:50px;
+    border-left:6px solid #0b5394;
+    padding-left:12px;
+}
+
+.objectif{
+    background:#f7f7f7;
+    border:1px solid #d0d0d0;
+    padding:15px;
+    margin:20px 0;
+}
+
+.theoreme{
+    background:#d9edf7;
+    border-left:6px solid #0b5394;
+    padding:15px;
+    margin:20px 0;
+}
+
+.propriete{
+    background:#eef7ff;
+    border-left:6px solid #2e75b6;
+    padding:15px;
+    margin:20px 0;
+}
+
+.remarque{
+    background:#fff8dc;
+    border-left:6px solid #e0a800;
+    padding:15px;
+    margin:20px 0;
+}
+
+svg{
+    display:block;
+    margin:auto;
+}
+
+hr{
+    margin:50px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+    <div class="navigation">
+
+    <a href="../tablecoursnombrescomplexes.html">⬅ Retour au chapitre</a>
+
+    <a href="../index01.html">🏠 Sommaire général</a>
+
+    <a href="/nombrescomplexes/monj2.html">Cours suivant ➡</a>
+
+</div>
+
+<h1>Racines de l'unité et triangle équilatéral fondamental</h1>
+
+<div class="objectif">
+<b>Objectif :</b>
+
+Comprendre comment l'étude de l'équation
+
+$$
+z^3=1
+$$
+
+conduit naturellement au triangle équilatéral de sommets
+
+$$
+1,\qquad j,\qquad j^2
+$$
+
+puis à la relation fondamentale
+
+$$
+1+j+j^2=0.
+$$
+</div>
+
+<hr>
+
+<h2>I. L'équation \(z^3=1\)</h2>
+
+<p>
+Cherchons les solutions dans \(\mathbb C\) de l'équation :
+</p>
+
+$$
+z^3=1.
+$$
+
+<p>
+On écrit :
+</p>
+
+$$
+z^3-1=0.
+$$
+
+<p>
+Puis on factorise :
+</p>
+
+$$
+z^3-1=(z-1)(z^2+z+1).
+$$
+
+<p>
+Les solutions sont donc :
+</p>
+
+$$
+z=1
+$$
+
+<p>
+ou les solutions de :
+</p>
+
+$$
+z^2+z+1=0.
+$$
+
+<hr>
+
+<h2>II. Les nombres \(j\) et \(j^2\)</h2>
+
+<p>
+Les solutions de
+</p>
+
+$$
+z^2+z+1=0
+$$
+
+<p>
+sont notées :
+</p>
+
+$$
+j
+\qquad\text{et}\qquad
+j^2.
+$$
+
+<p>
+On obtient alors :
+</p>
+
+$$
+j^2+j+1=0.
+$$
+
+<p>
+c'est-à-dire :
+</p>
+
+$$
+\boxed{1+j+j^2=0}.
+$$
+
+<div class="propriete">
+Cette relation jouera un rôle essentiel dans toute l'étude géométrique des triangles équilatéraux.
+</div>
+
+<hr>
+
+<h2>III. Forme exponentielle</h2>
+
+<p>
+Les trois solutions de \(z^3=1\) sont :
+</p>
+
+$$
+1=e^{i0}
+$$
+
+$$
+j=e^{i\frac{2\pi}{3}}
+$$
+
+$$
+j^2=e^{i\frac{4\pi}{3}}.
+$$
+
+<p>
+On vérifie que :
+</p>
+
+$$
+j^3=1.
+$$
+
+<p>
+Multiplier par \(j\) revient à effectuer une rotation de centre \(O\) et d'angle :
+</p>
+
+$$
+\frac{2\pi}{3}.
+$$
+
+<hr>
+
+<h2>IV. Le triangle équilatéral fondamental</h2>
+
+<p>
+Considérons les points :
+</p>
+
+$$
+A(1,0)
+$$
+
+$$
+J\left(-\frac12,\frac{\sqrt3}{2}\right)
+$$
+
+$$
+J'\left(-\frac12,-\frac{\sqrt3}{2}\right).
+$$
+
+<p>
+Leurs affixes sont respectivement :
+</p>
+
+$$
+1,\qquad j,\qquad j^2.
+$$
+
+<svg width="500" height="420">
+
+<circle cx="250" cy="210" r="150"
+fill="none"
+stroke="#0b5394"
+stroke-width="2"/>
+
+<line x1="250" y1="210" x2="400" y2="210" stroke="black"/>
+<line x1="250" y1="210" x2="175" y2="80" stroke="black"/>
+<line x1="250" y1="210" x2="175" y2="340" stroke="black"/>
+
+<line x1="400" y1="210" x2="175" y2="80"
+stroke="#d81b60"
+stroke-width="2"/>
+
+<line x1="175" y1="80" x2="175" y2="340"
+stroke="#d81b60"
+stroke-width="2"/>
+
+<line x1="175" y1="340" x2="400" y2="210"
+stroke="#d81b60"
+stroke-width="2"/>
+
+<circle cx="250" cy="210" r="4"/>
+<circle cx="400" cy="210" r="4"/>
+<circle cx="175" cy="80" r="4"/>
+<circle cx="175" cy="340" r="4"/>
+
+<text x="260" y="205">O</text>
+
+<text x="410" y="215">A(1)</text>
+
+<text x="115" y="80">J(j)</text>
+
+<text x="100" y="350">J'(j²)</text>
+
+<text x="300" y="155">2π/3</text>
+<text x="185" y="210">2π/3</text>
+<text x="300" y="280">2π/3</text>
+
+<text x="275" y="115">√3</text>
+<text x="140" y="215">√3</text>
+<text x="275" y="315">√3</text>
+
+</svg>
+
+<div class="theoreme">
+
+Les points images de
+
+$$
+1,\qquad j,\qquad j^2
+$$
+
+sont les sommets d'un triangle équilatéral inscrit dans le cercle trigonométrique.
+
+</div>
+
+<p>
+Les rayons valent :
+</p>
+
+$$
+OA=OJ=OJ'=1.
+$$
+
+<p>
+Les angles au centre valent :
+</p>
+
+$$
+\frac{2\pi}{3}.
+$$
+
+<p>
+Les côtés valent :
+</p>
+
+$$
+AJ=JJ'=J'A=\sqrt3.
+$$
+
+<hr>
+
+<h2>V. Théorème des racines n-ièmes de l'unité</h2>
+
+<div class="theoreme">
+
+Pour tout entier naturel non nul \(n\),
+
+l'équation
+
+$$
+z^n=1
+$$
+
+admet exactement \(n\) solutions distinctes :
+
+$$
+z_k=e^{i\frac{2k\pi}{n}}
+\qquad
+(k=0,1,\ldots,n-1).
+$$
+
+Ces solutions sont appelées les racines n-ièmes de l'unité.
+
+</div>
+
+<p>
+On utilise la factorisation :
+</p>
+
+$$
+\boxed{
+z^n-1=
+(z-1)
+(1+z+z^2+\cdots+z^{n-1})
+}
+$$
+
+<hr>
+
+<h2>VI. Exemple : résoudre \(z^5=1\)</h2>
+
+<p>
+Le théorème donne :
+</p>
+
+$$
+z_k=e^{i\frac{2k\pi}{5}}
+\qquad
+(k=0,1,2,3,4).
+$$
+
+<p>
+Les solutions sont :
+</p>
+
+$$
+1,
+\quad
+e^{i\frac{2\pi}{5}},
+\quad
+e^{i\frac{4\pi}{5}},
+\quad
+e^{i\frac{6\pi}{5}},
+\quad
+e^{i\frac{8\pi}{5}}.
+$$
+
+<div class="remarque">
+Lorsque \(n\ge 3\), les points images des racines n-ièmes de l'unité sont les sommets d'un polygone régulier inscrit dans le cercle trigonométrique.
+</div>
+<hr>
+
+<h2>VI. Démonstration de la factorisation de \(z^n-1\)</h2>
+
+<div class="theoreme">
+
+Nous allons démontrer la formule :
+
+$$
+\boxed{
+z^n-1
+=
+(z-1)
+\left(
+1+z+z^2+\cdots+z^{n-1}
+\right)
+}
+$$
+
+</div>
+
+<p>
+Observons d'abord que
+</p>
+
+$$
+1,\quad z,\quad z^2,\quad \ldots,\quad z^{n-1}
+$$
+
+<p>
+forme une suite géométrique de premier terme \(1\) et de raison \(z\).
+</p>
+
+<p>
+Développons maintenant le produit :
+</p>
+
+$$
+(z-1)
+\left(
+1+z+z^2+\cdots+z^{n-1}
+\right).
+$$
+
+<p>
+On distribue d'abord le terme \(z\) :
+</p>
+
+$$
+\color{blue}{z\times1}
++
+\color{blue}{z\times z}
++
+\color{blue}{z\times z^2}
++
+\cdots
++
+\color{blue}{z\times z^{n-1}}
+$$
+
+$$
+=
+\color{blue}{z}
++
+\color{blue}{z^2}
++
+\color{blue}{z^3}
++
+\cdots
++
+\color{blue}{z^n}
+$$
+
+<p>
+Puis on distribue le terme \(-1\) :
+</p>
+
+$$
+\color{red}{-1\times1}
++
+\color{red}{-1\times z}
++
+\color{red}{-1\times z^2}
++
+\cdots
++
+\color{red}{-1\times z^{n-1}}
+$$
+
+$$
+=
+\color{red}{-1}
++
+\color{red}{-z}
++
+\color{red}{-z^2}
++
+\cdots
++
+\color{red}{-z^{n-1}}
+$$
+
+<p>
+En regroupant :
+</p>
+
+$$
+\begin{aligned}
+&
+\color{red}{-1}
+\\[3mm]
+&+
+\cancel{\color{blue}{z}}
++\cancel{\color{red}{(-z)}}
+\\[3mm]
+&+
+\cancel{\color{blue}{z^2}}
++\cancel{\color{red}{(-z^2)}}
+\\[3mm]
+&+
+\cancel{\color{blue}{z^3}}
++\cancel{\color{red}{(-z^3)}}
+\\[3mm]
+&+\cdots
+\\[3mm]
+&+
+\cancel{\color{blue}{z^{n-1}}}
++\cancel{\color{red}{(-z^{n-1})}}
+\\[3mm]
+&+
+\color{blue}{z^n}
+\end{aligned}
+$$
+
+<p>
+Tous les termes intermédiaires disparaissent.
+</p>
+
+<p>
+Il reste uniquement :
+</p>
+
+$$
+\boxed{
+z^n-1
+}
+$$
+
+<p>
+Ainsi :
+</p>
+
+$$
+\boxed{
+(z-1)
+(1+z+z^2+\cdots+z^{n-1})
+=
+z^n-1
+}
+$$
+
+<hr>
+
+<h2>VII. Théorème des racines n-ièmes de l'unité</h2>
+
+<div class="theoreme">
+
+Pour tout entier naturel non nul \(n\),
+
+l'équation
+
+$$
+z^n=1
+$$
+
+admet exactement \(n\) solutions distinctes :
+
+$$
+\boxed{
+z_k=e^{i\frac{2k\pi}{n}}
+}
+\qquad
+(k=0,1,\ldots,n-1).
+$$
+
+</div>
+
+<hr>
+
+<h2>VIII. Application directe du théorème : résoudre \(z^8=1\)</h2>
+
+<p>
+Dans le théorème, on remplace :
+</p>
+
+$$
+n=8.
+$$
+
+<p>
+La formule devient :
+</p>
+
+$$
+z_k=e^{i\frac{2k\pi}{8}}
+\qquad
+(k=0,1,\ldots,7).
+$$
+
+<p>
+Après simplification :
+</p>
+
+$$
+z_k=e^{i\frac{k\pi}{4}}.
+$$
+
+<p>
+Les huit solutions sont :
+</p>
+
+$$
+z_0=e^{i0}=1
+$$
+
+$$
+z_1=e^{i\frac{\pi}{4}}
+$$
+
+$$
+z_2=e^{i\frac{\pi}{2}}
+$$
+
+$$
+z_3=e^{i\frac{3\pi}{4}}
+$$
+
+$$
+z_4=e^{i\pi}
+$$
+
+$$
+z_5=e^{i\frac{5\pi}{4}}
+$$
+
+$$
+z_6=e^{i\frac{3\pi}{2}}
+$$
+
+$$
+z_7=e^{i\frac{7\pi}{4}}.
+$$
+
+<div class="propriete">
+
+Les huit racines de l'unité sont régulièrement réparties sur le cercle trigonométrique.
+
+Elles forment les sommets d'un octogone régulier inscrit dans le cercle unité.
+
+</div>
+
+<div style="text-align:center;margin-top:20px;">
+
+<svg width="500" height="500">
+
+<circle cx="250" cy="250" r="180"
+fill="none"
+stroke="#0b5394"
+stroke-width="2"/>
+
+<polygon
+points="
+430,250
+377,123
+250,70
+123,123
+70,250
+123,377
+250,430
+377,377"
+fill="none"
+stroke="#d81b60"
+stroke-width="3"/>
+
+<circle cx="430" cy="250" r="4"/>
+<circle cx="377" cy="123" r="4"/>
+<circle cx="250" cy="70" r="4"/>
+<circle cx="123" cy="123" r="4"/>
+<circle cx="70" cy="250" r="4"/>
+<circle cx="123" cy="377" r="4"/>
+<circle cx="250" cy="430" r="4"/>
+<circle cx="377" cy="377" r="4"/>
+
+<circle cx="250" cy="250" r="4"/>
+
+<text x="438" y="255">1</text>
+
+<text x="385" y="118">
+e^{iπ/4}
+</text>
+
+<text x="250" y="55">
+e^{iπ/2}
+</text>
+
+<text x="55" y="255">
+e^{iπ}
+</text>
+
+<text x="230" y="460">
+e^{i3π/2}
+</text>
+
+<text x="260" y="245">O</text>
+
+</svg>
+
+</div>
+
+<div class="remarque">
+
+Méthode à retenir :
+
+<ol>
+<li>Identifier \(n\).</li>
+<li>Appliquer directement :</li>
+</ol>
+
+$$
+z_k=e^{i\frac{2k\pi}{n}}.
+$$
+
+<p>
+avec
+</p>
+
+$$
+k=0,1,\ldots,n-1.
+$$
+
+<p>
+On obtient immédiatement toutes les racines n-ièmes de l'unité.
+</p>
+
+</div>
+<hr>
+
+<h2>IX. Application : résoudre \(z^9=1\)</h2>
+
+<div class="theoreme">
+
+Pour tout entier naturel non nul \(n\),
+
+$$
+z_k=e^{i\frac{2k\pi}{n}}
+\qquad
+(k=0,1,\ldots,n-1).
+$$
+
+</div>
+
+<p>
+Dans cet exercice, on cherche les solutions de :
+</p>
+
+$$
+z^9=1.
+$$
+
+<p>
+On applique le théorème avec :
+</p>
+
+$$
+n=9.
+$$
+
+<p>
+La formule devient :
+</p>
+
+$$
+\boxed{
+z_k=e^{i\frac{2k\pi}{9}}
+}
+\qquad
+(k=0,1,\ldots,8).
+$$
+
+<hr>
+
+<h3>Compléter les neuf racines de l'unité</h3>
+
+<p>
+À l'aide de la formule précédente, compléter le tableau suivant.
+</p>
+
+<table style="
+border-collapse:collapse;
+width:100%;
+text-align:center;
+margin-top:20px;
+">
+
+<tr style="background:#d9edf7;">
+<th style="border:1px solid #999;padding:8px;">\(k\)</th>
+<th style="border:1px solid #999;padding:8px;">\(z_k=e^{i\frac{2k\pi}{9}}\)</th>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">0</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_0=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">1</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_1=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">2</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_2=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">3</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_3=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">4</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_4=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">5</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_5=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">6</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_6=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">7</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_7=\)
+..............................................
+</td>
+</tr>
+
+<tr>
+<td style="border:1px solid #999;padding:12px;">8</td>
+<td style="border:1px solid #999;padding:12px;">
+\(z_8=\)
+..............................................
+</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Questions</h3>
+
+<ol>
+<li>
+Combien de solutions possède l'équation \(z^9=1\) ?
+</li>
+
+<li>
+Quel est l'angle séparant deux racines consécutives ?
+</li>
+
+<li>
+Quelle est l'image de \(z_0\) sur le cercle trigonométrique ?
+</li>
+
+<li>
+Les neuf racines sont-elles les sommets d'un polygone régulier ?
+Lequel ?
+</li>
+
+<li>
+Tracer les neuf racines sur le cercle trigonométrique.
+</li>
+
+</ol>
+
+<div class="remarque">
+
+Aide :
+
+Les racines sont régulièrement réparties sur le cercle unité.
+
+L'angle entre deux racines consécutives vaut :
+
+$$
+\frac{2\pi}{9}.
+$$
+
+</div>
+
+<hr>
+
+<h3>Pour vérifier après correction</h3>
+
+<details>
+
+<summary><b>Afficher les réponses</b></summary>
+
+$$
+z_0=1
+$$
+
+$$
+z_1=e^{i\frac{2\pi}{9}}
+$$
+
+$$
+z_2=e^{i\frac{4\pi}{9}}
+$$
+
+$$
+z_3=e^{i\frac{6\pi}{9}}
+$$
+
+$$
+z_4=e^{i\frac{8\pi}{9}}
+$$
+
+$$
+z_5=e^{i\frac{10\pi}{9}}
+$$
+
+$$
+z_6=e^{i\frac{12\pi}{9}}
+$$
+
+$$
+z_7=e^{i\frac{14\pi}{9}}
+$$
+
+$$
+z_8=e^{i\frac{16\pi}{9}}
+$$
+
+</details>
+</body>
+</html>

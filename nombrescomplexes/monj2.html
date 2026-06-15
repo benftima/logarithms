@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Les nombres complexes par un exemple concret
+</title>
+
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['\\(','\\)']],
+displayMath: [['\\[','\\]']]
+}
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eef4ff;
+    border:1px solid #b7c8ff;
+    padding:12px 20px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.navigation a{
+    text-decoration:none;
+    color:#1e2fa8;
+    font-weight:bold;
+}
+
+.navigation a:hover{
+    text-decoration:underline;
+}
+
+
+:root{
+--bleu:#0d6efd;
+--vert:#198754;
+--orange:#fd7e14;
+--rouge:#dc3545;
+--fond:#f4f7fb;
+}
+
+body{
+
+margin:0;
+padding:0;
+
+font-family:
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:var(--fond);
+
+line-height:1.8;
+
+color:#222;
+
+}
+
+.page{
+
+max-width:1100px;
+
+margin:40px auto;
+
+background:white;
+
+padding:50px;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.chapter-header{
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#eaf2ff;
+
+color:var(--bleu);
+
+border-radius:30px;
+
+font-weight:bold;
+
+margin-bottom:15px;
+
+}
+
+h1{
+
+color:var(--bleu);
+
+margin-bottom:10px;
+
+}
+
+h2{
+
+color:var(--vert);
+
+border-bottom:
+3px solid var(--vert);
+
+padding-bottom:10px;
+
+margin-top:50px;
+
+}
+
+.definition,
+.exemple,
+.important,
+.remarque{
+
+padding:22px;
+
+border-radius:15px;
+
+margin:25px 0;
+
+}
+
+.definition{
+
+background:#eef5ff;
+
+border-left:
+6px solid var(--bleu);
+
+}
+
+.exemple{
+
+background:#fff8e8;
+
+border-left:
+6px solid var(--orange);
+
+}
+
+.important{
+
+background:#fff0f0;
+
+border-left:
+6px solid var(--rouge);
+
+}
+
+.remarque{
+
+background:#f6fff8;
+
+border-left:
+6px solid var(--vert);
+
+}
+
+.definition-title,
+.exemple-title,
+.important-title,
+.remarque-title{
+
+font-weight:bold;
+
+margin-bottom:10px;
+
+font-size:1.1rem;
+
+}
+
+svg{
+
+max-width:100%;
+
+display:block;
+
+margin:auto;
+
+}
+
+.MathJax{
+font-size:1.05em !important;
+}
+
+</style>
+
+</head>
+<body>
+    <div class="navigation">
+
+    <a href="../tablecoursnombrescomplexes.html">⬅ Retour au chapitre</a>
+
+    <a href="../index01.html">🏠 Sommaire général</a>
+
+    <a href="/nombrescomplexes/monj2.html">Cours suivant ➡</a>
+
+</div>
+<div class="page">
+<div class="chapter-header">
+
+<div class="badge">
+Chapitre suivant
+</div>
+
+<h1>
+Les racines de l'unité et la forme trigonométrique
+</h1>
+
+<p>
+
+Dans le chapitre précédent,
+nous avons découvert les nombres complexes
+à partir d'une figure géométrique.
+
+Nous avons rencontré les nombres
+
+\[
+1,\quad J,\quad J^2
+\]
+
+et nous avons montré que
+
+\[
+J^3=1.
+\]
+
+Ces trois nombres apparaissent naturellement
+comme les sommets d'un triangle équilatéral
+inscrit dans le cercle unité.
+
+Mais de nombreuses questions restent ouvertes.
+
+Pourquoi ces trois points sont-ils répartis
+de manière parfaitement régulière ?
+
+Pourquoi le nombre \(J\) joue-t-il un rôle
+si particulier ?
+
+Et existe-t-il d'autres familles de nombres
+présentant les mêmes propriétés ?
+
+Nous allons progressivement répondre
+à ces questions.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+1. Retour sur les nombres 1, J et J²
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Rappel
+</div>
+
+<p>
+
+Nous avons obtenu les trois nombres :
+
+</p>
+
+\[
+1
+\]
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J^2=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+et nous avons démontré que :
+
+</p>
+
+\[
+J^3=1
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Conséquence
+</div>
+
+<p>
+
+Le calcul des puissances successives de \(J\)
+donne :
+
+</p>
+
+\[
+J^0=1
+\]
+
+\[
+J^1=J
+\]
+
+\[
+J^2=J^2
+\]
+
+\[
+J^3=1
+\]
+
+\[
+J^4=J
+\]
+
+\[
+J^5=J^2
+\]
+
+\[
+J^6=1
+\]
+
+<p>
+
+Le phénomène recommence indéfiniment.
+
+</p>
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+
+Les puissances de \(J\)
+forment un cycle de longueur 3.
+
+</p>
+
+<p>
+
+Après trois multiplications,
+nous revenons exactement au point de départ.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+2. Une symétrie remarquable
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Comparaison de J et J²
+</div>
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+\[
+J^2=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Les parties réelles sont identiques.
+
+</p>
+
+<p>
+
+Les parties imaginaires sont opposées.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Conclusion
+</div>
+
+<p>
+
+Le nombre \(J^2\)
+est le conjugué du nombre \(J\).
+
+</p>
+
+\[
+\boxed{
+J^2=\overline J
+}
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Interprétation géométrique
+</div>
+
+<p>
+
+Dans le plan complexe,
+les points représentant
+\(J\) et \(J^2\)
+sont symétriques
+par rapport à l'axe réel.
+
+</p>
+</div>  
+
+<!-- ===================================== -->
+
+<h2>
+14. Une observation surprenante
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Le carré de J
+</div>
+
+<p>
+
+Nous avons obtenu :
+
+</p>
+
+\[
+J=
+\cos
+\left(
+\frac{2\pi}{3}
+\right)
++
+i
+\sin
+\left(
+\frac{2\pi}{3}
+\right)
+\]
+
+<p>
+
+Calculons maintenant \(J^2\).
+
+</p>
+
+\[
+J^2=
+\left(
+\cos
+\frac{2\pi}{3}
++
+i\sin
+\frac{2\pi}{3}
+\right)^2
+\]
+
+<p>
+
+Or nous savons déjà que :
+
+</p>
+
+\[
+J^2=
+\cos
+\frac{4\pi}{3}
++
+i
+\sin
+\frac{4\pi}{3}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Observation
+</div>
+
+<p>
+
+Lorsque l'on élève \(J\) au carré,
+l'angle est lui aussi multiplié par \(2\).
+
+</p>
+
+\[
+\frac{2\pi}{3}
+\longrightarrow
+\frac{4\pi}{3}
+\]
+
+</div>
+<!-- ===================================== -->
+
+<h2>
+15. Et pour le cube ?
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Calcul
+</div>
+
+\[
+J^3
+=
+\left(
+\cos
+\frac{2\pi}{3}
++
+i\sin
+\frac{2\pi}{3}
+\right)^3
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Résultat connu
+</div>
+
+\[
+J^3=1
+\]
+
+Or
+
+\[
+1=
+\cos(2\pi)+i\sin(2\pi)
+\]
+
+Ainsi :
+
+\[
+J^3=
+\cos(2\pi)
++i\sin(2\pi)
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Nouvelle observation
+</div>
+
+<p>
+
+L'angle
+
+</p>
+
+\[
+\frac{2\pi}{3}
+\]
+
+<p>
+
+a été multiplié par
+
+</p>
+
+\[
+3
+\]
+
+<p>
+
+pour devenir
+
+</p>
+
+\[
+2\pi
+\]
+
+</div>
+<!-- ===================================== -->
+
+<h2>
+16. Une conjecture
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Question
+</div>
+
+<p>
+
+Ne serait-il pas vrai que :
+
+</p>
+
+\[
+(\cos\theta+i\sin\theta)^n
+=
+\cos(n\theta)
++
+i\sin(n\theta)
+\]
+
+<p>
+
+pour tout entier naturel \(n\) ?
+
+</p>
+
+<p>
+
+Cette propriété sera démontrée plus tard.
+
+</p>
+
+</div>
+<!-- ===================================== -->
+
+<h2>
+17. Une écriture encore plus simple
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Forme exponentielle
+</div>
+
+<p>
+
+Pour alléger les écritures,
+on note :
+
+</p>
+
+\[
+e^{i\theta}
+=
+\cos\theta+i\sin\theta
+\]
+
+</div>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Application à J
+</div>
+
+\[
+J
+=
+e^{i\frac{2\pi}{3}}
+\]
+
+\[
+J^2
+=
+e^{i\frac{4\pi}{3}}
+\]
+
+\[
+J^3
+=
+e^{i2\pi}
+=
+1
+\]
+
+</div>
+<h2>
+18. Les solutions de z³=1 revisitées
+</h2>
+<p>
+z<sup>3</sup> - 1 = (z - 1)(z<sup>2</sup> + z + 1)
+</p>
+
+<!-- ===================================== -->
+ 
+<h2>
+3. Les trois points sur le cercle unité
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Observation
+</div>
+
+<p>
+
+Les trois nombres
+
+</p>
+
+\[
+1,\quad J,\quad J^2
+\]
+
+<p>
+
+ont tous pour module :
+
+</p>
+
+\[
+1
+\]
+
+<p>
+
+Ils appartiennent donc au cercle
+de centre \(O\) et de rayon \(1\).
+
+</p>
+
+</div>
+
+<svg viewBox="0 0 800 500">
+
+<circle
+cx="400"
+cy="250"
+r="170"
+fill="none"
+stroke="#555"
+stroke-width="2"/>
+
+<line
+x1="100"
+y1="250"
+x2="700"
+y2="250"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="400"
+y1="50"
+x2="400"
+y2="450"
+stroke="black"
+stroke-width="2"/>
+
+<!-- rayons -->
+
+<line
+x1="400"
+y1="250"
+x2="570"
+y2="250"
+stroke="#dc3545"
+stroke-width="4"/>
+
+<line
+x1="400"
+y1="250"
+x2="315"
+y2="103"
+stroke="#198754"
+stroke-width="4"/>
+
+<line
+x1="400"
+y1="250"
+x2="315"
+y2="397"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<!-- points -->
+
+<circle cx="570" cy="250" r="6" fill="#dc3545"/>
+<circle cx="315" cy="103" r="6" fill="#198754"/>
+<circle cx="315" cy="397" r="6" fill="#0d6efd"/>
+
+<text x="585" y="255">1</text>
+
+<text x="290" y="95">J</text>
+
+<text x="280" y="415">J²</text>
+
+<text x="410" y="270">O</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+Remarque
+</div>
+
+<p>
+
+Les trois points semblent partager
+le cercle en trois parties égales.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+4. Les angles associés à J
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Lecture de la figure
+</div>
+
+<p>
+
+Le point \(1\) est situé sur l'axe réel positif.
+
+</p>
+
+<p>
+
+Son angle est :
+
+</p>
+
+\[
+0
+\]
+
+<p>
+
+Le point \(J\) correspond à un angle de :
+
+</p>
+
+\[
+\frac{2\pi}{3}
+\]
+
+<p>
+
+Le point \(J^2\) correspond à un angle de :
+
+</p>
+
+\[
+\frac{4\pi}{3}
+\]
+
+</div>
+
+<svg viewBox="0 0 800 500">
+
+<circle
+cx="400"
+cy="250"
+r="170"
+fill="none"
+stroke="#555"
+stroke-width="2"/>
+
+<line
+x1="400"
+y1="250"
+x2="570"
+y2="250"
+stroke="#dc3545"
+stroke-width="4"/>
+
+<line
+x1="400"
+y1="250"
+x2="315"
+y2="103"
+stroke="#198754"
+stroke-width="4"/>
+
+<line
+x1="400"
+y1="250"
+x2="315"
+y2="397"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<text x="470" y="190">
+\( \frac{2\pi}{3} \)
+</text>
+
+<text x="300" y="250">
+\( \frac{2\pi}{3} \)
+</text>
+
+<text x="470" y="340">
+\( \frac{2\pi}{3} \)
+</text>
+
+<text x="580" y="255">1</text>
+
+<text x="290" y="95">J</text>
+
+<text x="280" y="415">J²</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+Conclusion
+</div>
+
+<p>
+
+Le cercle complet correspond à l'angle :
+
+</p>
+
+\[
+2\pi
+\]
+
+<p>
+
+Les trois points partagent donc le cercle
+en trois arcs égaux.
+
+</p>
+
+<p>
+
+Chaque arc correspond à :
+
+</p>
+
+\[
+\boxed{
+\frac{2\pi}{3}
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+5. Une nouvelle écriture de J
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Les coordonnées de J
+</div>
+
+\[
+J=
+-\frac12
++
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Or nous savons que :
+
+</p>
+
+\[
+\cos
+\left(
+\frac{2\pi}{3}
+\right)
+=
+-\frac12
+\]
+
+\[
+\sin
+\left(
+\frac{2\pi}{3}
+\right)
+=
+\frac{\sqrt3}{2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Découverte
+</div>
+
+<p>
+
+Nous pouvons réécrire \(J\)
+sous la forme :
+
+</p>
+
+\[
+\boxed{
+J=
+\cos
+\left(
+\frac{2\pi}{3}
+\right)
++
+i
+\sin
+\left(
+\frac{2\pi}{3}
+\right)
+}
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Nouvelle idée
+</div>
+
+<p>
+
+Cette écriture fait apparaître directement
+la position du point sur le cercle.
+
+</p>
+
+<p>
+
+Elle sera appelée
+forme trigonométrique.
+
+</p>
+
+<!-- ===================================== -->
+
+<h2>
+6. Écriture trigonométrique de J²
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Rappel
+</div>
+
+\[
+J^2=
+-\frac12
+-
+i\frac{\sqrt3}{2}
+\]
+
+<p>
+
+Nous reconnaissons :
+
+</p>
+
+\[
+\cos
+\left(
+\frac{4\pi}{3}
+\right)
+=
+-\frac12
+\]
+
+\[
+\sin
+\left(
+\frac{4\pi}{3}
+\right)
+=
+-\frac{\sqrt3}{2}
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Résultat
+</div>
+
+\[
+\boxed{
+J^2=
+\cos
+\left(
+\frac{4\pi}{3}
+\right)
++
+i
+\sin
+\left(
+\frac{4\pi}{3}
+\right)
+}
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+
+Le nombre \(J^2\)
+correspond à un angle double
+de celui de \(J\).
+
+</p>
+
+<p>
+
+En effet :
+
+</p>
+
+\[
+2\times\frac{2\pi}{3}
+=
+\frac{4\pi}{3}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+7. Une relation remarquable
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Retour à l'équation
+</div>
+
+<p>
+
+Nous savons que \(J\)
+est solution de :
+
+</p>
+
+\[
+x^2+x+1=0
+\]
+
+<p>
+
+En remplaçant \(x\) par \(J\),
+nous obtenons :
+
+</p>
+
+\[
+J^2+J+1=0
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Relation fondamentale
+</div>
+
+\[
+\boxed{
+1+J+J^2=0
+}
+\]
+
+</div>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Conséquence
+</div>
+
+\[
+J+J^2=-1
+\]
+
+<p>
+
+Cette relation intervient très souvent
+dans les exercices sur les nombres complexes.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+8. Une interprétation géométrique
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Addition vectorielle
+</div>
+
+<p>
+
+Les nombres complexes peuvent être vus
+comme des vecteurs du plan.
+
+</p>
+
+<p>
+
+La relation
+
+</p>
+
+\[
+1+J+J^2=0
+\]
+
+<p>
+
+signifie que la somme des trois vecteurs
+est nulle.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Lecture géométrique
+</div>
+
+<p>
+
+Les trois vecteurs associés à
+
+</p>
+
+\[
+1,\quad J,\quad J^2
+\]
+
+<p>
+
+forment un équilibre parfait.
+
+</p>
+
+<p>
+
+C'est une conséquence directe
+de leur répartition régulière
+sur le cercle unité.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+9. Retour sur l'équation z³ = 1
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Question
+</div>
+
+<p>
+
+Quels sont les nombres complexes
+dont le cube vaut 1 ?
+
+</p>
+
+\[
+z^3=1
+\]
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Première solution
+</div>
+
+\[
+1^3=1
+\]
+
+<p>
+
+Le nombre \(1\)
+est donc une solution.
+
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Deuxième solution
+</div>
+
+\[
+J^3=1
+\]
+
+<p>
+
+Le nombre \(J\)
+est également une solution.
+
+</p>
+
+</div>
+
+<div class="definition">
+
+<div class="definition-title">
+Troisième solution
+</div>
+
+\[
+(J^2)^3
+=
+J^6
+=
+(J^3)^2
+=
+1
+\]
+
+<p>
+
+Le nombre \(J^2\)
+est aussi une solution.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Les trois solutions
+</div>
+
+\[
+\boxed{
+1,\quad J,\quad J^2
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+10. Une figure remarquable
+</h2>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+
+Les trois solutions de
+
+</p>
+
+\[
+z^3=1
+\]
+
+<p>
+
+sont situées sur le cercle unité.
+
+</p>
+
+<p>
+
+Elles forment les sommets
+d'un triangle équilatéral.
+
+</p>
+
+<p>
+
+On les appelle les racines cubiques
+de l'unité.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Question naturelle
+</div>
+
+<p>
+
+Si trois solutions forment
+un triangle équilatéral,
+
+que se passera-t-il pour
+
+</p>
+
+\[
+z^4=1
+\]
+
+<p>
+
+?
+
+</p>
+
+<p>
+
+Obtiendrons-nous un carré ?
+
+</p>
+
+
+<!-- ===================================== -->
+
+<h2>
+11. Les solutions de z⁴ = 1
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Recherche des solutions
+</div>
+
+<p>
+
+Nous cherchons tous les nombres complexes
+vérifiant :
+
+</p>
+
+\[
+z^4=1
+\]
+
+<p>
+
+Commençons par quelques nombres connus.
+
+</p>
+
+\[
+1^4=1
+\]
+
+\[
+i^4=(i^2)^2=(-1)^2=1
+\]
+
+\[
+(-1)^4=1
+\]
+
+\[
+(-i)^4=1
+\]
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Les quatre solutions
+</div>
+
+\[
+\boxed{
+1,\quad i,\quad -1,\quad -i
+}
+\]
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+12. Représentation géométrique
+</h2>
+
+<div class="remarque">
+
+<div class="remarque-title">
+Observation
+</div>
+
+<p>
+
+Les quatre solutions appartiennent
+au cercle unité.
+
+</p>
+
+<p>
+
+Elles sont réparties régulièrement
+sur le cercle.
+
+</p>
+
+<p>
+
+Les angles sont :
+
+</p>
+
+\[
+0
+\]
+
+\[
+\frac{\pi}{2}
+\]
+
+\[
+\pi
+\]
+
+\[
+\frac{3\pi}{2}
+\]
+
+</div>
+
+<svg viewBox="0 0 800 500">
+
+<circle
+cx="400"
+cy="250"
+r="170"
+fill="none"
+stroke="#555"
+stroke-width="2"/>
+
+<line
+x1="100"
+y1="250"
+x2="700"
+y2="250"
+stroke="black"
+stroke-width="2"/>
+
+<line
+x1="400"
+y1="50"
+x2="400"
+y2="450"
+stroke="black"
+stroke-width="2"/>
+
+<!-- carré -->
+
+<polygon
+points="570,250 400,80 230,250 400,420"
+fill="rgba(13,110,253,.08)"
+stroke="#0d6efd"
+stroke-width="4"/>
+
+<!-- points -->
+
+<circle cx="570" cy="250" r="6" fill="#dc3545"/>
+<circle cx="400" cy="80" r="6" fill="#dc3545"/>
+<circle cx="230" cy="250" r="6" fill="#dc3545"/>
+<circle cx="400" cy="420" r="6" fill="#dc3545"/>
+
+<text x="585" y="255">1</text>
+
+<text x="410" y="75">i</text>
+
+<text x="205" y="255">-1</text>
+
+<text x="410" y="440">-i</text>
+
+<text x="410" y="270">O</text>
+
+</svg>
+
+<div class="important">
+
+<div class="important-title">
+Conclusion
+</div>
+
+<p>
+
+Les solutions de
+
+</p>
+
+\[
+z^4=1
+\]
+
+<p>
+
+forment les sommets d'un carré
+inscrit dans le cercle unité.
+
+</p>
+
+</div>
+
+<!-- ===================================== -->
+
+<h2>
+13. Comparaison avec z³ = 1
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Comparaison
+</div>
+
+<p>
+
+Pour l'équation
+
+</p>
+
+\[
+z^3=1
+\]
+
+<p>
+
+nous avons obtenu un triangle équilatéral.
+
+</p>
+
+<p>
+
+Pour l'équation
+
+</p>
+
+\[
+z^4=1
+\]
+
+<p>
+
+nous obtenons un carré.
+
+</p>
+
+</div>
+
+<div class="important">
+
+<div class="important-title">
+Question
+</div>
+
+<p>
+
+Que se passera-t-il pour
+
+</p>
+
+\[
+z^5=1
+\]
+
+<p>
+
+?
+
+</p>
+
+<p>
+
+Obtiendrons-nous un pentagone régulier ?
+
+</p>
+<h2>
+19. Théorème général des racines de l'unité
+</h2>
+
+<div class="important">
+
+<div class="important-title">
+Théorème et définition
+</div>
+
+<p>
+
+Pour tout entier naturel non nul \(n\),
+l'équation
+
+</p>
+
+\[
+z^n=1
+\]
+
+<p>
+
+admet exactement \(n\) solutions complexes
+distinctes données par :
+
+</p>
+
+\[
+z_k=
+e^{i\frac{2k\pi}{n}}
+\qquad
+(k=0,1,\ldots,n-1)
+\]
+
+<p>
+
+Ces solutions sont appelées
+<b>racines n-ièmes de l'unité</b>.
+
+</p>
+
+
+<h2>
+20. Application au cas n = 3
+</h2>
+
+<div class="definition">
+
+<div class="definition-title">
+Les racines cubiques de l'unité
+</div>
+
+<p>
+
+Pour \(n=3\), le théorème donne :
+
+</p>
+
+\[
+z_0=e^{i0}=1
+\]
+
+\[
+z_1=e^{i\frac{2\pi}{3}}=J
+\]
+
+\[
+z_2=e^{i\frac{4\pi}{3}}=J^2
+\]
+
+<p>
+
+Les solutions de
+
+</p>
+
+\[
+z^3=1
+\]
+
+<p>
+
+sont donc :
+
+</p>
+
+\[
+\boxed{
+1,\quad J,\quad J^2
+}
+\]
+</div>
+<h2>
+21. Retrouvons l'équation z²+z+1=0
+</h2>
+
+<div class="exemple">
+
+<div class="exemple-title">
+Factorisation
+</div>
+
+\[
+z^3-1
+=
+(z-1)(z^2+z+1)
+\]
+
+<p>
+
+Les solutions de
+
+</p>
+
+\[
+z^3=1
+\]
+
+<p>
+
+sont :
+
+</p>
+
+\[
+1,\quad J,\quad J^2
+\]
+
+<p>
+
+Le facteur \(z-1\) fournit la solution
+\(z=1\).
+
+</p>
+
+<p>
+
+Les deux autres solutions doivent donc
+annuler le second facteur.
+
+</p>
+
+<div class="important">
+
+<div class="important-title">
+Conséquence
+</div>
+
+<p>
+
+Les nombres
+
+</p>
+
+\[
+J
+\quad\text{et}\quad
+J^2
+\]
+
+<p>
+
+sont exactement les solutions de :
+
+</p>
+
+\[
+z^2+z+1=0
+\]
+
+<p>
+
+Ainsi, l'équation qui a permis
+de découvrir \(J\) apparaît
+naturellement comme une conséquence
+de l'étude des racines cubiques
+de l'unité.
+
+</p>
+
+
+
+</div>
+    
+</div>
+
+
+
+</body>
