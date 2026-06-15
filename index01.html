@@ -6,6 +6,7 @@
 <title>Sommaire - Logarithme.tn</title>
 
 <style>
+
 body{
     margin:0;
     padding:0;
@@ -52,11 +53,11 @@ h1{
     width:140px;
     color:#1f2fa0;
     font-weight:bold;
+    flex-shrink:0;
 }
 
 .title{
     color:#00aa22;
-    white-space:nowrap;
 }
 
 .dots{
@@ -69,6 +70,7 @@ h1{
     width:50px;
     text-align:right;
     color:#222;
+    flex-shrink:0;
 }
 
 a{
@@ -84,6 +86,59 @@ a{
     margin-top:50px;
     color:#666;
 }
+
+/* ========================= */
+/* RESPONSIVE SMARTPHONE */
+/* ========================= */
+
+@media (max-width:768px){
+
+    .page{
+        padding:15px;
+    }
+
+    h1{
+        font-size:2em;
+        margin-bottom:35px;
+    }
+
+    .section-title{
+        font-size:1.1em;
+        padding:12px;
+    }
+
+    .chapter{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+        padding:12px;
+        background:white;
+        border-radius:10px;
+        box-shadow:0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .num{
+        width:auto;
+    }
+
+    .title{
+        white-space:normal;
+        line-height:1.5;
+        font-weight:bold;
+    }
+
+    .dots{
+        display:none;
+    }
+
+    .page-num{
+        width:auto;
+        text-align:left;
+        color:#777;
+        font-size:.9em;
+    }
+}
+
 </style>
 </head>
 
