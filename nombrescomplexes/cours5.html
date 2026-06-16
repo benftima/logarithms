@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Racines n-ièmes de l'unité</title>
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['\\[','\\]']]
+    }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+body{
+    font-family:"Times New Roman", serif;
+    line-height:1.8;
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    color:#222;
+    background:white;
+}
+
+h1{
+    text-align:center;
+    color:#0b8b45;
+}
+
+h2{
+    color:#0b8b45;
+    border-bottom:2px solid #0b8b45;
+    padding-bottom:8px;
+    margin-top:40px;
+}
+
+p{
+    text-align:justify;
+}
+
+.encadre{
+    border-left:5px solid #0b8b45;
+    background:#f8fff8;
+    padding:15px;
+    margin:20px 0;
+}
+
+.propriete{
+    border-left:5px solid #1f4db8;
+    background:#f4f7ff;
+    padding:15px;
+    margin:20px 0;
+}
+
+.exemple{
+    border-left:5px solid #e38b00;
+    background:#fffaf0;
+    padding:15px;
+    margin:20px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>Exercice résolu</h1>
+
+<p style="text-align:center;">
+Exercice 12 – page 31 (Livre Sciences expérimentales)
+</p>
+
+\[
+(E):\; z^3-8z^2+24z-32=0
+\]
+
+<h2>Exercice</h2>
+
+<p>
+On considère dans \(\mathbb C\) l'équation :
+</p>
+
+\[
+(E):\; z^3-8z^2+24z-32=0.
+\]
+
+<ol>
+<li>Vérifier que \(z_0=4\) est une solution de \((E)\).</li>
+
+<li>Résoudre \((E)\).</li>
+
+<li>Déterminer la forme exponentielle des solutions.</li>
+</ol>
+<h2>Solution</h2>
+
+<p>
+On vérifie immédiatement que :
+</p>
+
+\[
+4^3-8\times4^2+24\times4-32=0.
+\]
+
+<p>
+Donc \(z_0=4\) est une solution de \((E)\).
+</p>
+
+<p>
+Le polynôme admet alors le facteur \((z-4)\).
+</p>
+
+<p>
+Effectuons la division :
+</p>
+
+\[
+z^3-8z^2+24z-32
+=(z-4)(z^2-4z+8).
+\]
+
+<p>
+Il reste à résoudre :
+</p>
+
+\[
+z^2-4z+8=0.
+\]
+
+<p>
+Son discriminant vaut :
+</p>
+
+\[
+\Delta=(-4)^2-4\times1\times8=-16.
+\]
+
+<p>
+Ainsi :
+</p>
+
+\[
+z=\frac{4\pm4i}{2}.
+\]
+
+<p>
+Les deux autres solutions sont :
+</p>
+
+\[
+z_1=2+2i,
+\qquad
+z_2=2-2i.
+\]
+
+<p>
+Les solutions de \((E)\) sont donc :
+</p>
+
+\[
+\boxed{4,\;2+2i,\;2-2i}.
+\]
+
+<h3>Forme exponentielle</h3>
+
+<p>
+Pour \(z_1=2+2i\) :
+</p>
+
+\[
+|z_1|=\sqrt{2^2+2^2}=2\sqrt2.
+\]
+
+\[
+\arg(z_1)=\frac{\pi}{4}.
+\]
+
+Donc :
+
+\[
+z_1=2\sqrt2\,e^{i\pi/4}.
+\]
+
+<p>
+De même :
+</p>
+
+\[
+z_2=2\sqrt2\,e^{-i\pi/4}.
+\]
+
+<p>
+Enfin :
+</p>
+
+\[
+4=4e^{i0}.
+\]
+<h2>Rappel : module, forme trigonométrique et forme exponentielle</h2>
+
+<p>
+Soit le nombre complexe :
+</p>
+
+\[
+z=a+ib.
+\]
+
+<p>
+Le module de \(z\), noté \(|z|\), est défini par :
+</p>
+
+\[
+|z|=\sqrt{a^2+b^2}.
+\]
+
+<p>
+Lorsque \(z\neq0\), on peut écrire :
+</p>
+
+\[
+z=|z|(\cos\theta+i\sin\theta),
+\]
+
+<p>
+où \(\theta\) est un argument de \(z\).
+</p>
+
+<p>
+Pour déterminer \(\cos\theta\) et \(\sin\theta\), on utilise les formules :
+</p>
+
+\[
+\cos\theta=\frac{a}{|z|}
+\]
+
+et
+
+\[
+\sin\theta=\frac{b}{|z|}.
+\]
+
+<p>
+Ces relations proviennent de la représentation géométrique du nombre complexe.
+</p>
+
+
+
+
+<h3>Exemple</h3>
+
+<p>
+Considérons le nombre complexe :
+</p>
+
+\[
+z=2+2i.
+\]
+
+<p>
+Calculons son module :
+</p>
+
+\[
+|z|
+=
+\sqrt{2^2+2^2}
+=
+\sqrt8
+=
+2\sqrt2.
+\]
+
+<p>
+On obtient alors :
+</p>
+
+\[
+\cos\theta
+=
+\frac{2}{2\sqrt2}
+=
+\frac{\sqrt2}{2}
+\]
+
+et
+
+\[
+\sin\theta
+=
+\frac{2}{2\sqrt2}
+=
+\frac{\sqrt2}{2}.
+\]
+
+<p>
+Comme le point représentant \(z\) appartient au premier quadrant, on en déduit :
+</p>
+
+\[
+\theta=\frac{\pi}{4}.
+\]
+
+<p>
+La forme trigonométrique de \(z\) est donc :
+</p>
+
+\[
+z
+=
+2\sqrt2
+\left(
+\cos\frac{\pi}{4}
++i\sin\frac{\pi}{4}
+\right).
+\]
+
+<p>
+En utilisant la formule d'Euler
+</p>
+
+\[
+e^{i\theta}
+=
+\cos\theta+i\sin\theta,
+\]
+
+<p>
+on obtient la forme exponentielle :
+</p>
+
+\[
+\boxed{
+z=
+2\sqrt2\,e^{i\pi/4}
+}.
+\]
+
+<p>
+De même :
+</p>
+
+\[
+2-2i
+=
+2\sqrt2\,e^{-i\pi/4}.
+\]
+
+<p>
+Ainsi, pour passer d'un nombre complexe \(a+ib\) à sa forme exponentielle :
+</p>
+
+<ol>
+<li>Calculer le module \(|z|\).</li>
+<li>Calculer \(\cos\theta=\dfrac{a}{|z|}\) et \(\sin\theta=\dfrac{b}{|z|}\).</li>
+<li>Déterminer l'argument \(\theta\).</li>
+<li>Écrire \(z=|z|e^{i\theta}\).</li>
+</ol>
+<p>
+Les formes exponentielles sont donc :
+</p>
+
+\[
+\boxed{
+\begin{aligned}
+z_0&=4e^{i0},\\[2mm]
+z_1&=2\sqrt2\,e^{i\pi/4},\\[2mm]
+z_2&=2\sqrt2\,e^{-i\pi/4}.
+\end{aligned}
+}
+\]
+
+</body>
+</html>
